@@ -23,4 +23,14 @@ var UserSchema  = new mongoose.Schema({
 
 });
 
+// var autoPopulateProducts = function(next) {
+//   this.populate('orders.items.product');
+//   next();
+// };
+
+// UserSchema.
+//   pre('findOne', autoPopulateProducts).
+//   pre('find', autoPopulateProducts);
+
+
 module.exports = mongoose.model('user', UserSchema);
