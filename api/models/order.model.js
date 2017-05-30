@@ -1,5 +1,4 @@
-var mongoose = require('mongoose');
-
+var mongoose    = require('mongoose');
 var OrderSchema = new mongoose.Schema({
 
   items: [{

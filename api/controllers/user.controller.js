@@ -20,5 +20,6 @@ function getAllUsers (req, res) {
 }
 
 module.exports = {
-  getUser: getSingleUser
+  getUser: getSingleUser,
+  getAllUsers: getAllUsers
 };

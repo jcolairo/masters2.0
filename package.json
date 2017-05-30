@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node api/server.js",
-    "dev": "nodemon api/server"
+    "dev": "nodemon api/server",
+    "db:seed": "node api/config/seeds.js"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +33,8 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.1.2",
+    "mongoose-seed": "^0.3.2",
+    "prompt": "^1.0.0",
     "run-sequence": "^1.2.2"
   }
 }
