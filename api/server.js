@@ -21,7 +21,7 @@ app.use(helmet());
 app.use(morgan());
 
 
-app.use(express.static(__dirname + '/frontend'));
+app.use(express.static(require('../env').path + '/frontend'));
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
