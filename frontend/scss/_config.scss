@@ -1,0 +1,24 @@
+$border-dev-red: 1px solid #C62828;
+$border-dev-blue: 1px solid #0288D1;
+$border-dev-green: 1px solid #00C853;
+
+//COLORS
+$white: #e3e3e3;
+$black: rgba(41, 41, 41, .8);
+$dark-grey: #bdbdbd;
+
+$sideBar-bg--color: radial-gradient(ellipse at center,#e3e3e3 0,#bdbdbd 100%);
+$content-bg-color: $white;
+
+//Fonts
+$font-family: 'Source Sans Pro', sans-serif;
+
+//Animations
+
+$ani-fadeIn: fade-in 0.5s linear forwards;
+$ani-fadeIn-alt: fade-in 0.5s linear .5s forwards;
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to  {opacity: 1;}
+}

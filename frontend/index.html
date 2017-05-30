@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MastersApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <title>Masters</title>
+  <!-- <base href="/" /> -->
+
+  <!--build:css css/styles.min.css-->
+  <link type="text/css" rel="stylesheet" href="css/styles.css" />
+  <!--endbuild-->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+
+  <!-- build:js js/app.min.js-->
+  <script src="js/router/app.js"></script>
+
+  <script src="js/factories/main.factory.js"></script>
+
+  <script src="js/controllers/main.controller.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+  <div class="siteContainer"
+    ng-controller="MainController as main"
+    ui-view>
+    </div>
+</body>
+</html>
