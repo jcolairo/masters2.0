@@ -4,6 +4,7 @@ var router  = express.Router();
 var staticController = require('../controllers/static.controller');
 var userController   = require('../controllers/user.controller');
 var productController   = require('../controllers/product.controller');
+var orderController   = require('../controllers/order.controller');
 
 
 // Static Routes 
@@ -30,5 +31,8 @@ router.route('/products/:id')
   .get(productController.getOne);
 
 
+//Order Routes 
+router.route('/orders/add')
+  .post(orderController.addProducts);
 
 module.exports = router; 

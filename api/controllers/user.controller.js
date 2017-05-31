@@ -1,13 +1,15 @@
-var User    = require('../controllers/user.controller');
+var User    = require('../models/user.model');
 var Err     = require('../utilities/badRequestHandler');
 
 function getSingleUser (req, res) {
   var uid = req && req.params && req.params.uid;
   if (!uid) return Err.missingParams(res, ['uid']);
 
-  var query = { "uid": uid }
+  if (req.user.user_id != uid) {
+    return Err.unauthorizedReq(res);
+  }
 
-  User.findOrCreate(query, function (err, user, created) {
+  User.findOne({ uid: uid }, function (err, user) {
     if (err) return Err.recordNotFound(res, err.message);
     res.json(user);
   });       

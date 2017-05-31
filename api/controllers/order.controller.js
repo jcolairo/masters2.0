@@ -1,4 +1,4 @@
-var User    = require('../controllers/user.controller');
+var User    = require('../models/user.model');
 var Err     = require('../utilities/badRequestHandler');
 
 // function getUserOrders (req, res) {
@@ -13,20 +13,35 @@ var Err     = require('../utilities/badRequestHandler');
 
 // }
 
-function addProductToBasket (req, res) {
-  var user      = req && req.user && req.user.uid;
-  var productId = req && req.body && req.body.productId;
+function addProductsToBasket (req, res) {
+  var products = req && req.body && req.body.products;
 
-  var query = { "uid": uid, "isLive": true }
+  if (!products.length || !validateProducts(products)) {
+    return Err.missingParams(res, ['PRODUCTS']); 
+  } 
 
-  User.findOrCreate(query, function (err, user, created) {
+  var query = { orders: { "uid": req.user.user_id, "isLive": true } }
+
+  User.findOrCreate(query, function (err, order, created) { // breakpoint
     if (err) return Err.recordNotFound(res, err.message);
+
     res.json(user);
   });
 }
 
 
+function validateProducts (products) {
+  for (var i = 0; i < products.length; i++) {
+
+    var current = products[i];
+    var isValidId = current.id && typeof current.id === 'string'
+    var isValidQty = current.qty && typeof current.qty === 'number'
+
+    if (!isValidQty || !isValidId) return false
+  }
+  return true
+}
+
 module.exports = {
-  getUser: getSingleUser,
-  getAllUsers: getAllUsers
+  addProducts: addProductsToBasket
 }

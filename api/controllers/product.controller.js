@@ -11,6 +11,7 @@ function getSingleProduct (req, res) {
 }
 
 function getAllProducts (req, res) {
+  console.log(req.user)
   Product.find({}, function (err, products) {
     if (err) return Err.recordNotFound(res, err.message);
     res.json(products);
