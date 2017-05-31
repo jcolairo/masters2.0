@@ -1,7 +1,7 @@
 function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('home', {
-      url: '/',
+      url: '/home',
       templateUrl: '/states/partials/home/home.html'
     })
     .state('auth-required', {

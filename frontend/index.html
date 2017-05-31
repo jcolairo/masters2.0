@@ -29,6 +29,16 @@
 
 </head>
 <body>
+
+  <nav>
+    <ul>
+      <li ui-sref="home"><a>Home</a></li>
+      <li ui-sref="login"><a>Log in</a></li>
+      <li ui-sref="signup"><a>Sign Up</a></li>
+      <li ui-sref="home" ng-click="auth.signOut()"><a>Sign Out</a></li>
+    </ul>
+  </nav>
+
   <div class="siteContainer"
     ng-controller="MainController as main"
     ui-view>
