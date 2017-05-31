@@ -14,10 +14,11 @@ function confirm () {
   prompt.get(['confirm'], function (err, result) {
     if (result.confirm.toLowerCase() === 'y') {
       console.log('Running Seed...');
+      seed();
+
     } else {
       console.error('Aborting Seed...');
       process.exit();
-      seed();
     }
   });
 }
@@ -25,9 +26,13 @@ function confirm () {
 function seed () {
 
   seeder.connect(require('../../env').db_url, function () {
-    seeder.loadModels(['../product.model.js']);
+    seeder.loadModels([require('../../env').path + '/api/models/product.model.js']);
     seeder.clearModels(['Product'], function () {
-      seeder.populateModels(data);
+      seeder.populateModels(data, function (err) {
+        if (err) console.log(err);
+        console.log('DB Seeded. Exiting...')
+        process.exit();
+      });
     });
   });
 
@@ -39,7 +44,7 @@ function seed () {
           'title': 'Bangers and Math',
           'price': '1.67',
           'category': 'Lunch',
-          'description': 'A bit plate of bangers and mash',
+          'description': ['something fun'],
           'img_path': '../some_location'
         }
       ]

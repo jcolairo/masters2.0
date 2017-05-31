@@ -1,5 +1,7 @@
-var mongoose    = require('mongoose');
-var OrderSchema = require('./order.model');
+var mongoose      = require('mongoose');
+var OrderSchema   = require('./order.model');
+var findOrCreate  = require('mongoose-findorcreate');
+
 
 var UserSchema  = new mongoose.Schema({
 
@@ -22,6 +24,8 @@ var UserSchema  = new mongoose.Schema({
   versionKey: false
 
 });
+
+UserSchema.plugin(findOrCreate);
 
 // var autoPopulateProducts = function(next) {
 //   this.populate('orders.items.product');
