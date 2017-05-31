@@ -4,5 +4,5 @@ exports.missingParams = function (res, params) {
 }
 
 exports.recordNotFound = function (res, message) {
-  res.status(404).send(message)
+  res.status(404).send(message);
 }

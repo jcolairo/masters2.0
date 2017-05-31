@@ -7,7 +7,7 @@ var mongoose    = require('mongoose');
 var app         = express();
 
 var PORT        = process.env.PORT || 3000;
-var end         = require('../env');
+var env         = require('../env');
 
 mongoose.connect(env.db_url, function (err) {
   if (err) {

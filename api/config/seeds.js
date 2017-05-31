@@ -2,12 +2,30 @@ var seeder = require('mongoose-seed');
 var prompt = require('prompt');
 
 confirm();
-function  seed () {
+
+function confirm () {
+  console.log('***************** Warning! *****************');
+  console.log();
+  console.log('This is a destructive action and with truncate the following collections: ["Product"]');
+  console.log('Do you want to continue? (Y/N)');
+
+  prompt.start();
+
+  prompt.get(['confirm'], function (err, result) {
+    if (result.confirm.toLowerCase() === 'y') {
+      console.log('Running Seed...');
+    } else {
+      console.error('Aborting Seed...');
+      process.exit();
+      seed();
+    }
+  });
+}
+
+function seed () {
 
   seeder.connect(require('../../env').db_url, function () {
-
     seeder.loadModels(['../product.model.js']);
-
     seeder.clearModels(['Product'], function () {
       seeder.populateModels(data);
     });
@@ -27,25 +45,5 @@ function  seed () {
       ]
     }
   ];
-
-}
-
-function confirm () {
-  console.log('***************** Warning! *****************');
-  console.log();
-  console.log('This is a destructive action and with truncate the following collections: ["Product"]');
-  console.log('Do you want to continue? (Y/N)');
-
-  prompt.start();
-  prompt.get(['confirm'], function (err, result) {
-    if (result.confirm.toLowerCase() === 'y') {
-      console.log('Running Seed...')
-    } else {
-      console.error('Aborting Seed...');
-      process.exit();
-      seed();
-    }
-  
-  });
 
 }
