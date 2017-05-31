@@ -8,7 +8,7 @@ function  seed () {
 
     seeder.loadModels(['../product.model.js']);
 
-    seeder.clearModels(['product'], function () {
+    seeder.clearModels(['Product'], function () {
       seeder.populateModels(data);
     });
   });
