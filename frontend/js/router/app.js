@@ -2,7 +2,7 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: '/states/partials/home/home.html'      
+      templateUrl: '/states/partials/home/home.html'
     });
 
 
