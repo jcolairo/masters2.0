@@ -30,7 +30,7 @@ function seed () {
     seeder.clearModels(['Product'], function () {
       seeder.populateModels(data, function (err) {
         if (err) console.log(err);
-        console.log('DB Seeded. Exiting...')
+        console.log('DB Seeded. Exiting...');
         process.exit();
       });
     });
@@ -940,13 +940,41 @@ function seed () {
           'price': '0.90',
           'category': 'lunch',
           'sub_category': 'lunchDrinks',
+          'description': [
+            'each'
+          ],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Kettles/ Luthers/ Tyrell\'s Crisps',
+          'price': '1.00',
+          'category': 'lunch',
+          'sub_category': 'lunchDrinks',
+          'description': [
+            'each'
+          ],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Canned Beverages',
+          'price': '1.00',
+          'category': 'lunch',
+          'sub_category': 'lunchDrinks',
+          'description': [],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Large Florentine',
+          'price': '1.90',
+          'category': 'lunch',
+          'sub_category': 'lunchDrinks',
           'description': [],
           'img_path': '../some_location'
         },
         {
           'title': 'Tea/Coffee, Herbal Teas or Decaffeinated Coffee served in flasks with house biscuits',
           'price': '3.30',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
           'sub_category': 'afternoonTeaDrinks',
           'description': [
             'Per Head'
@@ -956,7 +984,7 @@ function seed () {
         {
           'title': 'Tea/Coffee, Herbal Teas or Decaffeinated Coffee served in flasks with Farm House biscuits',
           'price': '3.50',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
           'sub_category': 'afternoonTeaDrinks',
           'description': [
             'Per Head'
@@ -966,7 +994,8 @@ function seed () {
         {
           'title': 'Freshly Squeezed Orange Juice',
           'price': '7.50',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
             '2.2 Litres'
           ],
@@ -975,7 +1004,8 @@ function seed () {
         {
           'title': 'Bottled Water still/sparkling',
           'price': '2.50',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
             '750ml'
           ],
@@ -984,7 +1014,8 @@ function seed () {
         {
           'title': 'Just Juice Orange/Apple',
           'price': '2.50',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
             '1 litre'
           ],
@@ -993,7 +1024,8 @@ function seed () {
         {
           'title': 'Finger Sandwiches',
           'price': '3.50',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1001,7 +1033,8 @@ function seed () {
         {
           'title': 'Large Scones with Jam & Cream',
           'price': '2.50',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1009,7 +1042,8 @@ function seed () {
         {
           'title': 'Mini Patisserie Cakes',
           'price': '1.30',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1017,7 +1051,8 @@ function seed () {
         {
           'title': 'Large Fresh Cream Cakes',
           'price': '2.80',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1025,7 +1060,8 @@ function seed () {
         {
           'title': 'Carrot and Walnut Loaf Cake',
           'price': '2.40',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1033,7 +1069,8 @@ function seed () {
         {
           'title': 'Ginger Loaf Cake',
           'price': '2.40',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1041,7 +1078,8 @@ function seed () {
         {
           'title': 'Chocolate Loaf Cake',
           'price': '2.40',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1049,7 +1087,8 @@ function seed () {
         {
           'title': 'Lemon Madeira Cake',
           'price': '2.40',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1057,7 +1096,8 @@ function seed () {
         {
           'title': 'Coconut Loaf Cake',
           'price': '2.40',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1065,7 +1105,8 @@ function seed () {
         {
           'title': 'Apple and Spice Cake',
           'price': '2.40',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1073,7 +1114,8 @@ function seed () {
         {
           'title': 'Mocha cake',
           'price': '2.50',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1081,7 +1123,8 @@ function seed () {
         {
           'title': 'Large Florentine',
           'price': '1.90',
-          'category': 'AfternoonTea',
+          'category': 'afternoonTea',
+          'sub_category': 'afternoonTeaDrinks',
           'description': [
           ],
           'img_path': '../some_location'
@@ -1089,193 +1132,225 @@ function seed () {
         {
           'title': 'Char grilled Carrot and Zucchini Tower with Tapenade and Pepper Salsa',
           'price': '1.90',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'French Goat Cheese with Chives & Provencal Peppers on Shortbread',
           'price': '1.90',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Duck Parfait with Rhubarb Vanilla Essence on Fresh',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Tartlet of Mature Stilton Apple Gelee',
           'price': '1.90',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Roast Beef Horseradish on Yorkshire Pudding',
           'price': '2.40',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Quail Egg Nicoise with Olive Tapenade and Anchovy',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Smoked Salmon with Salmon Mousse and Lemon Zest on Brown Bread',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Soft Quail Egg on Petit-Pain with Béarnaise, Shallots and Lolo Rosso',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Spicy Naan with Smoked Chicken Mousse Coriander and Mango',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Crostini of Mozzrella Tomato and Pesto',
           'price': '1.90',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Thai Aspargus Sushi Nigiri with Wasabi & Soy Dip',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Steak Tartare Quail Egg on Toast',
           'price': '2.50',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Mini Bagel with Cream Cheese and Smoked Salmon Tartar',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Mille Feuille of Poisson',
           'price': '2.40',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Walnut Bread with Mature Stilton and Figs',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Baby Vegetable with Sunblushed Tomato Mousseline in Tortilla Cup',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Beef Carpaccio on Crostini with Truffle Oil and Parmesan Shavings',
           'price': '2.40',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Open Prawn with Tomato Mousseline on Pain de Mie',
           'price': '2.40',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Honeyed Fresh Salmon with Avocado and Lemon on French Bread',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Fresh Asparagus on Petit-Pain with Sundried Tomato and Black Olive',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Mixed Roasted Peppers with Red Pepper Pesto on Ficelle',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Tuna, Salmon or Vegetarian Hosomaki Sushi',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Quails Eggg Sun blushed tomato Crostini with Thai Asparagus',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Baked Polenta Cured Ham fan and mozzarella pearl',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Char grilled Zucchini with Red Peppers and Goats Cheese',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Salmon Tartar Pattie with Avruga on Arctic Bread',
           'price': '2.40',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Baby Artichoke with Porcini Mousse and Chorizo with a pick',
           'price': '2.20',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Mini Prawns on Anchovy Butter with Lemon Zest and Chives',
           'price': '2.30',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Log of Smoked Duck with Compote and Chevril',
           'price': '2.30',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Home made Savoury Crepe with Smoked Duck and Compote',
           'price': '2.30',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Salmon Roulade with Saffron Butter on Feuillete',
           'price': '2.30',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         },
         {
           'title': 'Egg Soufflé with Tapenade and Chorizo',
           'price': '2.30',
-          'category': 'Canapes',
+          'category': 'canapes',
+          'sub_category': 'canapes',
           'img_path': '../some_location'
         }
       ]
