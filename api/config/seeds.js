@@ -240,13 +240,6 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Fried Egg & Sausage Sandwich',
-          'price': '3.80',
-          'category': 'breakfast',
-          'sub_category': 'sandwich',
-          'img_path': '../some_location'
-        },
-        {
           'title': 'Sausage & Bacon Sandwich',
           'price': '3.80',
           'category': 'breakfast',
