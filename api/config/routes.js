@@ -7,7 +7,7 @@ var productController   = require('../controllers/product.controller');
 var orderController   = require('../controllers/order.controller');
 
 
-// Static Routes 
+// Static Routes
 router.route('/')
   .get(staticController.index);
 
@@ -18,7 +18,7 @@ router.route('/users')
 
 router.route('/users/:uid')
   .get(userController.getUser);
-  
+
 
 // Product Routes
 router.route('/products')
@@ -31,8 +31,8 @@ router.route('/products/:id')
   .get(productController.getOne);
 
 
-//Order Routes 
+//Order Routes
 router.route('/orders/add')
   .post(orderController.addProducts);
 
-module.exports = router; 
+module.exports = router;

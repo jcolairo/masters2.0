@@ -40,6 +40,14 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         'menu@breakfast': {templateUrl: '/states/partials/menu/breakfast.html'}
       }
     })
+    .state('singleProduct', {
+      url: '/menu/breakfast/:id',
+      views: {
+        '': {templateUrl: '/states/partials/template.html'},
+        'aside@singleProduct': {templateUrl: '/states/partials/menu/aside.html'},
+        'menu@singleProduct': {templateUrl: '/states/partials/menu/singleProduct.html'}
+      }
+    })
     .state('lunch', {
       url: '/menu/lunch',
       views: {
