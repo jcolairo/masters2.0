@@ -1,0 +1,10 @@
+<h1>Users</h1>
+<section ng-controller="UserController as user">
+  <div ng-init="user.getAllUsers()">
+    <ul ng-repeat="details in user.users">
+      <li>
+        id: <a ui-sref="user ({id: details.uid })">{{details._id}}</a>
+      </li>
+    </ul>
+  </div>
+</section>

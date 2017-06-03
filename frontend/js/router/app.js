@@ -32,6 +32,14 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/menu',
       templateUrl: '/states/partials/menu/menu.html'
     })
+    .state('users', {
+      url: '/users',
+      templateUrl: '/states/partials/users/users.html'
+    })
+    .state('user', {
+      url: '/user/:uid',
+      templateUrl: '/states/partials/users/user.html'
+    })
     .state('breakfast', {
       url: '/menu/breakfast',
       views: {
