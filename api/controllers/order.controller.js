@@ -3,29 +3,30 @@ var Err     = require('../utilities/badRequestHandler');
 
 // function getUserOrders (req, res) {
 //   var uid = req && req.user && req.user.uid;
-  
+
 //   var query = { "uid": uid }
 
 //   User.findOrCreate(query, function (err, user, created) {
 //     if (err) return Err.recordNotFound(res, err.message);
 //     res.json(user);
-//   });       
+//   });
 
 // }
 
 function addProductsToBasket (req, res) {
+
   var products = req && req.body && req.body.products;
 
-  if (!products.length || !validateProducts(products)) {
-    return Err.missingParams(res, ['PRODUCTS']); 
-  } 
-
-  var query = { orders: { "uid": req.user.user_id, "isLive": true } }
+  if (!products || !products.length || !validateProducts(products)) {
+    return Err.missingParams(res, ['PRODUCTS']);
+  }
+  console.log(req.user);
+  var query = {'uid': req.user.uid, 'email': req.user.email }
 
   User.findOrCreate(query, function (err, order, created) { // breakpoint
     if (err) return Err.recordNotFound(res, err.message);
 
-    res.json(user);
+    res.json(order);
   });
 }
 

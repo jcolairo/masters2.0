@@ -89,6 +89,28 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
 MainRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
 
+function tokenHeader ($rootScope) {
+  return {
+    request: function (config) {
+      console.log($rootScope.token)
+      if ($rootScope && $rootScope.token) {
+        config.headers.auth = $rootScope.token;
+      }
+      return config;
+    }
+  };
+}
+
+tokenHeader.$inject = ['$rootScope'];
+
+function authInteceptor ($httpProvider) {
+  $httpProvider.interceptors.push('httpRequestInteceptor');
+}
+
+authInteceptor.$inject = ['$httpProvider'];
+
 angular
 .module('MastersApp', ['ui.router', 'firebase'])
-.config(MainRouter);
+.config(MainRouter)
+.factory('httpRequestInteceptor', tokenHeader)
+.config(authInteceptor);

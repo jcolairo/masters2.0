@@ -9,36 +9,38 @@ module.exports  = function (req, res, next) {
       email: user.email
     }, function (err, user) {
       next();
-    })
-  }
+    });
+  };
   var getUser = function (uid) {
     return new Promise(function (resolve, reject) {
       User.getOne({ uid: uid }, function(err, user) {
-        if (!err && user) resolve(user)
-        else reject(err) 
-      })
-    })
-  }
+        if (!err && user) resolve(user);
+        else reject(err);
+      });
+    });
+  };
   var ensureUserExists = function (user) {
-    
-      getUser(user.uid).then(function () {
-        next();
-      }).catch(function () {
-        createUser(user);
-      })
-  } 
 
-  var idToken = req &&         
+    getUser(user.uid).then(function () {
+      next();
+    }).catch(function () {
+      createUser(user);
+    });
+  };
+
+  var idToken = req &&
   req.headers &&
   req.headers.auth &&
   req.headers.auth.trim();
-
-  idToken = idToken || ''
+  console.log(idToken);
+  idToken = idToken || '';
   if (!idToken) return next();
 
   FBAdmin.auth().verifyIdToken(idToken).then(function (decodedUser) {
-    req.user = decodedUser
-    ensureUserExists(decodedUser);
-  }).catch(next)
+    req.user = decodedUser;
 
-}
+    console.log(decodedUser);
+    ensureUserExists(decodedUser);
+  }).catch(next);
+
+};

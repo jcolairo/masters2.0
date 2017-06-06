@@ -1,11 +1,17 @@
 function OrderController(OrderFactory) {
   var controller = this;
 
-  controller.addToOrder = function () {
+  controller.addToOrder = function (id, qty) {
     console.log('addToOrder()');
-    OrderFactory.addToOrder(controller.newOrder).then(
+    var order = {
+      products: [{
+        id: id,
+        qty: qty
+      }]
+    };
+    OrderFactory.addToOrder(order).then(
       function success(success) {
-        console.log('Created new duck:', success);
+        console.log('Created new order:', success);
       },
       function error(error) {
         console.warn('Error creating order:', error);
@@ -16,7 +22,7 @@ function OrderController(OrderFactory) {
   function init() {
     console.log('init function');
     controller.newOrder = {};
-    console.log(controller.addToOrder);
+    // console.log(controller.addToOrder);
   }
   init();
 }

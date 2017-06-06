@@ -1,4 +1,4 @@
-function AuthController($state, AuthFactory) {
+function AuthController($state, AuthFactory, $rootScope) {
   var controller = this;
 
   controller.createUser = function() {
@@ -42,20 +42,37 @@ function AuthController($state, AuthFactory) {
     controller.password = null;
   }
 
+  function assignToken () {
+    console.log('getting token.')
+    AuthFactory.$getAuth().getToken(false).then(function (token) {
+      console.log('assigning token ', token)
+      $rootScope.token = token;
+    });
+  }
   function init() {
     controller.user = null;
     controller.error = null;
     controller.email = '';
     controller.password = '';
-    AuthFactory.$onAuthStateChanged(function(user) {
+    // assignToken();
+    AuthFactory.$onAuthStateChanged(function (user) {
       controller.user = user;
+      console.log(user)
+      if (user) {
+        assignToken();
+      } else {
+        $rootScope.token = null;
+      }
     });
+
   }
 
   init();
+
+
 }
 
-AuthController.$inject = ['$state', 'AuthFactory'];
+AuthController.$inject = ['$state', 'AuthFactory', '$rootScope'];
 
 angular
   .module('MastersApp')

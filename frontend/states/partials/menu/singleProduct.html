@@ -8,19 +8,19 @@
       </li>
     </ul>
   </div>
-  <!-- <form ng-controller="OrderController as order" ng-submit="product.addToOrder()">
-    <div>
+  <form ng-controller="OrderController as order" ng-submit="order.addToOrder(product.oneProduct._id, 1)">
+    <!-- <div>
       <label for="new-duck-name">Name:</label>
       <input
         type="text"
         placeholder="Jack the ripper..."
-        ng-model="product.newOrder.name">
-    </div>
+        ng-model="order.newOrder.title">
+    </div> -->
     <div>
-      <input type="submit" value="add to order" ng-model="product.newOrder">
+      <input ng-model="order.newOrder" type="submit" value="add to order">
     </div>
 
-  </form> -->
+  </form>
 </section>
 <div ng-controller="OrderController as order">
   <p>{{order}}</p>
