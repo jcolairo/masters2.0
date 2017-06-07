@@ -7,9 +7,7 @@ module.exports  = function (req, res, next) {
     User.create({
       uid: user.uid,
       email: user.email
-    }, function (err, user) {
-      next();
-    });
+    }, next);
   };
   var getUser = function (uid) {
     return new Promise(function (resolve, reject) {
