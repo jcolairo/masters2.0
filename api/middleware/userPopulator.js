@@ -11,14 +11,14 @@ module.exports  = function (req, res, next) {
   };
   var getUser = function (uid) {
     return new Promise(function (resolve, reject) {
-      User.getOne({ uid: uid }, function(err, user) {
+      User.findOne({ uid: uid }, function(err, user) {
         if (!err && user) resolve(user);
         else reject(err);
       });
     });
   };
   var ensureUserExists = function (user) {
-
+    // console.log(user)
     getUser(user.uid).then(function () {
       next();
     }).catch(function () {
@@ -30,14 +30,12 @@ module.exports  = function (req, res, next) {
   req.headers &&
   req.headers.auth &&
   req.headers.auth.trim();
-  console.log(idToken);
+
   idToken = idToken || '';
   if (!idToken) return next();
 
   FBAdmin.auth().verifyIdToken(idToken).then(function (decodedUser) {
     req.user = decodedUser;
-
-    console.log(decodedUser);
     ensureUserExists(decodedUser);
   }).catch(next);
 

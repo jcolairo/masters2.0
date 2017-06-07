@@ -9,19 +9,8 @@
     </ul>
   </div>
   <form ng-controller="OrderController as order" ng-submit="order.addToOrder(product.oneProduct._id, 1)">
-    <!-- <div>
-      <label for="new-duck-name">Name:</label>
-      <input
-        type="text"
-        placeholder="Jack the ripper..."
-        ng-model="order.newOrder.title">
-    </div> -->
     <div>
       <input ng-model="order.newOrder" type="submit" value="add to order">
     </div>
-
   </form>
 </section>
-<div ng-controller="OrderController as order">
-  <p>{{order}}</p>
-</div>
