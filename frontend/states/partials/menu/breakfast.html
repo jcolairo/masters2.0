@@ -3,7 +3,7 @@
   <div ng-init="product.getProductByCategory('breakfast')">
     <ul ng-repeat="p in product.product | orderBy: 'title'">
       <li>
-        <button ui-sref="singleProduct ({id: p._id })">{{p.title}}</button>
+        <button ui-sref="singleProduct({id: p._id })">{{p.title}}</button>
       </li>
       <li ng-repeat="desc in p.description">
         {{desc}}
