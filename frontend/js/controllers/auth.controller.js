@@ -1,7 +1,7 @@
 function AuthController($state, AuthFactory, $rootScope) {
   var controller = this;
 
-  controller.createUser = function() {
+  controller.createUser = function () {
     controller.error = null;
     AuthFactory.$createUserWithEmailAndPassword(controller.email, controller.password).then(
       (firebaseUser) => {
@@ -42,25 +42,18 @@ function AuthController($state, AuthFactory, $rootScope) {
     controller.password = null;
   }
 
-  function assignToken () {
-    AuthFactory.$getAuth().getToken(false).then(function (token) {
-      $rootScope.token = token;
-    });
-  }
   function init() {
     controller.user = null;
     controller.error = null;
     controller.email = '';
     controller.password = '';
     AuthFactory.$onAuthStateChanged(function (user) {
-      controller.user = user;
       if (user) {
-        assignToken();
+        controller.user = user;
       } else {
-        $rootScope.token = null;
+        $rootScope.token = ''
       }
     });
-
   }
 
   init();

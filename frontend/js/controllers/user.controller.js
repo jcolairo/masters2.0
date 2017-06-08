@@ -15,6 +15,7 @@ function UserController(UserFactory, $stateParams) {
 
   controller.getSingleUser = function() {
     var uid = $stateParams.uid;
+    console.log(uid)
     UserFactory.getSingleUser(uid).then(
       function success(success) {
         console.log('Success getting single user');

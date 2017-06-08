@@ -1,4 +1,27 @@
 function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+  var authRequired = {
+    user: ['$q', 'AuthFactory', '$rootScope', function($q, AuthFactory, $rootScope) {
+        var deferred = $q.defer();
+        if ($rootScope.token) {
+          deferred.resolve('resolve');
+        } else {
+          console.log('getting token')
+          AuthFactory.$getAuth().getIdToken(false)
+            .then(function (token) {
+              $rootScope.token = token;
+              console.log(token)
+              deferred.resolve('resolve');
+            })
+            .catch(function(err) {
+              console.log(err)
+              deferred.reject('reject');
+            });
+        }
+        return deferred.promise;
+    }]
+}
+
   $stateProvider
     .state('home', {
       url: '/',
@@ -38,7 +61,8 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('user', {
       url: '/user/:uid',
-      templateUrl: '/states/partials/users/user.html'
+      templateUrl: '/states/partials/users/user.html',
+      resolve: authRequired
     })
     .state('breakfast', {
       url: '/menu/breakfast',
@@ -113,3 +137,4 @@ angular
 .config(MainRouter)
 .factory('httpRequestInteceptor', tokenHeader)
 .config(authInteceptor);
+
