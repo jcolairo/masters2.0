@@ -5,7 +5,7 @@ function OrderController(OrderFactory) {
     console.log('addToOrder()');
     var order = {
       products: [{
-        id: id,
+        product: id,
         qty: qty
       }]
     };

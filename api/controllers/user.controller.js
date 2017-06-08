@@ -9,10 +9,13 @@ function getSingleUser (req, res) {
     return Err.unauthorizedReq(res);
   }
 
-  User.findOne({ uid: uid }, function (err, user) {
-    if (err) return Err.recordNotFound(res, err.message);
-    res.json(user);
-  });
+  User
+    .findOne({ uid: uid })
+    .populate('orders.items.product')
+    .exec(function (err, user) {
+      if (err) return Err.recordNotFound(res, err.message);
+      res.json(user);
+    });
 
 }
 

@@ -6,7 +6,7 @@
     <ul ng-repeat="orders in user.user.orders">
       order:
       <li ng-repeat="items in orders.items">
-        {{items}}
+        {{items.product.title}}
       </li>
     </ul>
   </div>

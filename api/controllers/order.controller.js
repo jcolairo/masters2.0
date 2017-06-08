@@ -43,7 +43,7 @@ function validateProducts (products) {
   for (var i = 0; i < products.length; i++) {
 
     var current = products[i];
-    var isValidId = current.id && typeof current.id === 'string';
+    var isValidId = current.product && typeof current.product === 'string';
     var isValidQty = current.qty && typeof current.qty === 'number';
 
     if (!isValidQty || !isValidId) return false;
