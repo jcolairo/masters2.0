@@ -92,7 +92,6 @@ MainRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider
 function tokenHeader ($rootScope) {
   return {
     request: function (config) {
-      console.log($rootScope.token)
       if ($rootScope && $rootScope.token) {
         config.headers.auth = $rootScope.token;
       }
