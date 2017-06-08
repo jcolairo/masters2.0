@@ -43,9 +43,7 @@ function AuthController($state, AuthFactory, $rootScope) {
   }
 
   function assignToken () {
-    // console.log('getting token.')
     AuthFactory.$getAuth().getToken(false).then(function (token) {
-      // console.log('assigning token ', token)
       $rootScope.token = token;
     });
   }
@@ -54,10 +52,8 @@ function AuthController($state, AuthFactory, $rootScope) {
     controller.error = null;
     controller.email = '';
     controller.password = '';
-    // assignToken();
     AuthFactory.$onAuthStateChanged(function (user) {
       controller.user = user;
-      // console.log(user)
       if (user) {
         assignToken();
       } else {

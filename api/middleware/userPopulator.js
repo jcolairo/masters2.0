@@ -18,7 +18,6 @@ module.exports  = function (req, res, next) {
     });
   };
   var ensureUserExists = function (user) {
-    // console.log(user)
     getUser(user.uid).then(function () {
       next();
     }).catch(function () {

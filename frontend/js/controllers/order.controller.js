@@ -2,7 +2,6 @@ function OrderController(OrderFactory) {
   var controller = this;
 
   controller.addToOrder = function (id, qty) {
-    console.log('addToOrder()');
     var order = {
       products: [{
         product: id,
@@ -20,9 +19,7 @@ function OrderController(OrderFactory) {
   };
 
   function init() {
-    console.log('init function');
     controller.newOrder = {};
-    // console.log(controller.addToOrder);
   }
   init();
 }
