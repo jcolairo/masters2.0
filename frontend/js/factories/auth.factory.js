@@ -14,7 +14,10 @@ function AuthRun() {
 }
 
 function AuthFactory($firebaseAuth) {
-  return $firebaseAuth();
+
+  var fb = $firebaseAuth();
+
+  return fb;
 }
 
 AuthFactory.$inject = ['$firebaseAuth'];

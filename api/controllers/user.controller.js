@@ -5,14 +5,17 @@ function getSingleUser (req, res) {
   var uid = req && req.params && req.params.uid;
   if (!uid) return Err.missingParams(res, ['uid']);
 
-  if (req.user.user_id != uid) {
+  if (req.user.user_id !== uid) {
     return Err.unauthorizedReq(res);
   }
 
-  User.findOne({ uid: uid }, function (err, user) {
-    if (err) return Err.recordNotFound(res, err.message);
-    res.json(user);
-  });       
+  User
+    .findOne({ uid: uid })
+    .populate('orders.items.product')
+    .exec(function (err, user) {
+      if (err) return Err.recordNotFound(res, err.message);
+      res.json(user);
+    });
 
 }
 
@@ -27,4 +30,4 @@ function getAllUsers (req, res) {
 module.exports = {
   getUser: getSingleUser,
   getAllUsers: getAllUsers
-}
+};

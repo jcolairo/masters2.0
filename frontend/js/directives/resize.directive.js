@@ -1,6 +1,6 @@
 
 angular
-  .module('PortfolioApp')
+  .module('MastersApp')
   .directive('resize', resize);
 
 function resize () {
@@ -13,12 +13,16 @@ function resize () {
 
       function  checkScreen () {
         if(window.innerWidth < 780){
-          angular.element(element)         .parent().css('display', 'none');       
+          angular
+            .element(element)
+            .parent().css('display', 'none');
 
           // angular.element(element).remove();
         }
         if(window.innerWidth > 780){
-          angular.element(element)         .parent().css('display', 'block');
+          angular
+            .element(element)
+            .parent().css('display', 'block');
         }
       }
     }

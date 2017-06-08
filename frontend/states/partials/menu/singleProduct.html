@@ -1,0 +1,16 @@
+<h1>Single Product</h1>
+<section ng-controller="ProductController as product">
+  <div ng-init="product.getOneProduct()">
+    {{product.oneProduct.title}}
+    <ul ng-repeat="desc in product.oneProduct.description">
+      <li>
+        {{desc}}
+      </li>
+    </ul>
+  </div>
+  <form ng-controller="OrderController as order" ng-submit="order.addToOrder(product.oneProduct._id, 1)">
+    <div>
+      <input ng-model="order.newOrder" type="submit" value="add to order">
+    </div>
+  </form>
+</section>

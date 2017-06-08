@@ -5,7 +5,7 @@ var OrderSchema = new mongoose.Schema({
     product:    { ref: 'Product', type: mongoose.Schema.ObjectId },
     qty:        { type: Number, default: 1 }
   }],
-  is_live:            { type: Boolean, default: false },
+  is_live:            { type: Boolean, default: true },
   has_been_processed: { type: Boolean, default: false }
 
 },{
@@ -16,4 +16,4 @@ var OrderSchema = new mongoose.Schema({
 });
 
 
-module.exports = OrderSchema; 
+module.exports = OrderSchema;

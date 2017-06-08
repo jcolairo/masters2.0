@@ -32,12 +32,28 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/menu',
       templateUrl: '/states/partials/menu/menu.html'
     })
+    .state('users', {
+      url: '/users',
+      templateUrl: '/states/partials/users/users.html'
+    })
+    .state('user', {
+      url: '/user/:uid',
+      templateUrl: '/states/partials/users/user.html'
+    })
     .state('breakfast', {
       url: '/menu/breakfast',
       views: {
         '': {templateUrl: '/states/partials/template.html'},
         'aside@breakfast': {templateUrl: '/states/partials/menu/aside.html'},
         'menu@breakfast': {templateUrl: '/states/partials/menu/breakfast.html'}
+      }
+    })
+    .state('singleProduct', {
+      url: '/menu/breakfast/:id',
+      views: {
+        '': {templateUrl: '/states/partials/template.html'},
+        'aside@singleProduct': {templateUrl: '/states/partials/menu/aside.html'},
+        'menu@singleProduct': {templateUrl: '/states/partials/menu/singleProduct.html'}
       }
     })
     .state('lunch', {
@@ -73,6 +89,27 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
 MainRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
 
+function tokenHeader ($rootScope) {
+  return {
+    request: function (config) {
+      if ($rootScope && $rootScope.token) {
+        config.headers.auth = $rootScope.token;
+      }
+      return config;
+    }
+  };
+}
+
+tokenHeader.$inject = ['$rootScope'];
+
+function authInteceptor ($httpProvider) {
+  $httpProvider.interceptors.push('httpRequestInteceptor');
+}
+
+authInteceptor.$inject = ['$httpProvider'];
+
 angular
 .module('MastersApp', ['ui.router', 'firebase'])
-.config(MainRouter);
+.config(MainRouter)
+.factory('httpRequestInteceptor', tokenHeader)
+.config(authInteceptor);
