@@ -3,7 +3,7 @@
   <div ng-init="user.getAllUsers()">
     <ul ng-repeat="details in user.users">
       <li>
-        id: <a ui-sref="user ({id: details.uid })">{{details._id}}</a>
+        uid: <a ui-sref="user({uid: details.uid })">{{details.uid}}</a>
       </li>
     </ul>
   </div>
