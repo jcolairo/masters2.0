@@ -32,11 +32,16 @@
   <!-- endbuild -->
 
   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <script src="https://rawgit.com/d-oliveros/ngSticky/master/lib/sticky.js"></script>
 
 </head>
 <body ng-controller="AuthController as auth">
 
-  <nav class="mainNav">
+  <div class="masters_homepage none">
+    <img src="./images/masters_homepage.png">
+  </div>
+
+  <nav sticky class="mainNav">
     <ul>
       <li ui-sref="home"><a>Home</a></li>
       <li ui-sref="menu"><a>Menu</a></li>

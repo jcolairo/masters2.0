@@ -1,9 +1,7 @@
 .mainNav {
   text-align: center;
-  position: fixed;
   border: $border-dev-blue;
   width: 75%;
-  margin: 2rem;
   @include font-properties($letter-spacing: 1, $font-size: 1.5rem, $line-height: 2rem);
   margin-left: 12.5vw;
   li {

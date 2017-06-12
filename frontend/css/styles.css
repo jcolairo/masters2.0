@@ -46,12 +46,17 @@ table {
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(41, 41, 41, 0.004); }
 
+body .masters_homepage {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0; }
+
 .mainNav {
   text-align: center;
-  position: fixed;
   border: 1px solid #0288D1;
   width: 75%;
-  margin: 2rem;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5rem;
   letter-spacing: 1;
@@ -79,7 +84,7 @@ aside {
   display: inline-block;
   height: 100vh;
   width: 12vw;
-  margin-top: 75px;
+  margin-top: 15px;
   vertical-align: top;
   overflow: scroll;
   position: fixed; }
@@ -90,7 +95,7 @@ aside {
 main {
   border: 1px solid #00C853;
   display: inline-block;
-  margin-top: 75px;
+  margin-top: 15px;
   margin-left: 12.5vw;
   width: 75%;
   height: 100vh;
