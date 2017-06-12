@@ -1,0 +1,20 @@
+.menuBlocks {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+  width: 75%;
+  height: 100%;
+  border: $border-dev-red;
+  margin-top: 75px;
+  margin-left: 12.5vw;
+  text-align: center;
+    p {
+    width: 25vw;
+    height: 45vh;
+    display: inline-block;
+    border: $border-dev-green;
+    @include flex;
+    display: inline-flex;
+  }
+}

@@ -12,13 +12,3 @@ $content-bg-color: $white;
 
 //Fonts
 $font-family: 'Source Sans Pro', sans-serif;
-
-//Animations
-
-$ani-fadeIn: fade-in 0.5s linear forwards;
-$ani-fadeIn-alt: fade-in 0.5s linear .5s forwards;
-
-@keyframes fade-in {
-  from {opacity: 0;}
-  to  {opacity: 1;}
-}

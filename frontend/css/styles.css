@@ -46,8 +46,76 @@ table {
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(41, 41, 41, 0.004); }
 
-@keyframes fade-in {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
+.mainNav {
+  text-align: center;
+  position: fixed;
+  border: 1px solid #0288D1;
+  width: 75%;
+  margin: 2rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1;
+  line-height: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(41, 41, 41, 0.8);
+  margin-left: 12.5vw; }
+  .mainNav li {
+    display: inline-block;
+    padding: 0 0.75rem; }
+
+.asideNav {
+  border: 1px solid #0288D1;
+  text-align: center;
+  position: fixed; }
+  .asideNav nav ul li {
+    display: block;
+    text-align: center;
+    margin-top: 3rem;
+    line-height: 3rem; }
+
+aside {
+  border: 1px solid #C62828;
+  display: inline-block;
+  height: 100vh;
+  width: 12vw;
+  margin-top: 75px;
+  vertical-align: top;
+  overflow: scroll;
+  position: fixed; }
+  aside nav li {
+    display: block;
+    text-align: center; }
+
+main {
+  border: 1px solid #00C853;
+  display: inline-block;
+  margin-top: 75px;
+  margin-left: 12.5vw;
+  width: 75%;
+  height: 100vh;
+  text-align: center; }
+
+.menuBlocks {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+  width: 75%;
+  height: 100%;
+  border: 1px solid #C62828;
+  margin-top: 75px;
+  margin-left: 12.5vw;
+  text-align: center; }
+  .menuBlocks p {
+    width: 25vw;
+    height: 45vh;
+    display: inline-block;
+    border: 1px solid #00C853;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    display: inline-flex; }
