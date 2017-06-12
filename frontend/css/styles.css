@@ -56,15 +56,14 @@ body .masters_homepage {
 .mainNav {
   text-align: center;
   border: 1px solid #0288D1;
-  width: 75%;
+  width: 100%;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5rem;
   letter-spacing: 1;
   line-height: 2rem;
   text-transform: uppercase;
   font-weight: 500;
-  color: rgba(41, 41, 41, 0.8);
-  margin-left: 12.5vw; }
+  color: rgba(41, 41, 41, 0.8); }
   .mainNav li {
     display: inline-block;
     padding: 0 0.75rem; }
@@ -124,3 +123,22 @@ main {
     top: 0;
     left: 0;
     display: inline-flex; }
+
+.userDiv {
+  display: flex;
+  margin-left: 12.5vw; }
+  .userDiv .userLi {
+    width: 75vw;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1;
+    line-height: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(41, 41, 41, 0.8); }
+    .userDiv .userLi .titleOrder {
+      display: inline-block; }
+    .userDiv .userLi .priceOrder {
+      float: right;
+      display: inline-block; }

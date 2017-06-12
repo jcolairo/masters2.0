@@ -1,0 +1,16 @@
+.userDiv {
+  display: flex;
+  margin-left: 12.5vw;
+  .userLi {
+    width: 75vw;
+    text-align: center;
+    @include font-properties($letter-spacing: 1, $font-size: 2rem, $line-height: 2rem);
+    .titleOrder {
+      display: inline-block;
+      }
+    .priceOrder {
+      float: right;
+      display: inline-block;
+    }
+  }
+}
