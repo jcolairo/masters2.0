@@ -1,12 +1,12 @@
-<h1>Single User</h1>
 <section ng-controller="UserController as user">
   <div ng-init="user.getSingleUser()" class="userDiv">
     <div class="titleDiv">
       <ul ng-repeat="orders in user.user.orders">
         <li ng-repeat="items in orders.items" class="userLi">
           <p class="titleOrder">{{items.product.title}}</p>
-          <p class="priceOrder">{{items.product.price}}</p>
+          <p class="priceOrder">{{items.product.price | price}}</p>
         </li>
+        <b class="order-total userLi"> {{ user.getOrderTotal(orders.items) }} </b>
       </ul>
     </div>
   </div>
