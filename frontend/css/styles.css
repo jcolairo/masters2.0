@@ -51,11 +51,12 @@ body .masters_homepage {
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0; }
+  margin: 1rem 0; }
 
 .mainNav {
   text-align: center;
   border: 1px solid #0288D1;
+  background-color: white;
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5rem;
@@ -76,17 +77,25 @@ body .masters_homepage {
     display: block;
     text-align: center;
     margin-top: 3rem;
-    line-height: 3rem; }
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1;
+    line-height: 3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(41, 41, 41, 0.8); }
 
 aside {
   border: 1px solid #C62828;
   display: inline-block;
-  height: 100vh;
+  height: 75vh;
   width: 12vw;
   margin-top: 15px;
+  padding: 0.5rem;
   vertical-align: top;
   overflow: scroll;
-  position: fixed; }
+  position: fixed;
+  background-color: #f4efe1; }
   aside nav li {
     display: block;
     text-align: center; }
@@ -98,19 +107,18 @@ main {
   margin-left: 12.5vw;
   width: 75%;
   height: 100vh;
-  text-align: center; }
+  text-align: center;
+  background-color: #f4efe1; }
 
 .menuBlocks {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-grow: 1;
-  width: 75%;
-  height: 100%;
   border: 1px solid #C62828;
   margin-top: 15px;
-  margin-left: 12.5vw;
-  text-align: center; }
+  text-align: center;
+  background-color: #f4efe1; }
   .menuBlocks p {
     width: 25vw;
     height: 35vh;
@@ -126,9 +134,11 @@ main {
 
 .userDiv {
   display: flex;
-  margin-left: 12.5vw; }
+  margin-top: 2vh; }
+  .userDiv .titleDiv {
+    width: 100vw; }
   .userDiv .userLi {
-    width: 65vw;
+    background-color: #f4efe1;
     text-align: center;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
@@ -136,9 +146,35 @@ main {
     line-height: 2rem;
     text-transform: uppercase;
     font-weight: 500;
-    color: rgba(41, 41, 41, 0.8); }
+    color: rgba(41, 41, 41, 0.8);
+    padding: 1rem; }
     .userDiv .userLi .titleOrder {
       display: inline-block; }
     .userDiv .userLi .priceOrder {
       float: right;
       display: inline-block; }
+
+.userDiv .order-total {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 1;
+  line-height: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(41, 41, 41, 0.8);
+  height: 8vh; }
+
+.footer {
+  display: flex;
+  text-align: center;
+  width: 75%;
+  margin-left: 12.5vw;
+  margin-top: 1rem;
+  background-color: #f4efe1; }
+  .footer div {
+    display: block;
+    justify-content: center;
+    flex: 1 1 0;
+    margin: 1rem; }
