@@ -9,6 +9,7 @@
     text-align: center;
     @include font-properties($letter-spacing: 1, $font-size: 2rem, $line-height: 2rem);
     padding: 1rem;
+    border-bottom: 1px solid $black;
     .titleOrder {
       display: inline-block;
       }
@@ -24,5 +25,7 @@
     justify-content: flex-end;
     @include font-properties($letter-spacing: 1, $font-size: 3rem, $line-height: 2rem);
     height: 8vh;
+    border-top: 1px solid $black;
+    border-bottom: 2px solid $black;
   }
 }
