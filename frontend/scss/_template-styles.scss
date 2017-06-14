@@ -1,0 +1,31 @@
+aside {
+  border: $border-dev-red;
+  display: inline-block;
+  height: 75vh;
+  width: 12vw;
+  margin-top: 15px;
+  padding: 0.5rem;
+  vertical-align: top;
+  overflow: scroll;
+  position: fixed;
+  background-color: $creme;
+  nav {
+    li {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+main {
+  border: $border-dev-green;
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 12.5vw;
+  width: 75%;
+  height: 100vh;
+  text-align: center;
+  background-color: $creme;
+}
+body {
+  background-color: $white;
+}

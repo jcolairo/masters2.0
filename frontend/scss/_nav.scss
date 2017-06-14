@@ -1,0 +1,22 @@
+.mainNav {
+  text-align: center;
+  border: $border-dev-blue;
+  background-color: $white;
+  width: 100%;
+  @include font-properties($letter-spacing: 1, $font-size: 1.5rem, $line-height: 2rem);
+  li {
+    display: inline-block;
+    padding: 0 0.75rem;
+  }
+}
+.asideNav {
+  border: $border-dev-blue;
+  text-align: center;
+  position: fixed;
+  nav ul li {
+    display: block;
+    text-align: center;
+    margin-top: 3rem;
+    @include font-properties($letter-spacing: 1, $font-size: 1.5rem, $line-height: 3rem);
+  }
+}

@@ -1,6 +1,6 @@
 <h1>Lunch</h1>
 <section ng-controller="ProductController as product">
-  <div ng-init="product.getProductByCategory('lunch')">
+  <div class="test" ng-init="product.getProductByCategory('lunch')">
     <ul ng-repeat="p in product.product">
       <li>
         <a ui-sref="singleProduct ({id: p._id })">{{p.title}}</a>

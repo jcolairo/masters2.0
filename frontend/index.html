@@ -18,6 +18,8 @@
   <!-- build:js js/app.min.js-->
   <script src="js/router/app.js"></script>
 
+  <script src="js/filters/app.filter.js"></script>
+
   <script src="js/factories/main.factory.js"></script>
   <script src="js/factories/auth.factory.js"></script>
   <script src="js/factories/product.factory.js"></script>
@@ -32,15 +34,20 @@
   <!-- endbuild -->
 
   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <script src="https://rawgit.com/d-oliveros/ngSticky/master/lib/sticky.js"></script>
 
 </head>
 <body ng-controller="AuthController as auth">
 
-  <nav>
+  <div class="masters_homepage none">
+    <img src="./images/masters_homepage.png">
+  </div>
+
+  <nav sticky class="mainNav">
     <ul>
       <li ui-sref="home"><a>Home</a></li>
       <li ui-sref="menu"><a>Menu</a></li>
-      <li ui-sref="order"><a>Order</a></li>
+      <li ui-sref="user({uid: auth.user.uid })"><a>My Order</a></li>
       <li ui-sref="users"><a>Users</a></li>
       <li ui-sref="contact"><a>Contact</a></li>
       <li ui-sref="about"><a>About</a></li>
