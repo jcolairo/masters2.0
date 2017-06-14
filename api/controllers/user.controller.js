@@ -5,7 +5,7 @@ function getSingleUser (req, res) {
   var uid = req && req.params && req.params.uid;
   if (!uid) return Err.missingParams(res, ['uid']);
 
-  if (req.user.user_id !== 'UavAhWL1hmNFpIv7ULFWXB42Pev1'){
+  if (req.user.user_id !== process.env.Masters_Admin){
     if (req.user.user_id !== uid) {
       return Err.unauthorizedReq(res);
     }
