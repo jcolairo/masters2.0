@@ -19,7 +19,7 @@ function getAllProducts (req, res) {
   });
 }
 
-function getPriductsByCat (req, res) {
+function getProductsByCat (req, res) {
   var cat = req && req.params && req.params.cat;
   if (!cat) return Err.missingParams(res, ['cat']);
 
@@ -32,5 +32,5 @@ function getPriductsByCat (req, res) {
 module.exports = {
   getOne: getSingleProduct,
   getAll: getAllProducts,
-  getByCategory: getPriductsByCat
+  getByCategory: getProductsByCat
 };
