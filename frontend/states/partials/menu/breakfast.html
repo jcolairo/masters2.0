@@ -1,5 +1,21 @@
 <h1>Breakfast</h1>
-<section ng-controller="ProductController as product">
+<div ng-controller="ProductController as product">
+  <div ng-init="product.getProductBySubCategory()">
+    <div ui-sref="croissant">Croissant</div>
+    <div ui-sref="muffin">muffin</div>
+    <div ui-sref="danish">danish</div>
+    <div ui-sref="donut">donut</div>
+    <div ui-sref="bagel">bagel</div>
+    <div ui-sref="roll">roll</div>
+    <div ui-sref="baguette">baguette</div>
+    <div ui-sref="bap">bap</div>
+    <div ui-sref="yoghurt">yoghurt</div>
+    <div ui-sref="fruit">fruit</div>
+    <div ui-sref="breakfastDrinks">breakfastDrinks</div>
+    <div ui-sref="user({sub_category: product.subCat.croissant })">ui-sref="user({uid: details.uid })</div>
+  </div>
+</div>
+<!-- <section ng-controller="ProductController as product">
   <div ng-init="product.getProductByCategory('breakfast')">
     <ul ng-repeat="p in product.product | orderBy: 'title'">
       <li>
@@ -10,21 +26,4 @@
       </li>
     </ul>
   </div>
-</section>
-
-<h1>***************************************** CROISSANT ****************************</h1>
-<section ng-controller="ProductController as product">
-  <div ng-init="product.getProductBySubCategory('breakfast', 'croissant')">
-    <ul ng-repeat="croissant in product.subCat">
-      <li>
-        {{croissant.title}}
-        {{croissant.category}}
-        {{croissant.sub_category}}
-        {{croissant.price}}
-      </li>
-      <li ng-repeat="desc in croissant.description">
-        {{desc}}
-      </li>
-    </ul>
-  </div>
-</section>
+</section> -->
