@@ -11,3 +11,20 @@
     </ul>
   </div>
 </section>
+
+<h1>***************************************** CROISSANT ****************************</h1>
+<section ng-controller="ProductController as product">
+  <div ng-init="product.getProductBySubCategory('breakfast', 'croissant')">
+    <ul ng-repeat="croissant in product.subCat">
+      <li>
+        {{croissant.title}}
+        {{croissant.category}}
+        {{croissant.sub_category}}
+        {{croissant.price}}
+      </li>
+      <li ng-repeat="desc in croissant.description">
+        {{desc}}
+      </li>
+    </ul>
+  </div>
+</section>

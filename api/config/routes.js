@@ -27,6 +27,9 @@ router.route('/products')
 router.route('/products/category/:cat')
   .get(productController.getByCategory);
 
+router.route('/products/category/:cat/:subCat')
+  .get(productController.getBySubCategory);
+
 router.route('/products/:id')
   .get(productController.getOne);
 

@@ -29,8 +29,19 @@ function getProductsByCat (req, res) {
   });
 }
 
+function getProductsBySubCat (req, res) {
+  var subCat = req && req.params && req.params.subCat;
+  if (!subCat) return Err.missingParams(res, ['subCat']);
+
+  Product.find({ sub_category: subCat }, function (err, products) {
+    if (err) return Err.recordNotFound(res, err.message);
+    res.json(products);
+  });
+}
+
 module.exports = {
   getOne: getSingleProduct,
   getAll: getAllProducts,
-  getByCategory: getProductsByCat
+  getByCategory: getProductsByCat,
+  getBySubCategory: getProductsBySubCat
 };

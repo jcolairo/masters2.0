@@ -25,6 +25,18 @@ function ProductController(ProductFactory, $stateParams) {
     );
   };
 
+  controller.getProductBySubCategory = function(cat, subCat) {
+    ProductFactory.getProductBySubCategory(cat, subCat).then(
+      function success(success) {
+        console.log('success getting specific product by category');
+        controller.subCat = success.data;
+      },
+      function error(error) {
+        console.warn('Could not get specific product: ', error);
+      }
+    );
+  };
+
   controller.getOneProduct = function() {
     var id = $stateParams.id;
     ProductFactory.getOneProduct(id).then(
