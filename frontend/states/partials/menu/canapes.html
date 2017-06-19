@@ -1,13 +1,14 @@
-<h1>Canapes</h1>
+<!-- <h1>Canapes</h1>
 <section>
   <div ng-init="product.getProductByCategory('canapes')">
+    <div ui-sref="sub_category({sub_category:'canapes'})" class="menuDiv">Canapes</div>
     <ul ng-repeat="p in product.product">
       <li>
-        <a ui-sref="singleProduct ({id: p._id })">{{p.title}}</a>
+        <a ui-sref="singleProduct({category: 'canapes', id: p._id })">{{p.title}}</a>
       </li>
       <li ng-repeat="desc in p.description">
         {{desc}}
       </li>
     </ul>
   </div>
-</section>
+</section> -->

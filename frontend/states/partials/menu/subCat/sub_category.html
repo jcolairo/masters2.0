@@ -39,15 +39,15 @@
   </nav>
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">
     <div class="titleDiv">
-      <ul ng-repeat="product in product.subCat">
+      <ul ng-repeat="prod in product.subCat">
         <li>
-          <p>{{product.title}}</p>
+          <a ui-sref="singleProduct({id: prod._id })">{{prod.title}}</a>
         </li>
-        <li ng-repeat="desc in product.description">
+        <li ng-repeat="desc in prod.description">
           {{desc}}
         </li>
         <li>
-          <p>{{product.price | price}}</p>
+          <p>{{prod.price | price}}</p>
         </li>
       </ul>
     </div>
