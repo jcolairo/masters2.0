@@ -1,29 +1,15 @@
-<h1>Breakfast</h1>
-<div ng-controller="ProductController as product">
-  <div ng-init="product.getProductBySubCategory()">
-    <div ui-sref="croissant">Croissant</div>
-    <div ui-sref="muffin">muffin</div>
-    <div ui-sref="danish">danish</div>
-    <div ui-sref="donut">donut</div>
-    <div ui-sref="bagel">bagel</div>
-    <div ui-sref="roll">roll</div>
-    <div ui-sref="baguette">baguette</div>
-    <div ui-sref="bap">bap</div>
-    <div ui-sref="yoghurt">yoghurt</div>
-    <div ui-sref="fruit">fruit</div>
-    <div ui-sref="breakfastDrinks">breakfastDrinks</div>
-    <div ui-sref="user({sub_category: product.subCat.croissant })">ui-sref="user({uid: details.uid })</div>
+<section ng-controller="ProductController as product">
+  <div ng-init="product.getProductByCategory('breakfast')" class="breakfastMenuBlocks">
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'croissant'})" class="breakfastDiv">Croissant</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'muffin'})" class="breakfastDiv">muffin</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'danish'})" class="breakfastDiv">danish</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'donut'})" class="breakfastDiv">donut</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'bagel'})" class="breakfastDiv">bagel</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'roll'})" class="breakfastDiv">roll</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'baguette'})" class="breakfastDiv">baguette</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'bap'})" class="breakfastDiv">bap</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'yoghurt'})" class="breakfastDiv">yoghurt</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'fruit'})" class="breakfastDiv">fruit</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'breakfastDrinks'})" class="breakfastDiv">breakfastDrinks</div>
   </div>
-</div>
-<!-- <section ng-controller="ProductController as product">
-  <div ng-init="product.getProductByCategory('breakfast')">
-    <ul ng-repeat="p in product.product | orderBy: 'title'">
-      <li>
-        <button ui-sref="singleProduct({id: p._id })">{{p.title}}</button>
-      </li>
-      <li ng-repeat="desc in p.description">
-        {{desc}}
-      </li>
-    </ul>
-  </div>
-</section> -->
+</section>
