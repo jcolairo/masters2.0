@@ -135,6 +135,27 @@ body {
     left: 0;
     display: inline-flex; }
 
+.breakfastMenuBlocks {
+  display: inline-flex;
+  flex-wrap: wrap;
+  border: 1px solid #C62828;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15px; }
+  .breakfastMenuBlocks div {
+    border: 1px solid #00C853;
+    margin: 1rem;
+    flex-shrink: 0;
+    min-width: 15vw;
+    min-height: 23vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    display: inline-flex; }
+
 .userDiv {
   display: flex;
   margin-top: 2vh; }

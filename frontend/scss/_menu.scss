@@ -16,3 +16,20 @@
     display: inline-flex;
   }
 }
+.breakfastMenuBlocks {
+  display: inline-flex;
+  flex-wrap: wrap;
+  border: $border-dev-red;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15px;
+  div {
+    border: $border-dev-green;
+    margin: 1rem;
+    flex-shrink: 0;
+    min-width: 15vw;
+    min-height: 23vh;
+    @include flex;
+    display: inline-flex;
+  }
+}
