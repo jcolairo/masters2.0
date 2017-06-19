@@ -16,14 +16,14 @@
     display: inline-flex;
   }
 }
-.breakfastMenuBlocks {
+.mainMenuDiv {
   display: inline-flex;
   flex-wrap: wrap;
   border: $border-dev-red;
   justify-content: center;
   text-align: center;
   margin-top: 15px;
-  div {
+  .menuDiv {
     border: $border-dev-green;
     margin: 1rem;
     flex-shrink: 0;
