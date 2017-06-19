@@ -1,6 +1,16 @@
 function ProductController(ProductFactory, $stateParams) {
   var controller = this;
 
+  controller.breakfastNavShow = false;
+  controller.toggleBreakfastNav = function(){
+    controller.breakfastNavShow = !controller.breakfastNavShow;
+  };
+
+  controller.lunchNavShow = false;
+  controller.toggleLunchNav = function() {
+    controller.lunchNavShow = !controller.lunchNavShow;
+  };
+
   controller.getAllProducts = function() {
     ProductFactory.getAllProducts().then(
       function success(success) {
