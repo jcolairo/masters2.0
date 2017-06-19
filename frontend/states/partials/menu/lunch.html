@@ -1,11 +1,11 @@
 <h1>Lunch</h1>
-<section ng-controller="ProductController as product">
-  <div ng-init="product.getProductByCategory('lunch')" class="breakfastMenuBlocks">
-    <div ui-sref="sub_category({category:'lunch', sub_category:'platter'})" class="breakfastDiv">platter</div>
-    <div ui-sref="sub_category({category:'lunch', sub_category:'setLunch'})" class="breakfastDiv">setLunch</div>
-    <div ui-sref="sub_category({category:'lunch', sub_category:'finger'})" class="breakfastDiv">finger</div>
-    <div ui-sref="sub_category({category:'lunch', sub_category:'coldFork'})" class="breakfastDiv">coldFork</div>
-    <div ui-sref="sub_category({category:'lunch', sub_category:'hotFork'})" class="breakfastDiv">hotFork</div>
-    <div ui-sref="sub_category({category:'lunch', sub_category:'lunchDrinks'})" class="breakfastDiv">lunchDrinks</div>
+<section ng-click="product.lunchNavShow = true">
+  <div ng-init="product.getProductByCategory('lunch')" class="mainMenuDiv">
+    <div ui-sref="sub_category({category:'lunch', sub_category:'platter'})" class="menuDiv">platter</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'setLunch'})" class="menuDiv">setLunch</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'finger'})" class="menuDiv">finger</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'coldFork'})" class="menuDiv">coldFork</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'hotFork'})" class="menuDiv">hotFork</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'lunchDrinks'})" class="menuDiv">lunchDrinks</div>
   </div>
 </section>

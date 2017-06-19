@@ -1,15 +1,15 @@
-<section ng-controller="ProductController as product">
-  <div ng-init="product.getProductByCategory('breakfast')" class="breakfastMenuBlocks">
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'croissant'})" class="breakfastDiv">Croissant</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'muffin'})" class="breakfastDiv">muffin</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'danish'})" class="breakfastDiv">danish</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'donut'})" class="breakfastDiv">donut</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'bagel'})" class="breakfastDiv">bagel</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'roll'})" class="breakfastDiv">roll</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'baguette'})" class="breakfastDiv">baguette</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'bap'})" class="breakfastDiv">bap</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'yoghurt'})" class="breakfastDiv">yoghurt</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'fruit'})" class="breakfastDiv">fruit</div>
-    <div ui-sref="sub_category({category:'breakfast', sub_category:'breakfastDrinks'})" class="breakfastDiv">breakfastDrinks</div>
+<section ng-click="product.breakfastNavShow = true">
+  <div ng-init="product.getProductByCategory('breakfast')" class="mainMenuDiv">
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'croissant'})" class="menuDiv">Croissant</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'muffin'})" class="menuDiv">muffin</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'danish'})" class="menuDiv">danish</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'donut'})" class="menuDiv">donut</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'bagel'})" class="menuDiv">bagel</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'roll'})" class="menuDiv">roll</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'baguette'})" class="menuDiv">baguette</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'bap'})" class="menuDiv">bap</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'yoghurt'})" class="menuDiv">yoghurt</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'fruit'})" class="menuDiv">fruit</div>
+    <div ui-sref="sub_category({category:'breakfast', sub_category:'breakfastDrinks'})" class="menuDiv">breakfastDrinks</div>
   </div>
 </section>
