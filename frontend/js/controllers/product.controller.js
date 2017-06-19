@@ -25,7 +25,9 @@ function ProductController(ProductFactory, $stateParams) {
     );
   };
 
-  controller.getProductBySubCategory = function(cat, subCat) {
+  controller.getProductBySubCategory = function() {
+    var cat = $stateParams.category;
+    var subCat = $stateParams.sub_category;
     ProductFactory.getProductBySubCategory(cat, subCat).then(
       function success(success) {
         console.log('success getting specific product by category');
