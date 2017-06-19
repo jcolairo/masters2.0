@@ -98,15 +98,6 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         'footer@breakfast': {templateUrl: '/states/partials/footer/footer.html'}
       }
     })
-    .state('singleProduct', {
-      url: '/menu/:cat/:id',
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@singleProduct': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@singleProduct': {templateUrl: '/states/partials/menu/singleProduct.html'},
-        'footer@singleProduct': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
     .state('lunch', {
       url: '/menu/lunch',
       views: {
@@ -132,6 +123,15 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         'aside@canapes': {templateUrl: '/states/partials/menu/aside.html'},
         'menu@canapes': {templateUrl: '/states/partials/menu/canapes.html'},
         'footer@canapes': {templateUrl: '/states/partials/footer/footer.html'}
+      }
+    })
+    .state('singleProduct', {
+      url: '/menu/:id',
+      views: {
+        '': {templateUrl: '/states/partials/template.html'},
+        'aside@singleProduct': {templateUrl: '/states/partials/menu/aside.html'},
+        'menu@singleProduct': {templateUrl: '/states/partials/menu/singleProduct.html'},
+        'footer@singleProduct': {templateUrl: '/states/partials/footer/footer.html'}
       }
     });
 
