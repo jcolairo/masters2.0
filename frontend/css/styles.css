@@ -85,6 +85,26 @@ body .masters_homepage {
     font-weight: 500;
     color: rgba(41, 41, 41, 0.8); }
 
+.subNavNav {
+  text-align: center; }
+  .subNavNav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; }
+  .subNavNav .subNavDiv {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1;
+    line-height: 3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(41, 41, 41, 0.8); }
+  .subNavNav .pipe {
+    font-size: 1.3rem;
+    opacity: 0.7; }
+
 aside {
   border: 1px solid #C62828;
   display: inline-block;
@@ -135,14 +155,14 @@ body {
     left: 0;
     display: inline-flex; }
 
-.breakfastMenuBlocks {
+.mainMenuDiv {
   display: inline-flex;
   flex-wrap: wrap;
   border: 1px solid #C62828;
   justify-content: center;
   text-align: center;
   margin-top: 15px; }
-  .breakfastMenuBlocks div {
+  .mainMenuDiv .menuDiv {
     border: 1px solid #00C853;
     margin: 1rem;
     flex-shrink: 0;

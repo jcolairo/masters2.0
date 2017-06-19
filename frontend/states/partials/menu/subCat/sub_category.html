@@ -1,28 +1,41 @@
 <section>
-  <nav class="subNavDiv">
-    <div>
-      <ul ng-if="product.breakfastNavShow">
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'croissant'})" >Croissant</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'muffin'})" >muffin</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'danish'})" >danish</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'donut'})" >donut</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'bagel'})" >bagel</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'roll'})" >roll</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'baguette'})" >baguette</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'bap'})" >bap</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'yoghurt'})" >yoghurt</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'fruit'})" >fruit</li>
-        <li ui-sref="sub_category({category:'breakfast', sub_category:'breakfastDrinks'})">breakfastDrinks</li>
-      </ul>
-      <ul ng-if="product.lunchNavShow">
-        <li ui-sref="sub_category({category:'lunch', sub_category:'platter'})" class="menuDiv">platter</li>
-        <li ui-sref="sub_category({category:'lunch', sub_category:'setLunch'})" class="menuDiv">setLunch</li>
-        <li ui-sref="sub_category({category:'lunch', sub_category:'finger'})" class="menuDiv">finger</li>
-        <li ui-sref="sub_category({category:'lunch', sub_category:'coldFork'})" class="menuDiv">coldFork</li>
-        <li ui-sref="sub_category({category:'lunch', sub_category:'hotFork'})" class="menuDiv">hotFork</li>
-        <li ui-sref="sub_category({category:'lunch', sub_category:'lunchDrinks'})" class="menuDiv">lunchDrinks</li>
-      </ul>
-    </div>
+  <nav class="subNavNav">
+    <ul ng-if="product.breakfastNavShow">
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'croissant'})" class="subNavDiv">Croissant</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'muffin'})" class="subNavDiv">muffin</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'danish'})" class="subNavDiv">danish</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'donut'})" class="subNavDiv">donut</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'bagel'})" class="subNavDiv">bagel</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'roll'})" class="subNavDiv">roll</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'baguette'})" class="subNavDiv">baguette</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'bap'})" class="subNavDiv">bap</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'yoghurt'})" class="subNavDiv">yoghurt</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'fruit'})" class="subNavDiv">fruit</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'breakfastDrinks'})" class="subNavDiv">breakfastDrinks</li>
+    </ul>
+    <ul ng-if="product.lunchNavShow">
+      <li ui-sref="sub_category({category:'lunch', sub_category:'platter'})" class="subNavDiv">platter</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'lunch', sub_category:'setLunch'})" class="subNavDiv">setLunch</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'lunch', sub_category:'finger'})" class="subNavDiv">finger</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'lunch', sub_category:'coldFork'})" class="subNavDiv">coldFork</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'lunch', sub_category:'hotFork'})" class="subNavDiv">hotFork</li>
+      <li class="pipe">|</li>
+      <li ui-sref="sub_category({category:'lunch', sub_category:'lunchDrinks'})" class="subNavDiv">lunchDrinks</li>
+    </ul>
   </nav>
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">
     <div class="titleDiv">
