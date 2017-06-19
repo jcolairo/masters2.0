@@ -1,13 +1,11 @@
 <h1>Lunch</h1>
 <section ng-controller="ProductController as product">
-  <div class="test" ng-init="product.getProductByCategory('lunch')">
-    <ul ng-repeat="p in product.product">
-      <li>
-        <a ui-sref="singleProduct ({id: p._id })">{{p.title}}</a>
-      </li>
-      <li ng-repeat="desc in p.description">
-        {{desc}}
-      </li>
-    </ul>
+  <div ng-init="product.getProductByCategory('lunch')" class="breakfastMenuBlocks">
+    <div ui-sref="sub_category({category:'lunch', sub_category:'platter'})" class="breakfastDiv">platter</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'setLunch'})" class="breakfastDiv">setLunch</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'finger'})" class="breakfastDiv">finger</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'coldFork'})" class="breakfastDiv">coldFork</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'hotFork'})" class="breakfastDiv">hotFork</div>
+    <div ui-sref="sub_category({category:'lunch', sub_category:'lunchDrinks'})" class="breakfastDiv">lunchDrinks</div>
   </div>
 </section>
