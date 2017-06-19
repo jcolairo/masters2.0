@@ -1,4 +1,29 @@
-<section ng-controller="ProductController as product">
+<section>
+  <nav class="subNavDiv">
+    <div>
+      <ul ng-if="product.breakfastNavShow">
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'croissant'})" >Croissant</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'muffin'})" >muffin</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'danish'})" >danish</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'donut'})" >donut</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'bagel'})" >bagel</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'roll'})" >roll</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'baguette'})" >baguette</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'bap'})" >bap</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'yoghurt'})" >yoghurt</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'fruit'})" >fruit</li>
+        <li ui-sref="sub_category({category:'breakfast', sub_category:'breakfastDrinks'})">breakfastDrinks</li>
+      </ul>
+      <ul ng-if="product.lunchNavShow">
+        <li ui-sref="sub_category({category:'lunch', sub_category:'platter'})" class="menuDiv">platter</li>
+        <li ui-sref="sub_category({category:'lunch', sub_category:'setLunch'})" class="menuDiv">setLunch</li>
+        <li ui-sref="sub_category({category:'lunch', sub_category:'finger'})" class="menuDiv">finger</li>
+        <li ui-sref="sub_category({category:'lunch', sub_category:'coldFork'})" class="menuDiv">coldFork</li>
+        <li ui-sref="sub_category({category:'lunch', sub_category:'hotFork'})" class="menuDiv">hotFork</li>
+        <li ui-sref="sub_category({category:'lunch', sub_category:'lunchDrinks'})" class="menuDiv">lunchDrinks</li>
+      </ul>
+    </div>
+  </nav>
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">
     <div class="titleDiv">
       <ul ng-repeat="product in product.subCat">
