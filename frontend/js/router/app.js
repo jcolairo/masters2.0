@@ -80,103 +80,13 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         'footer@user': {templateUrl: '/states/partials/footer/footer.html'}
       }
     })
-    .state('croissant', {
-      url: `/menu/breakfast/croissant`,
+    .state('sub_category', {
+      url: `/menu/:category/:sub_category`,
       views: {
         '': {templateUrl: '/states/partials/template.html'},
-        'aside@croissant': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@croissant': {templateUrl: '/states/partials/menu/breakfast/croissant.html'},
-        'footer@croissant': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('muffin', {
-      url: `/menu/breakfast/muffin`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@muffin': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@muffin': {templateUrl: '/states/partials/menu/breakfast/muffin.html'},
-        'footer@muffin': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('danish', {
-      url: `/menu/breakfast/danish`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@danish': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@danish': {templateUrl: '/states/partials/menu/breakfast/danish.html'},
-        'footer@danish': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('donut', {
-      url: `/menu/breakfast/donut`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@donut': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@donut': {templateUrl: '/states/partials/menu/breakfast/donut.html'},
-        'footer@donut': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('bagel', {
-      url: `/menu/breakfast/bagel`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@bagel': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@bagel': {templateUrl: '/states/partials/menu/breakfast/bagel.html'},
-        'footer@bagel': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('roll', {
-      url: `/menu/breakfast/roll`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@roll': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@roll': {templateUrl: '/states/partials/menu/breakfast/roll.html'},
-        'footer@roll': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('baguette', {
-      url: `/menu/breakfast/baguette`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@baguette': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@baguette': {templateUrl: '/states/partials/menu/breakfast/baguette.html'},
-        'footer@baguette': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('bap', {
-      url: `/menu/breakfast/bap`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@bap': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@bap': {templateUrl: '/states/partials/menu/breakfast/bap.html'},
-        'footer@bap': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('yoghurt', {
-      url: `/menu/breakfast/yoghurt`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@yoghurt': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@yoghurt': {templateUrl: '/states/partials/menu/breakfast/yoghurt.html'},
-        'footer@yoghurt': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('fruit', {
-      url: `/menu/breakfast/fruit`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@fruit': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@fruit': {templateUrl: '/states/partials/menu/breakfast/fruit.html'},
-        'footer@fruit': {templateUrl: '/states/partials/footer/footer.html'}
-      }
-    })
-    .state('breakfastDrinks', {
-      url: `/menu/breakfast/breakfastDrinks`,
-      views: {
-        '': {templateUrl: '/states/partials/template.html'},
-        'aside@breakfastDrinks': {templateUrl: '/states/partials/menu/aside.html'},
-        'menu@breakfastDrinks': {templateUrl: '/states/partials/menu/breakfast/breakfastDrinks.html'},
-        'footer@breakfastDrinks': {templateUrl: '/states/partials/footer/footer.html'}
+        'aside@sub_category': {templateUrl: '/states/partials/menu/aside.html'},
+        'menu@sub_category': {templateUrl: '/states/partials/menu/subCat/sub_category.html'},
+        'footer@sub_category': {templateUrl: '/states/partials/footer/footer.html'}
       }
     })
     .state('breakfast', {
@@ -189,7 +99,7 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
       }
     })
     .state('singleProduct', {
-      url: '/menu/breakfast/:id',
+      url: '/menu/:cat/:id',
       views: {
         '': {templateUrl: '/states/partials/template.html'},
         'aside@singleProduct': {templateUrl: '/states/partials/menu/aside.html'},
