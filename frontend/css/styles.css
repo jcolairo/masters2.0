@@ -176,6 +176,22 @@ body {
     left: 0;
     display: inline-flex; }
 
+.productDiv {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 20vw; }
+  .productDiv .productUl {
+    border: 1px solid #0288D1;
+    display: inline-flex;
+    min-height: 15vh;
+    min-width: 15vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin: 1rem; }
+
 .userDiv {
   display: flex;
   margin-top: 2vh; }

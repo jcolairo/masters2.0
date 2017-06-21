@@ -1,1 +1,26 @@
-
+.productDiv {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 20vw;
+  .productUl {
+    border: $border-dev-blue;
+    display: inline-flex;
+    min-height: 15vh;
+    min-width: 15vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin: 1rem;
+    // .productTitle {
+    //   width: 50%;
+    // }
+    // .productDesc {
+    //   width: 50%;
+    // }
+    // .productPrice {
+    //   width: 50%;
+    // }
+  }
+}
