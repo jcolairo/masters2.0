@@ -1,0 +1,27 @@
+<section>
+  <nav class="subNavNav">
+    <ul ng-if="product.breakfastNavShow" ng-repeat="breakfastMenu in product.breakfastMenu" class="subNavUl">
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'{{breakfastMenu}}'})" class="subNavDiv">{{breakfastMenu}}</li>
+      <li class="pipe">|</li>
+    </ul>
+    <ul ng-if="product.lunchNavShow" ng-repeat="lunchMenu in product.lunchMenu" class="subNavUl">
+      <li ui-sref="sub_category({category:'lunch', sub_category:'{{lunchMenu}}'})" class="subNavDiv">{{lunchMenu}}</li>
+      <li class="pipe">|</li>
+    </ul>
+  </nav>
+  <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">
+    <div class="titleDiv productDiv">
+      <ul ng-repeat="prod in product.subCat" class="productUl">
+        <li class="productTitle">
+          <a ui-sref="singleProduct({id: prod._id })">{{prod.title}}</a>
+        </li>
+        <li ng-repeat="desc in prod.description" class="productDesc">
+          {{desc}}
+        </li>
+        <li class="productPrice">
+          <p>{{prod.price | price}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,13 +1,1 @@
-<h1>Canapes</h1>
-<section ng-controller="ProductController as product">
-  <div ng-init="product.getProductByCategory('canapes')">
-    <ul ng-repeat="p in product.product">
-      <li>
-        <a ui-sref="singleProduct ({id: p._id })">{{p.title}}</a>
-      </li>
-      <li ng-repeat="desc in p.description">
-        {{desc}}
-      </li>
-    </ul>
-  </div>
-</section>
+

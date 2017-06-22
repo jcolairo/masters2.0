@@ -13,6 +13,13 @@ function ProductFactory($http) {
         data: cat
       });
     },
+    getProductBySubCategory: function(cat, subCat) {
+      return $http({
+        method: 'GET',
+        url: `/products/category/${cat}/${subCat}`,
+        data: cat, subCat
+      });
+    },
     getOneProduct: function(id) {
       return $http({
         method: 'GET',

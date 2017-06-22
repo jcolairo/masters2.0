@@ -1,8 +1,10 @@
 <nav>
   <ul>
-    <li ui-sref="breakfast"><a>Breakfast</a></li>
-    <li ui-sref="lunch"><a>Lunch</a></li>
-    <li ui-sref="afternoonTea"><a>Afternoon Tea</a></li>
-    <li ui-sref="canapes"><a>Canapes</a></li>
+    <li ui-sref="breakfast" ng-click="product.lunchNavShow = false"><a>Breakfast</a></li>
+    <li ui-sref="lunch" ng-click="product.breakfastNavShow = false"><a>Lunch</a></li>
+    <li ui-sref="sub_category({category: 'afternoonTea', sub_category:'afternoonTeaDrinks'})"
+        ng-click="product.breakfastNavShow = false; product.lunchNavShow = false"><a>Afternoon Tea</a></li>
+    <li ui-sref="sub_category({category: 'canapes', sub_category:'canapes'})"
+        ng-click="product.breakfastNavShow = false; product.lunchNavShow = false"><a>Canapes</a></li>
   </ul>
 </nav>

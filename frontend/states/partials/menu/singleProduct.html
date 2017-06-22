@@ -1,5 +1,5 @@
 <h1>Single Product</h1>
-<section ng-controller="ProductController as product">
+<section>
   <div ng-init="product.getOneProduct()">
     {{product.oneProduct.title}}
     <ul ng-repeat="desc in product.oneProduct.description">
