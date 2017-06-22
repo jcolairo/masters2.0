@@ -86,8 +86,9 @@ body .masters_homepage {
     color: rgba(41, 41, 41, 0.8); }
 
 .subNavNav {
-  text-align: center; }
-  .subNavNav ul {
+  text-align: center;
+  display: flex; }
+  .subNavNav .subNavUl {
     width: 100%;
     display: flex;
     flex-direction: row;

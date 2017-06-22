@@ -22,8 +22,8 @@
 }
 .subNavNav {
   text-align: center;
-
-  ul {
+  display: flex;
+  .subNavUl {
     width: 100%;
     display: flex;
     flex-direction: row;

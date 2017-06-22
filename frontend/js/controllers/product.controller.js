@@ -61,6 +61,15 @@ function ProductController(ProductFactory, $stateParams) {
       }
     );
   };
+
+  controller.breakfastMenu = [
+    'croissant', 'muffin', 'danish', 'donut', 'bagel', 'roll', 'baguette', 'bap', 'yoghurt', 'fruit', 'breakfastDrinks'
+  ];
+
+  controller.lunchMenu = [
+    'platter', 'setLunch', 'finger', 'coldFork', 'hotFork', 'lunchDrinks'
+  ];
+  
 }
 
 ProductController.$inject = ['ProductFactory', '$stateParams'];

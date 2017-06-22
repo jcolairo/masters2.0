@@ -1,40 +1,12 @@
 <section>
   <nav class="subNavNav">
-    <ul ng-if="product.breakfastNavShow">
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'croissant'})" class="subNavDiv">Croissant</li>
+    <ul ng-if="product.breakfastNavShow" ng-repeat="breakfastMenu in product.breakfastMenu" class="subNavUl">
+      <li ui-sref="sub_category({category:'breakfast', sub_category:'{{breakfastMenu}}'})" class="subNavDiv">{{breakfastMenu}}</li>
       <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'muffin'})" class="subNavDiv">muffin</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'danish'})" class="subNavDiv">danish</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'donut'})" class="subNavDiv">donut</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'bagel'})" class="subNavDiv">bagel</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'roll'})" class="subNavDiv">roll</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'baguette'})" class="subNavDiv">baguette</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'bap'})" class="subNavDiv">bap</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'yoghurt'})" class="subNavDiv">yoghurt</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'fruit'})" class="subNavDiv">fruit</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'breakfastDrinks'})" class="subNavDiv">breakfastDrinks</li>
     </ul>
-    <ul ng-if="product.lunchNavShow">
-      <li ui-sref="sub_category({category:'lunch', sub_category:'platter'})" class="subNavDiv">platter</li>
+    <ul ng-if="product.lunchNavShow" ng-repeat="lunchMenu in product.lunchMenu" class="subNavUl">
+      <li ui-sref="sub_category({category:'lunch', sub_category:'{{lunchMenu}}'})" class="subNavDiv">{{lunchMenu}}</li>
       <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'lunch', sub_category:'setLunch'})" class="subNavDiv">setLunch</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'lunch', sub_category:'finger'})" class="subNavDiv">finger</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'lunch', sub_category:'coldFork'})" class="subNavDiv">coldFork</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'lunch', sub_category:'hotFork'})" class="subNavDiv">hotFork</li>
-      <li class="pipe">|</li>
-      <li ui-sref="sub_category({category:'lunch', sub_category:'lunchDrinks'})" class="subNavDiv">lunchDrinks</li>
     </ul>
   </nav>
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">
