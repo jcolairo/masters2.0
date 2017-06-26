@@ -1,0 +1,8 @@
+.userLi {
+  display: flex;
+  justify-content: space-between;
+  .removeForm {
+    display: inline-flex;
+    align-items: center;
+  }
+}
