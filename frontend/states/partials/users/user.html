@@ -4,7 +4,7 @@
       <ul ng-repeat="orders in user.user.orders">
         <li ng-repeat="items in orders.items" class="userLi">
           <form ng-controller="OrderController as order" ng-submit="order.removeProduct(items.product._id)" class="removeForm">
-            <input ng-model="order.removeProduct" type="submit" value="X" class="removeInput">
+            <input type="submit" value="X" class="removeInput">
           </form>
           <p class="titleOrder">{{items.product.title}}</p>
           <p class="priceOrder">{{items.product.price | price}}</p>
