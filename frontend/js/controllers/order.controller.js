@@ -1,4 +1,4 @@
-function OrderController(OrderFactory, $state) {
+function OrderController(OrderFactory, $state, $window) {
   var controller = this;
 
   controller.addToOrder = function (id, qty) {
@@ -11,6 +11,7 @@ function OrderController(OrderFactory, $state) {
     OrderFactory.addToOrder(order).then(
       function success(success) {
         console.log('Created new order:', success);
+        $window.history.back();
       },
       function error(error) {
         console.warn('Error creating order:', error);
@@ -36,7 +37,7 @@ function OrderController(OrderFactory, $state) {
   init();
 }
 
-OrderController.$inject = ['OrderFactory', '$state'];
+OrderController.$inject = ['OrderFactory', '$state', '$window'];
 
 angular
   .module('MastersApp')
