@@ -38,6 +38,42 @@ function addProductsToBasket (req, res) {
   });
 }
 
+function removeProductFromBasket (req, res) {
+
+  var productId = req && req.body && req.body.id;
+  if (!productId) {
+    return Err.missingParams(res, ['productId']);
+  }
+
+  var query = {'uid': req.user.uid, 'email': req.user.email };
+
+  User.findOne(query, function (err, user) {
+    if (err || !user) return Err.recordNotFound(res, err.message);
+    var liveOrders = user.orders.filter(function(order) {
+      return order.is_live === true;
+    });
+
+    if (!liveOrders.length) {
+      return Err.recordNotFound(res, ['User not found']);
+    } else {
+      for (var i  = 0; i < liveOrders[0].items.length; i++) {
+        var current = liveOrders[0].items[i];
+        if (productId == current.product) {
+          liveOrders[0].items.splice(i, 1);
+          break;
+        }
+      }
+    }
+
+    user.save(function(error){
+      if (error) {
+        return Err.missingParams(res, ['PRODUCTS']);
+      } else {
+        res.json(user);
+      }
+    });
+  });
+}
 
 function validateProducts (products) {
   for (var i = 0; i < products.length; i++) {
@@ -52,5 +88,6 @@ function validateProducts (products) {
 }
 
 module.exports = {
-  addProducts: addProductsToBasket
+  addProducts: addProductsToBasket,
+  removeProduct: removeProductFromBasket
 };

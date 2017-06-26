@@ -5,6 +5,11 @@
         <li ng-repeat="items in orders.items" class="userLi">
           <p class="titleOrder">{{items.product.title}}</p>
           <p class="priceOrder">{{items.product.price | price}}</p>
+          <form ng-controller="OrderController as order" ng-submit="order.removeProduct(items.product._id)">
+            <div>
+              <input ng-model="order.removeProduct" type="submit" value="remove product from order">
+            </div>
+          </form>
         </li>
         <b class="order-total userLi">£ {{ user.getOrderTotal(orders.items) }} </b>
       </ul>

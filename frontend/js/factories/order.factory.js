@@ -6,6 +6,13 @@ function OrderFactory($http) {
         url: '/orders/add',
         data: newOrder
       });
+    },
+    removeFromOrder: function(productId) {
+      return $http({
+        method: 'POST',
+        url: `/orders/delete`,
+        data: productId
+      });
     }
   };
 }

@@ -1,4 +1,4 @@
-function OrderController(OrderFactory) {
+function OrderController(OrderFactory, $state) {
   var controller = this;
 
   controller.addToOrder = function (id, qty) {
@@ -18,13 +18,25 @@ function OrderController(OrderFactory) {
     );
   };
 
+  controller.removeProduct = function (id) {
+    OrderFactory.removeFromOrder({id: id}).then(
+      function success(success) {
+        console.log('Removed product from order', success);
+        $state.reload();
+      },
+      function error(error) {
+        console.warn('Error removing product from order', error);
+      }
+    );
+  };
+
   function init() {
     controller.newOrder = {};
   }
   init();
 }
 
-OrderController.$inject = ['OrderFactory'];
+OrderController.$inject = ['OrderFactory', '$state'];
 
 angular
   .module('MastersApp')
