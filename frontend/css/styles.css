@@ -242,3 +242,10 @@ body {
     justify-content: center;
     flex: 1 1 0;
     margin: 1rem; }
+
+.userLi {
+  display: flex;
+  justify-content: space-between; }
+  .userLi .removeForm {
+    display: inline-flex;
+    align-items: center; }
