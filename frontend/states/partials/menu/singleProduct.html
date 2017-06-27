@@ -8,9 +8,10 @@
       </li>
     </ul>
   </div>
-  <form ng-controller="OrderController as order" ng-submit="order.addToOrder(product.oneProduct._id, 1)">
+  <form ng-controller="OrderController as order" ng-submit="order.addToOrder(product.oneProduct._id, order.addToOrder.order.products.qty)">
     <div>
       <input ng-model="order.newOrder" type="submit" value="add to order">
+      <input ng-model="order.addToOrder.order.products.qty" type="number" min="1">
     </div>
   </form>
 </section>

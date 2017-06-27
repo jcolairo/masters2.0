@@ -7,7 +7,8 @@
             <input type="submit" value="X" class="removeInput">
           </form>
           <p class="titleOrder">{{items.product.title}}</p>
-          <p class="priceOrder">{{items.product.price | price}}</p>
+          <p >qty: {{items.qty}}</p>
+          <p class="priceOrder">{{items.product.price * items.qty | price}}</p>
         </li>
         <b class="order-total userLi">£ {{ user.getOrderTotal(orders.items) }} </b>
       </ul>

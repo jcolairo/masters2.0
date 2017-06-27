@@ -23,8 +23,21 @@ function addProductsToBasket (req, res) {
         items: products
       });
     } else {
-      for (var i = 0; i < products.length; i++) {
-        liveOrders[0].items.push(products[i]);
+
+      var product = products[0];
+      var currentBasketProducts = liveOrders[0].items.map(function (prod) {
+        return prod.product;
+      }).join('|');
+
+      var productToTest = new RegExp(product.product, 'ig');
+      if (productToTest.test(currentBasketProducts)) {
+        for (var j = 0; j < liveOrders[0].items.length; j++) {
+          if (liveOrders[0].items[j].product == product.product) {
+            liveOrders[0].items[j].qty += product.qty;
+          }
+        }
+      } else {
+        liveOrders[0].items.push(product);
       }
     }
 
