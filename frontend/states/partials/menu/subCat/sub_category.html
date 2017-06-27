@@ -2,11 +2,11 @@
   <nav class="subNavNav">
     <ul ng-if="product.breakfastNavShow" ng-repeat="breakfastMenu in product.breakfastMenu" class="subNavUl">
       <li ui-sref="sub_category({category:'breakfast', sub_category:'{{breakfastMenu}}'})" class="subNavDiv">{{breakfastMenu}}</li>
-      <li class="pipe">|</li>
+      <li class="pipe" ng-class="{ 'last': $last }">|</li>
     </ul>
     <ul ng-if="product.lunchNavShow" ng-repeat="lunchMenu in product.lunchMenu" class="subNavUl">
       <li ui-sref="sub_category({category:'lunch', sub_category:'{{lunchMenu}}'})" class="subNavDiv">{{lunchMenu}}</li>
-      <li class="pipe">|</li>
+      <li class="pipe" ng-class="{ 'last': $last }">|</li>
     </ul>
   </nav>
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">

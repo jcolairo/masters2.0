@@ -105,6 +105,8 @@ body .masters_homepage {
   .subNavNav .pipe {
     font-size: 1.3rem;
     opacity: 0.7; }
+  .subNavNav .last {
+    display: none; }
 
 aside {
   border: 1px solid #C62828;
