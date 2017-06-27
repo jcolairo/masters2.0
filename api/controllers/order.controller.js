@@ -51,6 +51,38 @@ function addProductsToBasket (req, res) {
   });
 }
 
+function editOrder (req, res) {
+
+  var updatedItems = req && req.body && req.body;
+
+
+  if (!updatedItems.length ) {
+    return Err.missingParams(res, ['items']);
+  }
+
+  var query = {'uid': req.user.uid, 'email': req.user.email};
+
+  User.findOne(query, function(err, user) {
+    if (err || !user) return Err.recordNotFound(res, err.message);
+
+    var liveOrders = user.orders.filter(function(order) {
+      return order.is_live === true;
+    });
+
+    if (liveOrders.length){
+      liveOrders[0].items = updatedItems;
+    }
+
+    user.save(function(error) {
+      if(error) {
+        return Err.missingParams(res, ['PRODUCTS']);
+      } else {
+        res.json(user);
+      }
+    });
+  });
+}
+
 function removeProductFromBasket (req, res) {
 
   var productId = req && req.body && req.body.id;
@@ -102,5 +134,6 @@ function validateProducts (products) {
 
 module.exports = {
   addProducts: addProductsToBasket,
+  editOrder: editOrder,
   removeProduct: removeProductFromBasket
 };

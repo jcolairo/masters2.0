@@ -19,6 +19,17 @@ function OrderController(OrderFactory, $state, $window) {
     );
   };
 
+  controller.editOrder = function (updatedItems) {
+    OrderFactory.editOrder(updatedItems).then(
+      function success(success) {
+        console.log('Success editing order:', success);
+      },
+      function error(error) {
+        console.warn('Error editing order:', error);
+      }
+    );
+  };
+
   controller.removeProduct = function (id) {
     OrderFactory.removeFromOrder({id: id}).then(
       function success(success) {
