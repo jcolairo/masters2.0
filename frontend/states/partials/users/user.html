@@ -1,13 +1,16 @@
 <section ng-controller="UserController as user">
   <div ng-init="user.getSingleUser()" class="userDiv">
-    <div class="titleDiv">
+    <div class="titleDiv" ng-controller="OrderController as order">
       <ul ng-repeat="orders in user.user.orders">
         <li ng-repeat="items in orders.items" class="userLi">
-          <form ng-controller="OrderController as order" ng-submit="order.removeProduct(items.product._id)" class="removeForm">
+          <form ng-submit="order.removeProduct(items.product._id)" class="removeForm">
             <input type="submit" value="X" class="removeInput">
           </form>
           <p class="titleOrder">{{items.product.title}}</p>
-          <p >qty: {{items.qty}}</p>
+          qty:<input type="number" ng-model="items.qty" min="1">
+          <form ng-submit="order.editOrder(orders.items)">
+            <input type="submit" value="edit order">
+          </form>
           <p class="priceOrder">{{items.product.price * items.qty | price}}</p>
         </li>
         <b class="order-total userLi">£ {{ user.getOrderTotal(orders.items) }} </b>

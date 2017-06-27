@@ -41,4 +41,7 @@ router.route('/orders/add')
 router.route('/orders/delete')
   .post(orderController.removeProduct);
 
+router.route('/orders/edit')
+  .put(orderController.editOrder);
+
 module.exports = router;
