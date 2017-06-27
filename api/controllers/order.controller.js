@@ -73,10 +73,6 @@ function editOrder (req, res) {
       liveOrders[0].items = updatedItems;
     }
 
-
-
-
-
     user.save(function(error) {
       if(error) {
         return Err.missingParams(res, ['PRODUCTS']);

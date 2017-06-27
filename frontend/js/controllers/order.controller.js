@@ -1,4 +1,4 @@
-function OrderController(OrderFactory, $state, $stateParams, $window) {
+function OrderController(OrderFactory, $state, $window) {
   var controller = this;
 
   controller.addToOrder = function (id, qty) {
@@ -20,11 +20,6 @@ function OrderController(OrderFactory, $state, $stateParams, $window) {
   };
 
   controller.editOrder = function (updatedItems) {
-    // var order = {
-    //   products: [{
-    //
-    //   }]
-    // }
     OrderFactory.editOrder(updatedItems).then(
       function success(success) {
         console.log('Success editing order:', success);
@@ -53,7 +48,7 @@ function OrderController(OrderFactory, $state, $stateParams, $window) {
   init();
 }
 
-OrderController.$inject = ['OrderFactory', '$state', '$stateParams', '$window'];
+OrderController.$inject = ['OrderFactory', '$state', '$window'];
 
 angular
   .module('MastersApp')
