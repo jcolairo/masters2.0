@@ -41,159 +41,59 @@ function seed () {
       'model': 'Product',
       'documents': [
         {
-          'title': 'Mini Croissant',
-          'price': '1.40',
+          'title': 'Selection of Mini Pastries',
+          'price': '1.30',
           'category': 'breakfast',
-          'sub_category': 'croissant',
+          'sub_category': 'pastries',
           'description': [
-            'plain'
+            'Plain Croissant',
+            'Pain au Chocolat',
+            'Pain au Raisin',
+            'Almond Croissant',
+            'Fruit Danish'
           ],
           'img_path': '../some_location'
         },
         {
-          'title': 'Mini Croissant',
-          'price': '1.45',
-          'category': 'breakfast',
-          'sub_category': 'croissant',
-          'description': [
-            'chocolate'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini Croissant',
-          'price': '1.50',
-          'category': 'breakfast',
-          'sub_category': 'croissant',
-          'description': [
-            'almond'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large Croissant',
-          'price': '1.90',
-          'category': 'breakfast',
-          'sub_category': 'croissant',
-          'description': [
-            'plain'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large Croissant',
-          'price': '2.10',
-          'category': 'breakfast',
-          'sub_category': 'croissant',
-          'description': [
-            'chocolate'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large Croissant',
-          'price': '2.30',
-          'category': 'breakfast',
-          'sub_category': 'croissant',
-          'description': [
-            'almond'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini Savory Croissant',
-          'price': '3.00',
-          'category': 'breakfast',
-          'sub_category': 'croissant',
-          'description': [
-            'filled with Ham & Cheese, Cheese & Tomato, Smoked Salmon, Egg & Cress'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large Savory Croissant',
-          'price': '4.00',
-          'category': 'breakfast',
-          'sub_category': 'croissant',
-          'description': [
-            'filled with Ham & Cheese, Cheese & Tomato, Smoked Salmon, Egg & Cress'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini Muffin',
-          'price': '1.50',
-          'category': 'breakfast',
-          'sub_category': 'muffin',
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large Muffin',
-          'price': '2.20',
-          'category': 'breakfast',
-          'sub_category': 'muffin',
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini fruit Danish',
-          'price': '1.40',
-          'category': 'breakfast',
-          'sub_category': 'danish',
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large fruit Danish',
-          'price': '2.30',
-          'category': 'breakfast',
-          'sub_category': 'danish',
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini Donut',
-          'price': '1.40',
-          'category': 'breakfast',
-          'sub_category': 'donut',
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large Donut',
-          'price': '2.00',
-          'category': 'breakfast',
-          'sub_category': 'donut',
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini breakfast Bagels',
-          'price': '3.00',
+          'title': 'Selection of Brick Lane Bagels',
+          'price': '3.50',
           'category': 'breakfast',
           'sub_category': 'bagel',
           'description': [
-            'filled with Smoked Salmon Cream Cheese, Ham & Cheese, Cheese & Tomato, Tuna Mayo, Egg & Cress'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini breakfast filled Rolls',
-          'price': '3.00',
-          'category': 'breakfast',
-          'sub_category': 'roll',
-          'description': [
-            'filled with Ham & Cheese or Cheese & Tomato, Tuna Mayo, Smoked Salmon, Egg & Cress'
+            'Smoked Salmon & Cream Cheese',
+            'Ham & Cheese',
+            'Cream Cheese & Cucumber'
           ],
           'img_path': '../some_location'
         },
         {
           'title': 'Fried Egg Roll',
-          'price': '2.50',
+          'price': '2.00',
           'category': 'breakfast',
           'sub_category': 'roll',
           'description': [
-            '(free-range)'
+            'free-range'
           ],
           'img_path': '../some_location'
         },
         {
           'title': 'Bacon Roll',
+          'price': '2.50',
+          'category': 'breakfast',
+          'sub_category': 'roll',
+          'description': [],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Sausage Roll',
+          'price': '2.50',
+          'category': 'breakfast',
+          'sub_category': 'roll',
+          'description': [],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Egg & Bacon Roll',
           'price': '3.00',
           'category': 'breakfast',
           'sub_category': 'roll',
@@ -201,7 +101,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Cumberland Sausage in a Roll',
+          'title': 'Sausage & Egg Roll',
           'price': '3.00',
           'category': 'breakfast',
           'sub_category': 'roll',
@@ -209,101 +109,70 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Fried Egg Sandwich',
-          'price': '3.20',
+          'title': 'Sausage & Bacon Roll',
+          'price': '3.00',
+          'category': 'breakfast',
+          'sub_category': 'roll',
+          'description': [],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Double Fried Egg Sandwich',
+          'price': '3.00',
           'category': 'breakfast',
           'sub_category': 'sandwich',
           'description': [
-            '(2 free-range eggs)'
+            'free-range'
           ],
           'img_path': '../some_location'
         },
         {
           'title': 'Bacon Sandwich',
-          'price': '3.20',
+          'price': '3.50',
           'category': 'breakfast',
           'sub_category': 'sandwich',
+          'description': [],
           'img_path': '../some_location'
         },
         {
-          'title': 'Cumberland Sausage Sandwich',
-          'price': '3.20',
+          'title': 'Sausage Sandwich',
+          'price': '3.50',
           'category': 'breakfast',
           'sub_category': 'sandwich',
+          'description': [],
           'img_path': '../some_location'
         },
         {
-          'title': 'Fried Egg & Bacon Sandwich',
-          'price': '3.80',
+          'title': 'Egg & Bacon Sandwich',
+          'price': '4.00',
           'category': 'breakfast',
           'sub_category': 'sandwich',
+          'description': [],
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage & Bacon Sandwich',
-          'price': '3.80',
+          'title': 'Sausage & Egg Sandwich',
+          'price': '4.00',
           'category': 'breakfast',
           'sub_category': 'sandwich',
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Fried Free-Egg Sandwich',
-          'price': '3.45',
-          'category': 'breakfast',
-          'sub_category': 'sandwich',
-          'description': [
-            'on Bloomer Bread',
-            '(2 eggs)'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Bacon Sandwich',
-          'price': '3.45',
-          'category': 'breakfast',
-          'sub_category': 'sandwich',
-          'description': [
-            'on Bloomer Bread'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Cumberland Sausage Sandwich',
-          'price': '3.45',
-          'category': 'breakfast',
-          'sub_category': 'sandwich',
-          'description': [
-            'on Bloomer Bread'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Fried Egg & Bacon Sandwich',
-          'price': '4.05',
-          'category': 'breakfast',
-          'sub_category': 'sandwich',
-          'description': [
-            'on Bloomer Bread'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Fried Egg & Sausage Sandwich',
-          'price': '4.05',
-          'category': 'breakfast',
-          'sub_category': 'sandwich',
-          'description': [
-            'on Bloomer Bread'
-          ],
+          'description': [],
           'img_path': '../some_location'
         },
         {
           'title': 'Sausage & Bacon Sandwich',
-          'price': '4.05',
+          'price': '4.00',
           'category': 'breakfast',
           'sub_category': 'sandwich',
+          'description': [],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Double Fried Egg Baguette',
+          'price': '3.50',
+          'category': 'breakfast',
+          'sub_category': 'baguette',
           'description': [
-            'on Bloomer Bread'
+            'free-range'
           ],
           'img_path': '../some_location'
         },
@@ -312,11 +181,12 @@ function seed () {
           'price': '4.00',
           'category': 'breakfast',
           'sub_category': 'baguette',
-          'description': [],
+          'description': [
+          ],
           'img_path': '../some_location'
         },
         {
-          'title': 'Cumberland Sausage Baguette',
+          'title': 'Sausage Baguette',
           'price': '4.00',
           'category': 'breakfast',
           'sub_category': 'baguette',
@@ -324,38 +194,16 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Fried Egg Baguette',
-          'price': '4.00',
+          'title': 'Egg & Bacon Baguette',
+          'price': '4.50',
           'category': 'breakfast',
           'sub_category': 'baguette',
-          'description': [
-            '(2 free-range eggs)'
-          ],
+          'description': [],
           'img_path': '../some_location'
         },
         {
-          'title': 'Extra Fried Egg Baguette',
-          'price': '4.80',
-          'category': 'breakfast',
-          'sub_category': 'baguette',
-          'description': [
-            '(3 free-range eggs)'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Fried Egg & Bacon Baguette',
-          'price': '4.80',
-          'category': 'breakfast',
-          'sub_category': 'baguette',
-          'description': [
-            '(2 eggs)'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Fried Eggs & Sausage Baguette',
-          'price': '4.80',
+          'title': 'Sausage & Egg Baguette',
+          'price': '4.50',
           'category': 'breakfast',
           'sub_category': 'baguette',
           'description': [],
@@ -363,44 +211,31 @@ function seed () {
         },
         {
           'title': 'Sausage & Bacon Baguette',
-          'price': '4.80',
+          'price': '4.50',
           'category': 'breakfast',
           'sub_category': 'baguette',
           'description': [],
           'img_path': '../some_location'
         },
         {
-          'title': 'Hangover Cure Bap',
-          'price': '5.00',
+          'title': 'Greek/Natural Yoghurt with honey',
+          'price': '3.00',
           'category': 'breakfast',
-          'sub_category': 'bap',
+          'sub_category': 'yoghurt',
           'description': [
-            '(2 eggs, bacon & sausage)'
+            'with Granola',
+            'Fresh Mixed Berries'
           ],
           'img_path': '../some_location'
         },
         {
-          'title': 'Greek/Natural Yoghurt with honey, Granola and fresh mixed berries',
+          'title': 'Greek/Natural Yoghurt & Granola Pots',
           'price': '3.00',
           'category': 'breakfast',
           'sub_category': 'yoghurt',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Muller Yoghurt',
-          'price': '1.00',
-          'category': 'breakfast',
-          'sub_category': 'yoghurt',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Fresh Fruit Salad',
-          'price': '3.00',
-          'category': 'breakfast',
-          'sub_category': 'fruit',
-          'description': [],
+          'description': [
+            'Fresh Mixed Berries'
+          ],
           'img_path': '../some_location'
         },
         {
@@ -420,22 +255,12 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Tea/Coffee, Herbal Teas or Decaffeinated Coffee served in flasks with house biscuits',
-          'price': '3.30',
-          'category': 'breakfast',
-          'sub_category': 'breakfastDrinks',
-          'description': [
-            'Per Head'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Tea/Coffee, Herbal Teas or Decaffeinated Coffee served in flasks with Farm House biscuits',
+          'title': 'Selection of Tea/Coffee',
           'price': '3.50',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
           'description': [
-            'Per Head'
+            'Served in Flasks with a Selection of Biscuits'
           ],
           'img_path': '../some_location'
         },
@@ -460,7 +285,37 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Just Juice Orange/Apple',
+          'title': 'Orange Juice',
+          'price': '2.20',
+          'category': 'breakfast',
+          'sub_category': 'breakfastDrinks',
+          'description': [
+            '1 litre'
+          ],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Apple Juice',
+          'price': '2.20',
+          'category': 'breakfast',
+          'sub_category': 'breakfastDrinks',
+          'description': [
+            '1 litre'
+          ],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Freshly Pressed Carrot & Ginger Juice',
+          'price': '2.20',
+          'category': 'breakfast',
+          'sub_category': 'breakfastDrinks',
+          'description': [
+            '1 litre'
+          ],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Freshly Pressed Mixed Berries Juice',
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
