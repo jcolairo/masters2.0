@@ -403,7 +403,7 @@ function seed () {
           'title': 'Menu A',
           'price': '11.50',
           'category': 'lunch',
-          'sub_category': 'finger',
+          'sub_category': 'coldForkBuffet',
           'description': [
             'Assorted Sandwiches/Assorted wraps/Assorted Rolls (subject to availability)',
             'Chicken Tikka Skewers',
@@ -418,43 +418,13 @@ function seed () {
           'title': 'Menu B',
           'price': '11.50',
           'category': 'lunch',
-          'sub_category': 'finger',
-          'description': [
-            'Assorted Sandwiches/Assorted wraps/Assorted Rolls (subject to availability)',
-            'Mini Chunky Beef & Mushroom Pie',
-            'Butterfly Breaded Prawn ',
-            'Mini Vegetable Samosas',
-            'Platter of Fresh Fruit',
-            'Patisserie Cake'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Menu C',
-          'price': '11.50',
-          'category': 'lunch',
-          'sub_category': 'finger',
+          'sub_category': 'coldForkBuffet',
           'description': [
             'Assorted Sandwiches/Assorted wraps/Assorted Rolls (subject to availability)',
             'Lemon Chicken Skewers with mixed herbs',
             'Marinated Tiger Prawns on Skewers',
             'Vegetarian Quiche',
             'Fresh Fruit Kebabs',
-            'Patisserie Cake'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Menu D',
-          'price': '11.50',
-          'category': 'lunch',
-          'sub_category': 'finger',
-          'description': [
-            'Assorted Sandwiches/Assorted wraps/Assorted Rolls (subject to availability)',
-            'Mini Lamb & Mint with Rosemary Pie',
-            'Sole Goujons',
-            'Vegetarian Kebabs',
-            'Fresh Fruit Platter',
             'Patisserie Cake'
           ],
           'img_path': '../some_location'
@@ -542,69 +512,55 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Assorted Sandwiches',
+          'title': 'Selection of Sandwiches',
           'price': '3.30',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Assorted Rolls',
-          'price': '3.00',
-          'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Speciality Breads Carrot fine herb bread Sandwiches Walnut Bread Sandwiches Beetroot Bread Sandwiches',
-          'price': '3.60',
-          'category': 'lunch',
-          'sub_category': 'platter',
           'description': [
-            'Minimum of 10 rounds'
+            'Meat',
+            'Fish',
+            'Veg',
+            '1 round'
           ],
           'img_path': '../some_location'
         },
         {
-          'title': 'Crudities with Hummus/Taramaslata',
-          'price': '2.60',
+          'title': 'Selection of Wraps',
+          'price': '3.30',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [],
+          'description': [
+            'Meat',
+            'Fish',
+            'Veg',
+            '1 round'
+          ],
           'img_path': '../some_location'
         },
         {
-          'title': 'Fresh Fruit Platter',
-          'price': '2.10',
+          'title': 'Selection of Rolls',
+          'price': '2.50',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [],
+          'description': [
+            'Meat',
+            'Fish',
+            'Veg',
+            '1 round'
+          ],
           'img_path': '../some_location'
         },
         {
-          'title': 'Fresh Fruit Kebab',
-          'price': '1.70',
+          'title': 'Selection of Baguettes',
+          'price': '4.00',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini Patisserie Cakes',
-          'price': '1.30',
-          'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': '2x Mozzarella Ball with Cherry Tomato on Skewer',
-          'price': '2.30',
-          'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
+          'description': [
+            'Meat',
+            'Fish',
+            'Veg',
+            '1 round'
+          ],
           'img_path': '../some_location'
         },
         {
@@ -632,59 +588,51 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Platter of Smoked Salmon with Cray Fish and Prawns',
-          'price': '8.00',
+          'title': 'Menu 1',
+          'price': '5.00',
           'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
+          'sub_category': 'packedLunch',
+          'description': [
+            'Sandwich',
+            'Crisps',
+            'Water'
+          ],
           'img_path': '../some_location'
         },
         {
-          'title': 'Chocolate Brownies/Rocky Road/Caramel Shortbread slice',
-          'price': '1.80',
+          'title': 'Menu 2',
+          'price': '6.00',
           'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
+          'sub_category': 'packedLunch',
+          'description': [
+            'Sandwich',
+            'Cake',
+            'Fruit Salad'
+          ],
           'img_path': '../some_location'
         },
         {
-          'title': '2x Cocktail Chorizo with Feta cheese and roasted vegetables on skewers',
-          'price': '2.30',
+          'title': 'Menu 3',
+          'price': '5.20',
           'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
+          'sub_category': 'packedLunch',
+          'description': [
+            'Wrap',
+            'Crisps',
+            'Fruit Salad'
+          ],
           'img_path': '../some_location'
         },
         {
-          'title': 'Mini Bagels',
-          'price': '3.00',
+          'title': 'Menu 4',
+          'price': '7.50',
           'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Vegetable Kebabs',
-          'price': '1.50',
-          'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large pastry Sausage Roll',
-          'price': '1.80',
-          'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Greek Yoghurt with Honey, Granola and fresh mixed berries',
-          'price': '3.00',
-          'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
+          'sub_category': 'packedLunch',
+          'description': [
+            'Baguette',
+            'Cake',
+            'Fruit Salad'
+          ],
           'img_path': '../some_location'
         },
         {
@@ -728,82 +676,6 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Assorted Wraps',
-          'price': '3.60',
-          'category': 'lunch',
-          'sub_category': 'lunchDrinks',
-          'description': [
-            'per wrap'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini Bagel',
-          'price': '3.00',
-          'category': 'lunch',
-          'sub_category': 'lunchDrinks',
-          'description': [
-            'each'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Selection of Fresh Fruit',
-          'price': '2.10',
-          'category': 'lunch',
-          'sub_category': 'lunchDrinks',
-          'description': [
-            'per person'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Patisserie Cake',
-          'price': '1.30',
-          'category': 'lunch',
-          'sub_category': 'lunchDrinks',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Crudities with Dips',
-          'price': '2.60',
-          'category': 'lunch',
-          'sub_category': 'lunchDrinks',
-          'description': [
-            'per person'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Chocolate Bar',
-          'price': '1.00',
-          'category': 'lunch',
-          'sub_category': 'lunchDrinks',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Walkers Crisps',
-          'price': '0.90',
-          'category': 'lunch',
-          'sub_category': 'lunchDrinks',
-          'description': [
-            'each'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Kettles/ Luthers/ Tyrell\'s Crisps',
-          'price': '1.00',
-          'category': 'lunch',
-          'sub_category': 'lunchDrinks',
-          'description': [
-            'each'
-          ],
-          'img_path': '../some_location'
-        },
-        {
           'title': 'Canned Beverages',
           'price': '1.00',
           'category': 'lunch',
@@ -812,168 +684,15 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Large Florentine',
-          'price': '1.90',
-          'category': 'lunch',
-          'sub_category': 'lunchDrinks',
-          'description': [],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Tea/Coffee, Herbal Teas or Decaffeinated Coffee served in flasks with house biscuits',
-          'price': '3.30',
+          'title': 'Afternoon Tea',
+          'price': '15.00',
           'category': 'afternoonTea',
           'sub_category': 'afternoonTeaDrinks',
           'description': [
-            'Per Head'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Tea/Coffee, Herbal Teas or Decaffeinated Coffee served in flasks with Farm House biscuits',
-          'price': '3.50',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-            'Per Head'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Freshly Squeezed Orange Juice',
-          'price': '7.50',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-            '2.2 Litres'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Bottled Water still/sparkling',
-          'price': '2.50',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-            '750ml'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Just Juice Orange/Apple',
-          'price': '2.50',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-            '1 litre'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Finger Sandwiches',
-          'price': '3.50',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large Scones with Jam & Cream',
-          'price': '2.50',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mini Patisserie Cakes',
-          'price': '1.30',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large Fresh Cream Cakes',
-          'price': '2.80',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Carrot and Walnut Loaf Cake',
-          'price': '2.40',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Ginger Loaf Cake',
-          'price': '2.40',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Chocolate Loaf Cake',
-          'price': '2.40',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Lemon Madeira Cake',
-          'price': '2.40',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Coconut Loaf Cake',
-          'price': '2.40',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Apple and Spice Cake',
-          'price': '2.40',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Mocha cake',
-          'price': '2.50',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Large Florentine',
-          'price': '1.90',
-          'category': 'afternoonTea',
-          'sub_category': 'afternoonTeaDrinks',
-          'description': [
+            'Selection of Tea/Coffee',
+            'Selection of Finger Sandwiches',
+            'Selection of Patisserie Cakes',
+            'Scones with Clotted Cream & Jam'
           ],
           'img_path': '../some_location'
         },

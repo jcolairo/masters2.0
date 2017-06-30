@@ -67,7 +67,7 @@ function ProductController(ProductFactory, $stateParams) {
   ];
 
   controller.lunchMenu = [
-    'platter', 'setLunch', 'finger', 'coldFork', 'hotFork', 'lunchDrinks'
+    'platter', 'setLunch', 'finger', 'coldFork', 'coldForkBuffet', 'hotFork', 'lunchDrinks'
   ];
 
 }
