@@ -17,10 +17,6 @@ function AuthFactory($firebaseAuth) {
 
   var fb = $firebaseAuth();
 
-  // fb.isAdmin = function () {
-  //   var user = this.$getAuth()
-  //   console.log('isAdmin: ', user)
-  // }
   return fb;
 }
 
