@@ -16,7 +16,7 @@ function UserFactory($http) {
   };
 }
 
-UserFactory.$inject = ['$http', '$rootScope'];
+UserFactory.$inject = ['$http'];
 
 angular
   .module('MastersApp')
