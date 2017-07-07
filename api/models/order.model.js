@@ -6,7 +6,8 @@ var OrderSchema = new mongoose.Schema({
     qty:        { type: Number, default: 1 }
   }],
   is_live:            { type: Boolean, default: true },
-  has_been_processed: { type: Boolean, default: false }
+  has_been_processed: { type: Boolean, default: false },
+  has_been_submitted: { type: Boolean, default: false }
 
 },{
 
