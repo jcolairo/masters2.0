@@ -1,4 +1,4 @@
-function UserFactory($http, $rootScope) {
+function UserFactory($http) {
   return {
     getAllUsers: function() {
       return $http({
@@ -11,12 +11,6 @@ function UserFactory($http, $rootScope) {
         method: 'GET',
         url: `/users/${uid}`,
         data: uid
-      });
-    },
-    getCurrentUser: function () {
-      return $http({
-        method: 'GET',
-        url: `/users/current`
       });
     }
   };
