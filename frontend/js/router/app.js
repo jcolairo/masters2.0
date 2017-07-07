@@ -1,4 +1,27 @@
 function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+  var authRequired = {
+    "currentAuth": ['AuthFactory', function(AuthFactory) {
+      return AuthFactory.$requireSignIn();
+    }]
+  }
+
+  var currentUser = {
+    "currentUser": ['UserFactory', 'currentAuth', '$rootScope', function(UserFactory, currentAuth, $rootScope) {
+      $rootScope.token = currentAuth._lat
+      return UserFactory.getSingleUser(currentAuth.uid);
+    }]
+  }
+
+  var isAdmin = {
+    "isAdmin": ['currentUser', function (currentUser) {
+      return new Promise(function (resolve, reject){
+        if (currentUser.data.is_admin) resolve(true);
+        else reject('ADMIN_REQUIRED');
+      });
+    }]
+  }
+
   $stateProvider
     .state('home', {
       url: '/',
@@ -54,7 +77,8 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         '': {templateUrl: '/states/partials/templateMain.html'},
         'menu@order': {templateUrl: '/states/partials/order/order.html'},
         'footer@order': {templateUrl: '/states/partials/footer/footer.html'}
-      }
+      },
+      resolve: authRequired
     })
     .state('menu', {
       url: '/menu',
@@ -65,12 +89,13 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
       }
     })
     .state('users', {
-      url: '/users',
+      url: '/admin',
       views: {
         '': {templateUrl: '/states/partials/templateMain.html'},
         'menu@users': {templateUrl: '/states/partials/users/users.html'},
         'footer@users': {templateUrl: '/states/partials/footer/footer.html'}
-      }
+      },
+      resolve: Object.assign({}, authRequired, currentUser, isAdmin)
     })
     .state('user', {
       url: '/user/:uid',
@@ -78,7 +103,8 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         '': {templateUrl: '/states/partials/templateMain.html'},
         'menu@user': {templateUrl: '/states/partials/users/user.html'},
         'footer@user': {templateUrl: '/states/partials/footer/footer.html'}
-      }
+      },
+      resolve: authRequired
     })
     .state('sub_category', {
       url: `/menu/:category/:sub_category`,
@@ -166,4 +192,12 @@ angular
 .module('MastersApp', ['ui.router', 'firebase', 'sticky'])
 .config(MainRouter)
 .factory('httpRequestInteceptor', tokenHeader)
-.config(authInteceptor);
+.config(authInteceptor)
+.run(['$rootScope', '$state', function ($rootScope, $state) {
+  $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+    console.log('State Change Error: ', error)
+    if (error === 'AUTH_REQUIRED' || error === 'ADMIN_REQUIRED') {
+      $state.go('auth-required');
+    }
+  });
+}]);

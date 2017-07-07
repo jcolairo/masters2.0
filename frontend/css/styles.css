@@ -47,10 +47,13 @@ table {
   text-shadow: 1px 1px 1px rgba(41, 41, 41, 0.004); }
 
 body .masters_homepage {
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  justify-content: center;
-  align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   margin: 1rem 0; }
 
 .mainNav {
@@ -87,13 +90,18 @@ body .masters_homepage {
 
 .subNavNav {
   text-align: center;
+  display: -ms-flexbox;
   display: flex; }
   .subNavNav .subNavUl {
     width: 100%;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around; }
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
   .subNavNav .subNavDiv {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1rem;
@@ -137,10 +145,14 @@ body {
   background-color: #e3e3e3; }
 
 .menuBlocks {
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-grow: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
   border: 1px solid #C62828;
   margin-top: 15px;
   text-align: center;
@@ -150,52 +162,75 @@ body {
     height: 35vh;
     display: inline-block;
     border: 1px solid #00C853;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
     top: 0;
     left: 0;
+    display: -ms-inline-flexbox;
     display: inline-flex; }
 
 .mainMenuDiv {
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   border: 1px solid #C62828;
-  justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   text-align: center;
   margin-top: 15px; }
   .mainMenuDiv .menuDiv {
     border: 1px solid #00C853;
     margin: 1rem;
-    flex-shrink: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
     min-width: 15vw;
     min-height: 23vh;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
     top: 0;
     left: 0;
+    display: -ms-inline-flexbox;
     display: inline-flex; }
 
 .productDiv {
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   min-width: 20vw; }
   .productDiv .productUl {
     border: 1px solid #0288D1;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     min-height: 15vh;
     min-width: 15vw;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex-grow: 1;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
     margin: 1rem; }
 
 .userDiv {
+  display: -ms-flexbox;
   display: flex;
   margin-top: 2vh; }
   .userDiv .titleDiv {
@@ -219,8 +254,10 @@ body {
       display: inline-block; }
 
 .userDiv .order-total {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 3rem;
   letter-spacing: 1;
@@ -233,6 +270,7 @@ body {
   border-bottom: 2px solid rgba(41, 41, 41, 0.8); }
 
 .footer {
+  display: -ms-flexbox;
   display: flex;
   text-align: center;
   width: 75%;
@@ -241,13 +279,19 @@ body {
   background-color: #f4efe1; }
   .footer div {
     display: block;
-    justify-content: center;
-    flex: 1 1 0;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex: 1 1 0px;
+        flex: 1 1 0;
     margin: 1rem; }
 
 .userLi {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between; }
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
   .userLi .removeForm {
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    align-items: center; }
+    -ms-flex-align: center;
+        align-items: center; }
