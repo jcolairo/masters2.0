@@ -21,11 +21,11 @@ function OrderFactory($http) {
         data: productId
       });
     },
-    submitOrder: function(submitOrder) {
+    submitOrder: function(notes) {
       return $http({
         method: 'POST',
         url: '/orders/submit',
-        data: submitOrder
+        data: notes
       });
     }
   };

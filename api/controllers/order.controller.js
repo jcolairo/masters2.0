@@ -121,29 +121,27 @@ function removeProductFromBasket (req, res) {
 }
 
 function submitOrder (req, res) {
-  var products = req && req.body && req.body.products;
 
-  if (!products || !products.length || !validateProducts(products)) {
-    return Err.missingParams(res, ['PRODUCTS']);
-  }
   var query = {'uid': req.user.uid, 'email': req.user.email };
 
-  User.findOne(query, function (err, user) { // breakpoint
-    if (err || !user) return Err.recordNotFound(res, err.message);
+  User.findOne(query, function (err, user) {
+    if (err || !user) return Err.recordNotFound(res, err);
 
     var liveOrders = user.orders.filter(function(order) {
       return order.is_live === true;
     });
 
-    if (liveOrders.length) {
+    if (!liveOrders.length) {
       return Err.recordNotFound(res, ['User not found']);
     } else {
+      console.log(req.body)
       liveOrders[0].has_been_submitted = true;
+      liveOrders[0].customer_notes = req.body.notes
     }
 
     user.save(function(error){
       if (error) {
-        return Err.missingParams(res, ['PRODUCTS']);
+        return Err.miscError(res, error.message);
       } else {
         res.json(user);
       }

@@ -11,3 +11,7 @@ exports.recordNotFound = function (res, message) {
 exports.unauthorizedReq = function (res) {
   res.status(401).send('You do not have permisson to access this resource');
 }
+
+exports.miscError = function (res, msg) {
+  res.status(500).send(msg || "Something went wrong.")
+}

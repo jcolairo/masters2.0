@@ -42,9 +42,11 @@ function OrderController(OrderFactory, $state, $window) {
     );
   };
 
-  controller.submitOrder = function (submitOrder) {
-    OrderFactory.submitOrder(submitOrder).then(
+  controller.submitOrder = function () {
+    OrderFactory.submitOrder({ notes: controller.notes }).then(
       function success(success) {
+        controller.submitted = true
+        controller.notes = ''
         console.log('Submited order', success);
       },
       function error(error) {
