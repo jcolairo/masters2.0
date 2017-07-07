@@ -18,11 +18,11 @@ mongoose.connect(env.db_url, function (err) {
 });
 
 app.use(helmet());
-app.use(morgan());
+app.use(morgan('dev'));
 
 app.use(express.static(env.path + '/frontend'));
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(require('./middleware/userPopulator'));
 

@@ -31,6 +31,7 @@ module.exports  = function (req, res, next) {
   req.headers.auth.trim();
 
   idToken = idToken || '';
+
   if (!idToken) return next();
 
   FBAdmin.auth().verifyIdToken(idToken).then(function (decodedUser) {

@@ -6,6 +6,7 @@ var findOrCreate  = require('mongoose-findorcreate');
 var UserSchema  = new mongoose.Schema({
 
   uid:      { type: String, required: true, unique: true },
+  is_admin: { type: Boolean, default: false},
   email:    { type: String, required: true, unique: true },
   address: [{
     line_one:   { type: String },

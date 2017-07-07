@@ -32,6 +32,7 @@ function AuthController($state, AuthFactory, $rootScope) {
       );
   };
 
+
   controller.signOut = () => {
     AuthFactory.$signOut();
     $state.go('home');
@@ -41,6 +42,7 @@ function AuthController($state, AuthFactory, $rootScope) {
     controller.email = null;
     controller.password = null;
   }
+
 
   function assignToken () {
     AuthFactory.$getAuth().getToken(false).then(function (token) {
@@ -52,9 +54,9 @@ function AuthController($state, AuthFactory, $rootScope) {
     controller.error = null;
     controller.email = '';
     controller.password = '';
-    AuthFactory.$onAuthStateChanged(function (user) {
-      controller.user = user;
-      if (user) {
+    AuthFactory.$onAuthStateChanged(function (fbUser) {
+      controller.user = fbUser;
+      if (fbUser) {
         assignToken();
       } else {
         $rootScope.token = null;
