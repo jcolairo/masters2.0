@@ -218,23 +218,15 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Greek/Natural Yoghurt with honey',
+          'title': 'Yoghurt Pot',
           'price': '3.00',
           'category': 'breakfast',
           'sub_category': 'yoghurt',
           'description': [
-            'with Granola',
-            'Fresh Mixed Berries'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Greek/Natural Yoghurt & Granola Pots',
-          'price': '3.00',
-          'category': 'breakfast',
-          'sub_category': 'yoghurt',
-          'description': [
-            'Fresh Mixed Berries'
+            'Natural Yoghurt',
+            'Granola',
+            'Fresh mixed Berries',
+            'Honey'
           ],
           'img_path': '../some_location'
         },
@@ -275,7 +267,17 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Bottled Water still/sparkling',
+          'title': 'Bottled Water Still',
+          'price': '2.20',
+          'category': 'breakfast',
+          'sub_category': 'breakfastDrinks',
+          'description': [
+            '750ml'
+          ],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Bottled Water Sparkling',
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
