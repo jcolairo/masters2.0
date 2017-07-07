@@ -1,4 +1,4 @@
-function AuthController($state, AuthFactory, $rootScope, UserFactory) {
+function AuthController($state, AuthFactory, $rootScope) {
   var controller = this;
 
   controller.createUser = function() {
@@ -70,7 +70,7 @@ function AuthController($state, AuthFactory, $rootScope, UserFactory) {
 
 }
 
-AuthController.$inject = ['$state', 'AuthFactory', '$rootScope', 'UserFactory'];
+AuthController.$inject = ['$state', 'AuthFactory', '$rootScope'];
 
 angular
   .module('MastersApp')
