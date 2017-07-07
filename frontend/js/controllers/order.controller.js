@@ -42,6 +42,17 @@ function OrderController(OrderFactory, $state, $window) {
     );
   };
 
+  controller.submitOrder = function (submitOrder) {
+    OrderFactory.submitOrder(submitOrder).then(
+      function success(success) {
+        console.log('Submited order', success);
+      },
+      function error(error) {
+        console.warn('Error submitting order', error);
+      }
+    );
+  };
+
   function init() {
     controller.newOrder = {};
   }

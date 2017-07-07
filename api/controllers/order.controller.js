@@ -132,8 +132,80 @@ function validateProducts (products) {
   return true;
 }
 
+function submitOrder (req, res) {
+  var products = req && req.body && req.body.products;
+
+  if (!products || !products.length || !validateProducts(products)) {
+    return Err.missingParams(res, ['PRODUCTS']);
+  }
+  var query = {'uid': req.user.uid, 'email': req.user.email };
+
+  User.findOne(query, function (err, user) { // breakpoint
+    if (err || !user) return Err.recordNotFound(res, err.message);
+
+    user.orders.has_been_submitted = true;
+
+    user.save(function(error){
+      if (error) {
+        return Err.missingParams(res, ['PRODUCTS']);
+      } else {
+        res.json(user);
+      }
+    });
+  });
+}
+
+// function sendgridMail (req, res) {
+//   var mailmail = req.query.mailmail || '';
+//   if (!mailmail.length) {
+//     return res.status(500).json({ message: 'please provide a search term' });
+//   }
+//
+//   // using SendGrid's v3 Node.js Library
+//   // https://github.com/sendgrid/sendgrid-nodejs
+//   var helper = require('sendgrid').mail;
+//   var fromEmail = new helper.Email('jamescolairo37@gmail.com');
+//   var toEmail = new helper.Email('jcolairo@spartaglobal.co');
+//   var subject = 'Sending with SendGrid is Fun';
+//   var content = new helper.Content('text/plain', 'and easy to do anywhere, even with Node.js');
+//   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
+//   mail.setTemplateId('aa1c13f7-cb6a-4f36-b901-47a37505f7be');
+//
+//   var sg = require('sendgrid')(process.env.MASTERS_SENDGRIB);
+//   var request = sg.emptyRequest({
+//     method: 'POST',
+//     path: '/v3/mail/send',
+//     body: mail.toJSON()
+//   });
+//
+//   sg.API(request, function (error, response) {
+//     if (error) {
+//       console.log('Error response received');
+//     }
+//     console.log(response.statusCode);
+//     console.log(response.body);
+//     console.log(response.headers);
+//   });
+//
+//   User.findOne(function (error, response, body, user) {
+//     if (error || !user) return Err.recordNotFound(res, error.message);
+//     var sendgridJson;
+//
+//     if (error) {
+//       console.warn('could not get mail', error);
+//       res.status(500).json({ message: 'could not get mail' });
+//       return;
+//     }
+//     sendgridJson = JSON.parse(body);
+//     res.status(200).json(sendgridJson.results);
+//   }
+// );
+// }
+
 module.exports = {
   addProducts: addProductsToBasket,
   editOrder: editOrder,
-  removeProduct: removeProductFromBasket
+  removeProduct: removeProductFromBasket,
+  submitOrder: submitOrder
+  // sendgridMail: sendgridMail
 };

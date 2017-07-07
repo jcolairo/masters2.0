@@ -16,5 +16,8 @@
         <b class="order-total userLi">£ {{ user.getOrderTotal(orders.items) }} </b>
       </ul>
     </div>
+    <form method="post" ng-submit="order.submitOrder(user.orders.has_been_submitted)">
+      <input type="submit" value="submit order">
+    </form>
   </div>
 </section>
