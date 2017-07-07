@@ -120,6 +120,37 @@ function removeProductFromBasket (req, res) {
   });
 }
 
+function submitOrder (req, res) {
+  var products = req && req.body && req.body.products;
+
+  if (!products || !products.length || !validateProducts(products)) {
+    return Err.missingParams(res, ['PRODUCTS']);
+  }
+  var query = {'uid': req.user.uid, 'email': req.user.email };
+
+  User.findOne(query, function (err, user) { // breakpoint
+    if (err || !user) return Err.recordNotFound(res, err.message);
+
+    var liveOrders = user.orders.filter(function(order) {
+      return order.is_live === true;
+    });
+
+    if (liveOrders.length) {
+      return Err.recordNotFound(res, ['User not found']);
+    } else {
+      liveOrders[0].has_been_submitted = true;
+    }
+
+    user.save(function(error){
+      if (error) {
+        return Err.missingParams(res, ['PRODUCTS']);
+      } else {
+        res.json(user);
+      }
+    });
+  });
+}
+
 function validateProducts (products) {
   for (var i = 0; i < products.length; i++) {
 
@@ -132,28 +163,6 @@ function validateProducts (products) {
   return true;
 }
 
-function submitOrder (req, res) {
-  var products = req && req.body && req.body.products;
-
-  if (!products || !products.length || !validateProducts(products)) {
-    return Err.missingParams(res, ['PRODUCTS']);
-  }
-  var query = {'uid': req.user.uid, 'email': req.user.email };
-
-  User.findOne(query, function (err, user) { // breakpoint
-    if (err || !user) return Err.recordNotFound(res, err.message);
-
-    user.orders.has_been_submitted = true;
-
-    user.save(function(error){
-      if (error) {
-        return Err.missingParams(res, ['PRODUCTS']);
-      } else {
-        res.json(user);
-      }
-    });
-  });
-}
 
 // function sendgridMail (req, res) {
 //   var mailmail = req.query.mailmail || '';
