@@ -16,7 +16,7 @@ function getSingleUser (req, res) {
 
   User
     .findOne({ uid: uid })
-    .populate('orders.items.product')
+    .populate('orders.items.product basket.items.product')
     .exec(function (err, user) {
       if (err) return Err.recordNotFound(res, err.message);
       res.json(user);

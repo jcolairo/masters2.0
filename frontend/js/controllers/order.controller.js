@@ -23,6 +23,7 @@ function OrderController(OrderFactory, $state, $window) {
     OrderFactory.editOrder(updatedItems).then(
       function success(success) {
         console.log('Success editing order:', success);
+        $state.reload();
       },
       function error(error) {
         console.warn('Error editing order:', error);
@@ -53,15 +54,6 @@ function OrderController(OrderFactory, $state, $window) {
         console.warn('Error submitting order', error);
       }
     );
-  };
-  
-  controller.getOrderTotal = function (items) {
-
-    var total = 0;
-    for (var i = 0; i < items.length; i++) {
-      total += (items[i].product.price * items[i].qty);
-    }
-    return total.toFixed(2);
   };
 
   function init() {

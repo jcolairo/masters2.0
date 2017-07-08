@@ -1,14 +1,14 @@
 
-<section ng-controller="OrderController as orderCTRL">
+<span ng-controller="OrderController as orderCTRL" ng-if="basket.items.length">
 
   <!-- List out items in order -->
-  <li ng-repeat="item in order.items" class="userLi">
+  <li ng-repeat="item in basket.items" class="userLi">
 
     <form ng-submit="orderCTRL.removeProduct(item.product._id)" class="removeForm">
       <input type="submit" value="X" class="removeInput">
     </form>
 
-    <form ng-submit="orderCTRL.editOrder(order.items)">
+    <form ng-submit="orderCTRL.editOrder(basket.items)">
 
       <p class="titleOrder">{{item.product.title}}</p>
       qty:
@@ -19,13 +19,12 @@
     <p class="priceOrder">{{item.product.price * item.qty | price}}</p>
   </li>
 
-  <b ng-if="thisOrder.has_been_submitted">Status: {{ order.has_been_processed ? "Awaiting Collection" : "Being Prepaired!"}}</b>
-  <b class="order-total userLi">£ {{ orderCTRL.getOrderTotal(order.items) }} </b>
+  <b ng-if="thisOrder.has_been_submitted">Status: {{ basket.has_been_processed ? "Awaiting Collection" : "Being Prepaired!"}}</b>
+  <b class="order-total userLi">£ {{ basket.total }} </b>
 
-  <section ng-if="thisOrder.is_live">
+  <section ng-if="basket.items.length">
     <button
-      ng-click="showNotes = true"
-      ng-if="!showNotes">
+      ng-click="showNotes = true">
       Submit Order
     </button>
 
@@ -36,7 +35,7 @@
         name="notes"
         cols="60"
         rows="7"
-        ng-model="order.notes">
+        ng-model="basket.notes">
       </textarea>
 
       <button ng-click="orderCTRL.submitOrder()">Confirm</button>
@@ -44,4 +43,6 @@
 
   </section>
 
-</section>
+</span>
+
+<b ng-if="!basket.items.length" class="order-total userLi"> Your basket is empty </b>

@@ -14,32 +14,22 @@ function addProductsToBasket (req, res) {
   User.findOrCreate(query, function (err, user) { // breakpoint
     if (err || !user) return Err.recordNotFound(res, err.message);
 
-    var liveOrders = user.orders.filter(function(order) {
-      return order.is_live === true;
-    });
+    var product = products[0];
+    var currentBasketProducts = user.basket.items.map(function (prod) {
+      return prod.product;
+    }).join('|') || ''
 
-    if (!liveOrders.length) {
-      user.orders.push({
-        items: products
-      });
-    } else {
-
-      var product = products[0];
-      var currentBasketProducts = liveOrders[0].items.map(function (prod) {
-        return prod.product;
-      }).join('|');
-
-      var productToTest = new RegExp(product.product, 'ig');
-      if (productToTest.test(currentBasketProducts)) {
-        for (var j = 0; j < liveOrders[0].items.length; j++) {
-          if (liveOrders[0].items[j].product == product.product) {
-            liveOrders[0].items[j].qty += product.qty;
-          }
+    var productToTest = new RegExp(product.product, 'ig');
+    if (productToTest.test(currentBasketProducts)) {
+      for (var j = 0; j < liveOrders[0].items.length; j++) {
+        if (user.basket.items[j].product == product.product) {
+          user.basket.items[j].qty += product.qty;
         }
-      } else {
-        liveOrders[0].items.push(product);
       }
+    } else {
+      user.basket.items.push(product);
     }
+
 
     user.save(function(error){
       if (error) {
@@ -65,13 +55,7 @@ function editOrder (req, res) {
   User.findOne(query, function(err, user) {
     if (err || !user) return Err.recordNotFound(res, err.message);
 
-    var liveOrders = user.orders.filter(function(order) {
-      return order.is_live === true;
-    });
-
-    if (liveOrders.length){
-      liveOrders[0].items = updatedItems;
-    }
+    user.basket.items = updatedItems;
 
     user.save(function(error) {
       if(error) {
@@ -94,19 +78,12 @@ function removeProductFromBasket (req, res) {
 
   User.findOne(query, function (err, user) {
     if (err || !user) return Err.recordNotFound(res, err.message);
-    var liveOrders = user.orders.filter(function(order) {
-      return order.is_live === true;
-    });
 
-    if (!liveOrders.length) {
-      return Err.recordNotFound(res, ['User not found']);
-    } else {
-      for (var i  = 0; i < liveOrders[0].items.length; i++) {
-        var current = liveOrders[0].items[i];
-        if (productId == current.product) {
-          liveOrders[0].items.splice(i, 1);
-          break;
-        }
+    for (var i  = 0; i < user.basket.items.length; i++) {
+      var current = user.basket.items[i];
+      if (productId == current.product) {
+        user.basket.items.splice(i, 1);
+        break;
       }
     }
 
@@ -127,25 +104,17 @@ function submitOrder (req, res) {
   User.findOne(query, function (err, user) {
     if (err || !user) return Err.recordNotFound(res, err);
 
-    var liveOrders = user.orders.filter(function(order) {
-      return order.is_live === true;
-    });
+      user.basket.has_been_submitted = true;
+      user.basket.customer_notes = req.body.notes
 
-    if (!liveOrders.length) {
-      return Err.recordNotFound(res, ['User not found']);
-    } else {
-      console.log(req.body)
-      liveOrders[0].has_been_submitted = true;
-      liveOrders[0].customer_notes = req.body.notes
-    }
+      user.submitOrder(function (err) {
 
-    user.save(function(error){
-      if (error) {
-        return Err.miscError(res, error.message);
-      } else {
-        res.json(user);
-      }
-    });
+        if (err) {
+          return Err.miscError(res, error.message);
+        } else {
+          res.json(user);
+        }
+      })
   });
 }
 

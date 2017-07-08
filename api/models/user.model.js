@@ -17,7 +17,8 @@ var UserSchema  = new mongoose.Schema({
   company_name:   { type: String },
   contact_name:   { type: String },
   contact_number: { type: String },
-  orders:         [ OrderSchema ]
+  orders:         [ OrderSchema ],
+  basket:         { type: OrderSchema, default: OrderSchema }
 
 },{
 
@@ -28,14 +29,13 @@ var UserSchema  = new mongoose.Schema({
 
 UserSchema.plugin(findOrCreate);
 
-// var autoPopulateProducts = function(next) {
-//   this.populate('orders.items.product');
-//   next();
-// };
-
-// UserSchema.
-//   pre('findOne', autoPopulateProducts).
-//   pre('find', autoPopulateProducts);
+UserSchema.methods.submitOrder = function (cb) {
+  var order = this.basket;
+  this.orders.push(order);
+  this.basket = null;
+  this.basket = OrderSchema;
+  return this.save(cb);
+}
 
 
 module.exports = mongoose.model('user', UserSchema);

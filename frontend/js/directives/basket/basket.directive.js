@@ -1,19 +1,17 @@
 
 angular
   .module('MastersApp')
-  .directive('order', orderDirective);
+  .directive('basket', orderDirective);
 
 function orderDirective () {
   return {
     restrict: 'E',
     scope: {
-      order: '='
+      basket: '='
     },
-    templateUrl: 'js/directives/order/order.directive.html',
+    templateUrl: 'js/directives/basket/basket.directive.html',
     link: function (scope, element, attrs) {
       console.log(scope)
-      console.log('order dir rendered');
-
 
     }
   };
