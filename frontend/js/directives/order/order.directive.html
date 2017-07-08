@@ -1,0 +1,47 @@
+
+<section ng-controller="OrderController as orderCTRL">
+
+  <!-- List out items in order -->
+  <li ng-repeat="item in order.items" class="userLi">
+
+    <form ng-submit="orderCTRL.removeProduct(item.product._id)" class="removeForm">
+      <input type="submit" value="X" class="removeInput">
+    </form>
+
+    <form ng-submit="orderCTRL.editOrder(order.items)">
+
+      <p class="titleOrder">{{item.product.title}}</p>
+      qty:
+      <input type="number" ng-model="item.qty" min="1">
+      <input type="submit" value="edit order">
+    </form>
+
+    <p class="priceOrder">{{item.product.price * item.qty | price}}</p>
+  </li>
+
+  <b ng-if="thisOrder.has_been_submitted">Status: {{ order.has_been_processed ? "Awaiting Collection" : "Being Prepaired!"}}</b>
+  <b class="order-total userLi">£ {{ orderCTRL.getOrderTotal(order.items) }} </b>
+
+  <section ng-if="thisOrder.is_live">
+    <button
+      ng-click="showNotes = true"
+      ng-if="!showNotes">
+      Submit Order
+    </button>
+
+    <div id="order-submit" ng-if="showNotes">
+
+      <textarea
+        placeholder="Alergic to nuts..."
+        name="notes"
+        cols="60"
+        rows="7"
+        ng-model="order.notes">
+      </textarea>
+
+      <button ng-click="orderCTRL.submitOrder()">Confirm</button>
+    </div>
+
+  </section>
+
+</section>

@@ -1,8 +1,11 @@
 <section ng-controller="UserController as user">
   <div ng-init="user.getSingleUser()" class="userDiv">
-    <div class="titleDiv" ng-controller="OrderController as order">
-      <ul ng-repeat="orders in user.user.orders" >
-        <li ng-repeat="items in orders.items" class="userLi">
+    <div class="titleDiv">
+      <ul ng-repeat="thisOrder in user.user.orders" >
+
+        <Order order="thisOrder"></Order>
+      <!-- Order Display -->
+        <!-- <li ng-repeat="items in thisOrder.items" class="userLi">
           <form ng-submit="order.removeProduct(items.product._id)" class="removeForm">
             <input type="submit" value="X" class="removeInput">
           </form>
@@ -13,10 +16,11 @@
           </form>
           <p class="priceOrder">{{items.product.price * items.qty | price}}</p>
         </li>
-        <b ng-if="orders.has_been_submitted">Status: {{ orders.has_been_processed ? "Awaiting Collection" : "Being Prepaired!"}}</b>
+
+        <b ng-if="thisOrder.has_been_submitted">Status: {{ orders.has_been_processed ? "Awaiting Collection" : "Being Prepaired!"}}</b>
         <b class="order-total userLi">£ {{ user.getOrderTotal(orders.items) }} </b>
-        <!-- only show submit order if this is a live order -->
-        <section ng-if="orders.is_live">
+
+        <section ng-if="thisOrder.is_live">
           <button
             ng-click="order.showNotes = true"
             ng-if="!order.showNotes">
@@ -36,8 +40,7 @@
             <button ng-click="order.submitOrder()">Confirm</button>
           </div>
 
-          <h3 ng-if="order.submitted">Your order has been submitted!</h3>
-        </section>
+        </section> -->
 
       </ul>
 

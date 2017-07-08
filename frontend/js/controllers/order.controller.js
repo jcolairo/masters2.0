@@ -45,14 +45,23 @@ function OrderController(OrderFactory, $state, $window) {
   controller.submitOrder = function () {
     OrderFactory.submitOrder({ notes: controller.notes }).then(
       function success(success) {
-        controller.submitted = true
         controller.notes = ''
         console.log('Submited order', success);
+        $state.reload();
       },
       function error(error) {
         console.warn('Error submitting order', error);
       }
     );
+  };
+  
+  controller.getOrderTotal = function (items) {
+
+    var total = 0;
+    for (var i = 0; i < items.length; i++) {
+      total += (items[i].product.price * items[i].qty);
+    }
+    return total.toFixed(2);
   };
 
   function init() {
