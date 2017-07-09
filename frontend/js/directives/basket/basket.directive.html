@@ -1,5 +1,4 @@
-
-<span ng-controller="OrderController as orderCTRL" ng-if="basket.items.length">
+<section ng-controller="OrderController as orderCTRL" ng-if="basket.items.length">
 
   <!-- List out items in order -->
   <li ng-repeat="item in basket.items" class="userLi">
@@ -23,8 +22,7 @@
   <b class="order-total userLi">£ {{ basket.total }} </b>
 
   <section ng-if="basket.items.length">
-    <button
-      ng-click="showNotes = true">
+    <button ng-click="placeOrder()">
       Submit Order
     </button>
 
@@ -38,11 +36,35 @@
         ng-model="basket.notes">
       </textarea>
 
+      Delivery Address:
+      <div class="address-select">
+        <div class="address" ng-repeat="address in addresses track by $index">
+          <b>{{ $index + 1 }}. - </b>
+          <span>{{address.line_one}}, </span>
+          <span>{{address.line_two}}, </span>
+          <span>{{address.line_three}}, </span>
+          <span>{{address.post_code}}</span>
+        </div>
+      </div>
+
+      <button ng-click="toggleNewAddressForm()">{{ showNewAddress ? '- Hide Form' : '+ Add Address' }}</button>
+
+      <div class="new-address" ng-if="showNewAddress">
+        <h2>Add Address</h2>
+        <form ng-submit="addAddress($event)">
+          <input type="text" name="line_one" ng-model="newAddress.line_one" placeholder="Address line 1">
+          <input type="text" name="line_two" ng-model="newAddress.line_two" placeholder="Address line 2">
+          <input type="text" name="line_three" ng-model="newAddress.line_three" placeholder="Address line 2">
+          <input type="text" name="post_code" ng-model="newAddress.post_code" placeholder="post code">
+          <input ng-disabled="enableAddressSubmit()" type="submit" value="submit">
+        </form>
+      </div>
+
       <button ng-click="orderCTRL.submitOrder()">Confirm</button>
     </div>
 
   </section>
 
-</span>
+</section>
 
-<b ng-if="!basket.items.length" class="order-total userLi"> Your basket is empty </b>
+<b ng-if="!basket.items.length" class="basket-message"> Your basket is empty </b>

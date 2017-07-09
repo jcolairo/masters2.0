@@ -12,6 +12,13 @@ function UserFactory($http) {
         url: `/users/${uid}`,
         data: uid
       });
+    },
+    addAddress: function (newAddress) {
+      return $http({
+        method: 'POST',
+        url: `/users/add-address`,
+        data: { newAddress: newAddress }
+      });
     }
   };
 }

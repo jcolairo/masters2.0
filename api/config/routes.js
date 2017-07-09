@@ -1,10 +1,10 @@
 var express = require('express');
 var router  = express.Router();
 
-var staticController = require('../controllers/static.controller');
-var userController   = require('../controllers/user.controller');
+var staticController    = require('../controllers/static.controller');
+var userController      = require('../controllers/user.controller');
 var productController   = require('../controllers/product.controller');
-var orderController   = require('../controllers/order.controller');
+var orderController     = require('../controllers/order.controller');
 
 
 // Static Routes
@@ -15,6 +15,9 @@ router.route('/')
 //User Routes
 router.route('/users')
   .get(userController.getAllUsers);
+
+router.route('/users/add-address')
+  .post(userController.addNewAddres);
 
 router.route('/users/:uid')
   .get(userController.getUser);

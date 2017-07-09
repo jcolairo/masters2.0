@@ -31,8 +31,32 @@ function getAllUsers (req, res) {
   });
 }
 
+function addNewAddress (req, res) {
+
+  var newAddress = req && req.body && req.body.newAddress
+  if (!newAddress) return Err.missingParams(res, ['newAddress']);
+
+  if (!req.user && !req.user.user_id ) {
+    return Err.unauthorizedReq(res);
+  }
+
+  var query = { uid: req.user.uid, email: req.user.email}
+
+  User.findOne(query, function (err, user) {
+    if (err || !user) return Err.recordNotFound(res, err.message);
+
+    user.address.push(newAddress);
+    
+    user.save(function (err) {
+      if (err) return Err.recordNotFound(res, err.message);
+      res.json(user);
+    })
+  })
+}
+
 
 module.exports = {
   getUser: getSingleUser,
-  getAllUsers: getAllUsers
+  getAllUsers: getAllUsers,
+  addNewAddres: addNewAddress
 };

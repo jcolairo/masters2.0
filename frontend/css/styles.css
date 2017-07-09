@@ -230,44 +230,59 @@ body {
     margin: 1rem; }
 
 .userDiv {
-  display: -ms-flexbox;
-  display: flex;
   margin-top: 2vh; }
   .userDiv .titleDiv {
-    width: 100vw; }
+    width: 100vw;
+    display: -ms-flexbox;
+    display: flex; }
   .userDiv .userLi {
     background-color: #f4efe1;
     text-align: center;
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
     letter-spacing: 1;
     line-height: 2rem;
     text-transform: uppercase;
     font-weight: 500;
-    color: rgba(41, 41, 41, 0.8);
-    padding: 1rem;
-    border-bottom: 1px solid rgba(41, 41, 41, 0.8); }
+    color: rgba(41, 41, 41, 0.8); }
     .userDiv .userLi .titleOrder {
       display: inline-block; }
     .userDiv .userLi .priceOrder {
       float: right;
       display: inline-block; }
 
-.userDiv .order-total {
+.userDiv {
   display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 3rem;
-  letter-spacing: 1;
-  line-height: 2rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: rgba(41, 41, 41, 0.8);
-  height: 8vh;
-  border-top: 1px solid rgba(41, 41, 41, 0.8);
-  border-bottom: 2px solid rgba(41, 41, 41, 0.8); }
+  display: flex; }
+  .userDiv .order-total {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1;
+    line-height: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(41, 41, 41, 0.8);
+    border-top: 1px solid rgba(41, 41, 41, 0.8);
+    border-bottom: 2px solid rgba(41, 41, 41, 0.8); }
+
+.basket {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex; }
+  .basket .basket-message {
+    font-size: 18px;
+    border-bottom: 1px solid rgba(41, 41, 41, 0.8);
+    margin: 0 auto; }
+  .basket .address {
+    text-align: left;
+    padding: 10px; }
+
+.hide {
+  display: none; }
 
 .footer {
   display: -ms-flexbox;
