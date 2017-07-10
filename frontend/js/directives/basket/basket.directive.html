@@ -33,19 +33,19 @@
         name="notes"
         cols="60"
         rows="7"
-        ng-model="basket.notes">
+        ng-model="orderCTRL.notes">
       </textarea>
 
       Delivery Address:
-      <div class="address-select">
-        <div class="address" ng-repeat="address in addresses track by $index">
-          <b>{{ $index + 1 }}. - </b>
-          <span>{{address.line_one}}, </span>
-          <span>{{address.line_two}}, </span>
-          <span>{{address.line_three}}, </span>
-          <span>{{address.post_code}}</span>
-        </div>
-      </div>
+
+      <select
+        ng-if="addresses.length"
+        ng-init="orderCTRL.deliveryAddress = addresses[0]"
+        ng-model="orderCTRL.deliveryAddress"
+        ng-options="address.line_one + ', ' + address.line_two + ', ' + address.line_three + ', ' + address.post_code for address in addresses track by $index">
+      </select>
+
+      <p ng-if="!addresses.length"> You currently have no addresses saved</p>
 
       <button ng-click="toggleNewAddressForm()">{{ showNewAddress ? '- Hide Form' : '+ Add Address' }}</button>
 
@@ -60,7 +60,7 @@
         </form>
       </div>
 
-      <button ng-click="orderCTRL.submitOrder()">Confirm</button>
+      <button ng-disabled="delivery_address" ng-click="orderCTRL.submitOrder()">Confirm</button>
     </div>
 
   </section>
