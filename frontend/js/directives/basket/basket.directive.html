@@ -47,16 +47,6 @@
 
       <p ng-if="!addresses.length"> You currently have no addresses saved</p>
 
-      <!-- <div class="address-select">
-        <div class="address" ng-repeat="address in addresses track by $index">
-          <b>{{ $index + 1 }}. - </b>
-          <span>{{address.line_one}}, </span>
-          <span>{{address.line_two}}, </span>
-          <span>{{address.line_three}}, </span>
-          <span>{{address.post_code}}</span>
-        </div>
-      </div> -->
-
       <button ng-click="toggleNewAddressForm()">{{ showNewAddress ? '- Hide Form' : '+ Add Address' }}</button>
 
       <div class="new-address" ng-if="showNewAddress">
