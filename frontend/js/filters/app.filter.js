@@ -5,9 +5,3 @@ app.filter('price', function () {
     return '£ ' + input.toFixed(2);
   };
 });
-
-app.filter('currentOrder', function () {
-  return function (input) {
-    return input.filter((order) => order.is_live)[0];
-  };
-});
