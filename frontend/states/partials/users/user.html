@@ -6,47 +6,9 @@
     <div class="titleDiv">
 
       <ul ng-repeat="thisOrder in user.user.orders" >
-
-      <!-- Order Display -->
-        <!-- <li ng-repeat="items in thisOrder.items" class="userLi">
-          <form ng-submit="order.removeProduct(items.product._id)" class="removeForm">
-            <input type="submit" value="X" class="removeInput">
-          </form>
-          <p class="titleOrder">{{items.product.title}}</p>
-          qty:<input type="number" ng-model="items.qty" min="1">
-          <form ng-submit="order.editOrder(orders.items)">
-            <input type="submit" value="edit order">
-          </form>
-          <p class="priceOrder">{{items.product.price * items.qty | price}}</p>
-        </li>
-
-        <b ng-if="thisOrder.has_been_submitted">Status: {{ orders.has_been_processed ? "Awaiting Collection" : "Being Prepaired!"}}</b>
-        <b class="order-total userLi">£ {{ user.getOrderTotal(orders.items) }} </b>
-
-        <section ng-if="thisOrder.is_live">
-          <button
-            ng-click="order.showNotes = true"
-            ng-if="!order.showNotes">
-            Submit Order
-          </button>
-
-          <div id="order-submit" ng-if="order.showNotes">
-
-            <textarea
-              placeholder="Alergic to nuts..."
-              name="notes"
-              cols="60"
-              rows="7"
-              ng-model="order.notes">
-            </textarea>
-
-            <button ng-click="order.submitOrder()">Confirm</button>
-          </div>
-
-        </section> -->
+        <Order order="thisOrder"></Order>
 
       </ul>
-
 
     </div>
 

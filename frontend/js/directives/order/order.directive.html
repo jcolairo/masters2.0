@@ -1,0 +1,23 @@
+<li class="singleOrder">
+
+  <ul>
+    <li ng-repeat="item in order.items" class="userLi">
+
+      <p class="titleOrder">{{item.product.title}}</p>
+      qty: {
+      <input type="number" ng-model="item.qty" min="1" diabled>
+
+      <p class="priceOrder">{{item.product.price * item.qty | price}}</p>
+    </li>
+  </ul>
+  Delivery Address:
+  <span>{{address.line_one}}, </span>
+  <span>{{address.line_two}}, </span>
+  <span>{{address.line_three}}, </span>
+  <span>{{address.post_code}}</span>
+
+  <b ng-if="thisOrder.has_been_submitted">Status: {{ order.has_been_processed ? "Out For Delivery" : "Being Prepaired!"}}</b>
+  <b class="order-total userLi">£ {{ order.total }} </b>
+
+
+</li>
