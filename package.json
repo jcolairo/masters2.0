@@ -17,7 +17,7 @@
     "firebase": "^4.0.0",
     "firebase-admin": "^5.0.0",
     "helmet": "^3.6.1",
-    "mongoose": "^4.10.2",
+    "mongoose": "^4.10.8",
     "mongoose-findorcreate": "^2.0.0",
     "morgan": "^1.8.2",
     "ngsticky": "^1.7.12",
