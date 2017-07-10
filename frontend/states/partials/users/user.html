@@ -1,13 +1,15 @@
 <section ng-controller="UserController as user">
   <div ng-init="user.getSingleUser()" class="userDiv">
-
-    <Basket basket="user.user.basket" addresses="user.user.address" class="basket"></Basket>
-
-    <div class="titleDiv">
+    <div>
+      <h2>Your Basket</h2>
+      <Basket basket="user.user.basket" addresses="user.user.address" class="basket"></Basket>
+    </div>
+    <br>
+    <div>
+      <h2>Your Orders</h2>
 
       <ul ng-repeat="thisOrder in user.user.orders" >
         <Order order="thisOrder"></Order>
-
       </ul>
 
     </div>
