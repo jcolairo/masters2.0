@@ -13,8 +13,9 @@
   Delivery Address:
   <span>{{ order.delivery_address }}</span>
 
-  <b ng-if="thisOrder.has_been_submitted">Status: {{ order.has_been_processed ? "Out For Delivery" : "Being Prepaired!"}}</b>
-  <b class="order-total userLi">£ {{ order.total }} </b>
+  <p ng-if="order.has_been_submitted">Status: {{ order.has_been_processed ? "Complete" : "Being Prepaired!"}}</p>
+
+  <p class="order-total userLi">£ {{ order.total }} </p>
 
 
 </li>
