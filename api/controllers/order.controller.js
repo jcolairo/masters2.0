@@ -102,7 +102,10 @@ function submitOrder (req, res) {
 
   var query = {'uid': req.user.uid, 'email': req.user.email };
 
-  User.findOne(query, function (err, user) {
+  User
+    .findOne(query)
+    .populate('orders.items.product basket.items.product')
+    .exec(function (err, user) {
     if (err || !user) return Err.recordNotFound(res, err);
       var a = req && req.body && req.body.deliveryAddress
       var notes = req && req.body && req.body.notes
@@ -115,7 +118,7 @@ function submitOrder (req, res) {
       }
 
       user.basket.has_been_submitted = true;
-      var orderInfo = user;
+      var orderInfo = user.toObject();
 
       user.submitOrder(function (err) {
         if (err) {
