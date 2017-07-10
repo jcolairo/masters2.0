@@ -115,15 +115,14 @@ function submitOrder (req, res) {
       }
 
       user.basket.has_been_submitted = true;
-
+      var orderInfo = user;
 
       user.submitOrder(function (err) {
-
         if (err) {
           return Err.miscError(res, error.message);
         } else {
           // moved email to here, just so we dont send an email if order has failed.
-          emailManager.sendOrderConfirmation(user)
+          emailManager.sendOrderConfirmation(orderInfo);
           res.json(user);
         }
       })
