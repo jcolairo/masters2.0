@@ -119,7 +119,7 @@ function submitOrder (req, res) {
 
       user.basket.has_been_submitted = true;
       var orderInfo = user.toObject();
-      console.log('*************** user.toObject()', orderInfo);
+      // console.log('*************** user.toObject()', orderInfo);
 
       user.submitOrder(function (err) {
         if (err) {

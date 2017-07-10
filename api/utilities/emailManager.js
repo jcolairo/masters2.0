@@ -1,14 +1,38 @@
 function sendOrderConfirmation (user) {
   console.log('sending email to: ', user.email);
 
-  var basket = user.basket.items[0];
-  var title = basket.product.title;
-  var price = basket.product.price;
-  var description = basket.product.description;
-  var qty = basket.qty;
-  var comments = basket.customer_notes;
+  var products = user.basket.items;
+  // console.log('mmmmmm********************************mmmm', products);
+  // console.log('mmmmmm********************************PRODUCT', products[0].product);
+  // console.log('mmmmmm********************************QTY', products[0].qty);
 
-  var products = 'Tittie: '+ title +  '<br>' + 'Price' + price + '<br>' + 'Description:' + description + '<br>' + 'Quantity:' + qty + '<br>' + 'Comments:' + comments;
+  var productsHTML = '';
+
+  products.forEach(function(prod) {
+    productsHTML += generateSingleProductHTML(prod);
+  });
+
+  function generateSingleProductHTML(prod) {
+    return [
+      '<p>',
+      '<b>' + prod + '</b>',
+      '</p>'
+    ].join('');
+  }
+  // console.log('******************generateSingleProductHTML()', generateSingleProductHTML(products));
+
+  // for (var i = 0; i < user.basket.items.length; i++) {
+  //   console.log('***************************************************************************', user.basket.items[i]);
+  // }
+
+  // var basket = user.basket.items[0];
+  // var title = basket.product.title;
+  // var price = basket.product.price;
+  // var description = basket.product.description;
+  // var qty = basket.qty;
+  // var comments = basket.customer_notes;
+  //
+  // var products = 'Tittie: '+ title +  '<br>' + 'Price' + price + '<br>' + 'Description:' + description + '<br>' + 'Quantity:' + qty + '<br>' + 'Comments:' + comments;
 
   // all sendgrid code here
 
@@ -36,7 +60,7 @@ function sendOrderConfirmation (user) {
     console.log(response.statusCode);
     console.log(response.body);
     console.log(response.headers);
-    console.log('******************************', user.basket.items);
+    // console.log('******************************', user.basket.items);
   });
 
 
