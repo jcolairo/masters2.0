@@ -1,5 +1,6 @@
-var User    = require('../models/user.model');
-var Err     = require('../utilities/badRequestHandler');
+var User         = require('../models/user.model');
+var Err          = require('../utilities/badRequestHandler');
+var emailManager = require('../utilities/emailManager');
 
 
 function addProductsToBasket (req, res) {
@@ -14,32 +15,22 @@ function addProductsToBasket (req, res) {
   User.findOrCreate(query, function (err, user) { // breakpoint
     if (err || !user) return Err.recordNotFound(res, err.message);
 
-    var liveOrders = user.orders.filter(function(order) {
-      return order.is_live === true;
-    });
+    var product = products[0];
+    var currentBasketProducts = user.basket.items.map(function (prod) {
+      return prod.product;
+    }).join('|') || ''
 
-    if (!liveOrders.length) {
-      user.orders.push({
-        items: products
-      });
-    } else {
-
-      var product = products[0];
-      var currentBasketProducts = liveOrders[0].items.map(function (prod) {
-        return prod.product;
-      }).join('|');
-
-      var productToTest = new RegExp(product.product, 'ig');
-      if (productToTest.test(currentBasketProducts)) {
-        for (var j = 0; j < liveOrders[0].items.length; j++) {
-          if (liveOrders[0].items[j].product == product.product) {
-            liveOrders[0].items[j].qty += product.qty;
-          }
+    var productToTest = new RegExp(product.product, 'ig');
+    if (productToTest.test(currentBasketProducts)) {
+      for (var j = 0; j < liveOrders[0].items.length; j++) {
+        if (user.basket.items[j].product == product.product) {
+          user.basket.items[j].qty += product.qty;
         }
-      } else {
-        liveOrders[0].items.push(product);
       }
+    } else {
+      user.basket.items.push(product);
     }
+
 
     user.save(function(error){
       if (error) {
@@ -65,13 +56,7 @@ function editOrder (req, res) {
   User.findOne(query, function(err, user) {
     if (err || !user) return Err.recordNotFound(res, err.message);
 
-    var liveOrders = user.orders.filter(function(order) {
-      return order.is_live === true;
-    });
-
-    if (liveOrders.length){
-      liveOrders[0].items = updatedItems;
-    }
+    user.basket.items = updatedItems;
 
     user.save(function(error) {
       if(error) {
@@ -94,19 +79,12 @@ function removeProductFromBasket (req, res) {
 
   User.findOne(query, function (err, user) {
     if (err || !user) return Err.recordNotFound(res, err.message);
-    var liveOrders = user.orders.filter(function(order) {
-      return order.is_live === true;
-    });
 
-    if (!liveOrders.length) {
-      return Err.recordNotFound(res, ['User not found']);
-    } else {
-      for (var i  = 0; i < liveOrders[0].items.length; i++) {
-        var current = liveOrders[0].items[i];
-        if (productId == current.product) {
-          liveOrders[0].items.splice(i, 1);
-          break;
-        }
+    for (var i  = 0; i < user.basket.items.length; i++) {
+      var current = user.basket.items[i];
+      if (productId == current.product) {
+        user.basket.items.splice(i, 1);
+        break;
       }
     }
 
@@ -117,6 +95,29 @@ function removeProductFromBasket (req, res) {
         res.json(user);
       }
     });
+  });
+}
+
+function submitOrder (req, res) {
+
+  var query = {'uid': req.user.uid, 'email': req.user.email };
+
+  User.findOne(query, function (err, user) {
+    if (err || !user) return Err.recordNotFound(res, err);
+
+      user.basket.has_been_submitted = true;
+      user.basket.customer_notes = req.body.notes
+
+      emailManager.sendOrderConfirmation(user)
+
+      user.submitOrder(function (err) {
+
+        if (err) {
+          return Err.miscError(res, error.message);
+        } else {
+          res.json(user);
+        }
+      })
   });
 }
 
@@ -132,8 +133,58 @@ function validateProducts (products) {
   return true;
 }
 
+
+// function sendgridMail (req, res) {
+//   var mailmail = req.query.mailmail || '';
+//   if (!mailmail.length) {
+//     return res.status(500).json({ message: 'please provide a search term' });
+//   }
+//
+//   // using SendGrid's v3 Node.js Library
+//   // https://github.com/sendgrid/sendgrid-nodejs
+//   var helper = require('sendgrid').mail;
+//   var fromEmail = new helper.Email('jamescolairo37@gmail.com');
+//   var toEmail = new helper.Email('jcolairo@spartaglobal.co');
+//   var subject = 'Sending with SendGrid is Fun';
+//   var content = new helper.Content('text/plain', 'and easy to do anywhere, even with Node.js');
+//   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
+//   mail.setTemplateId('aa1c13f7-cb6a-4f36-b901-47a37505f7be');
+//
+//   var sg = require('sendgrid')(process.env.MASTERS_SENDGRIB);
+//   var request = sg.emptyRequest({
+//     method: 'POST',
+//     path: '/v3/mail/send',
+//     body: mail.toJSON()
+//   });
+//
+//   sg.API(request, function (error, response) {
+//     if (error) {
+//       console.log('Error response received');
+//     }
+//     console.log(response.statusCode);
+//     console.log(response.body);
+//     console.log(response.headers);
+//   });
+//
+//   User.findOne(function (error, response, body, user) {
+//     if (error || !user) return Err.recordNotFound(res, error.message);
+//     var sendgridJson;
+//
+//     if (error) {
+//       console.warn('could not get mail', error);
+//       res.status(500).json({ message: 'could not get mail' });
+//       return;
+//     }
+//     sendgridJson = JSON.parse(body);
+//     res.status(200).json(sendgridJson.results);
+//   }
+// );
+// }
+
 module.exports = {
   addProducts: addProductsToBasket,
   editOrder: editOrder,
-  removeProduct: removeProductFromBasket
+  removeProduct: removeProductFromBasket,
+  submitOrder: submitOrder
+  // sendgridMail: sendgridMail
 };

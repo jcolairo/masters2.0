@@ -23,6 +23,7 @@ function OrderController(OrderFactory, $state, $window) {
     OrderFactory.editOrder(updatedItems).then(
       function success(success) {
         console.log('Success editing order:', success);
+        $state.reload();
       },
       function error(error) {
         console.warn('Error editing order:', error);
@@ -38,6 +39,19 @@ function OrderController(OrderFactory, $state, $window) {
       },
       function error(error) {
         console.warn('Error removing product from order', error);
+      }
+    );
+  };
+
+  controller.submitOrder = function () {
+    OrderFactory.submitOrder({ notes: controller.notes }).then(
+      function success(success) {
+        controller.notes = ''
+        console.log('Submited order', success);
+        $state.reload();
+      },
+      function error(error) {
+        console.warn('Error submitting order', error);
       }
     );
   };

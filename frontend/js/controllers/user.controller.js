@@ -26,15 +26,6 @@ function UserController(UserFactory, $stateParams) {
     );
   };
 
-  controller.getOrderTotal = function (items) {
-    
-    var total = 0;
-    for (var i = 0; i < items.length; i++) {
-      total += (items[i].product.price * items[i].qty);
-    }
-    return total.toFixed(2);
-  };
-
 }
 
 UserController.$inject = ['UserFactory', '$stateParams'];

@@ -20,6 +20,13 @@ function OrderFactory($http) {
         url: `/orders/delete`,
         data: productId
       });
+    },
+    submitOrder: function(notes) {
+      return $http({
+        method: 'POST',
+        url: '/orders/submit',
+        data: notes
+      });
     }
   };
 }
