@@ -1,5 +1,6 @@
-var User    = require('../models/user.model');
-var Err     = require('../utilities/badRequestHandler');
+var User         = require('../models/user.model');
+var Err          = require('../utilities/badRequestHandler');
+var emailManager = require('../utilities/emailManager');
 
 
 function addProductsToBasket (req, res) {
@@ -106,6 +107,8 @@ function submitOrder (req, res) {
 
       user.basket.has_been_submitted = true;
       user.basket.customer_notes = req.body.notes
+
+      emailManager.sendOrderConfirmation(user)
 
       user.submitOrder(function (err) {
 
