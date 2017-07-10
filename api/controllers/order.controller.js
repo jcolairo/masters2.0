@@ -104,17 +104,26 @@ function submitOrder (req, res) {
 
   User.findOne(query, function (err, user) {
     if (err || !user) return Err.recordNotFound(res, err);
+      var a = req && req.body && req.body.deliveryAddress
+      var notes = req && req.body && req.body.notes
+
+      if (a) {
+        user.basket.delivery_address = `${a.line_one || ''}, ${a.line_two || ''}, ${a.line_three || ''}, ${a.post_code || ''}`
+      }
+      if (notes) {
+        user.basket.customer_notes = notes
+      }
 
       user.basket.has_been_submitted = true;
-      user.basket.customer_notes = req.body.notes
 
-      emailManager.sendOrderConfirmation(user)
 
       user.submitOrder(function (err) {
 
         if (err) {
           return Err.miscError(res, error.message);
         } else {
+          // moved email to here, just so we dont send an email if order has failed.
+          emailManager.sendOrderConfirmation(user)
           res.json(user);
         }
       })

@@ -7,6 +7,7 @@ var OrderSchema = new mongoose.Schema({
   }],
   has_been_processed: { type: Boolean, default: false },
   has_been_submitted: { type: Boolean, default: false },
+  delivery_address:   { type: String },
   customer_notes:     { type: String }
 },{
 
