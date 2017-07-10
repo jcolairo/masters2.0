@@ -1,11 +1,11 @@
-<li class="singleOrder">
+<li class="single-order">
 
   <ul>
     <li ng-repeat="item in order.items" class="userLi">
 
       <p class="titleOrder">{{item.product.title}}</p>
-      qty: {
-      <input type="number" ng-model="item.qty" min="1" diabled>
+      <b>qty: {{item.qty }} </b>
+
 
       <p class="priceOrder">{{item.product.price * item.qty | price}}</p>
     </li>

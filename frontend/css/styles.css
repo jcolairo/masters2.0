@@ -281,6 +281,11 @@ body {
     text-align: left;
     padding: 10px; }
 
+.single-order {
+  margin-top: 30px;
+  border: solid 2px black;
+  padding: 5px; }
+
 .hide {
   display: none; }
 
