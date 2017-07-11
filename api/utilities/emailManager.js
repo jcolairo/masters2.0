@@ -41,13 +41,10 @@ function sendOrderConfirmation (user) {
     body: mail.toJSON()
   });
 
-  sg.API(request, function (error, response) {
+  sg.API(request, function (error) {
     if (error) {
       console.log('Error response received');
     }
-    console.log(response.statusCode);
-    console.log(response.body);
-    console.log(response.headers);
   });
 
   helper = require('sendgrid').mail;
@@ -64,13 +61,10 @@ function sendOrderConfirmation (user) {
     body: mail.toJSON()
   });
 
-  sg.API(request, function (error, response) {
+  sg.API(request, function (error) {
     if (error) {
       console.log('Error response received');
     }
-    console.log(response.statusCode);
-    console.log(response.body);
-    console.log(response.headers);
   });
 }
 
