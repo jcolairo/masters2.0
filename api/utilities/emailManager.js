@@ -2,7 +2,6 @@ function sendOrderConfirmation (user) {
   console.log('sending email to: ', user.email);
 
   var products = user.basket.items;
-
   var productsHTML = '';
 
   products.forEach(function(prod) {
@@ -28,10 +27,6 @@ function sendOrderConfirmation (user) {
     ].join('');
   }
 
-  // all sendgrid code here
-
-    // using SendGrid's v3 Node.js Library
-    // https://github.com/sendgrid/sendgrid-nodejs
   var helper = require('sendgrid').mail;
   var fromEmail = new helper.Email('jamescolairo37@gmail.com');
   var toEmail = new helper.Email(user.email);
