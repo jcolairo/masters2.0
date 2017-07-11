@@ -1,5 +1,5 @@
 
-function orderDirective (UserFactory) {
+function basketDirective (UserFactory) {
   return {
     restrict: 'E',
     replace: false,
@@ -38,8 +38,8 @@ function orderDirective (UserFactory) {
   };
 }
 
-orderDirective.$inject = ['UserFactory']
+basketDirective.$inject = ['UserFactory']
 
 angular
   .module('MastersApp')
-  .directive('basket', orderDirective);
+  .directive('basket', basketDirective);
