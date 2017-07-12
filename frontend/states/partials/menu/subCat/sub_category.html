@@ -9,7 +9,7 @@
       <li class="pipe" ng-class="{ 'last': $last }">|</li>
     </ul>
     <ul ng-if="product.canapesNavShow" ng-repeat="canapesMenu in product.canapesMenu" class="subNavUl">
-      <li ui-sref="sub_category({category:'lunch', sub_category:'{{canapesMenu}}'})" class="subNavDiv">{{canapesMenu}}</li>
+      <li ui-sref="sub_category({category:'canapes', sub_category:'{{canapesMenu}}'})" class="subNavDiv">{{canapesMenu}}</li>
       <li class="pipe" ng-class="{ 'last': $last }">|</li>
     </ul>
   </nav>

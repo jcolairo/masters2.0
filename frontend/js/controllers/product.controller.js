@@ -76,7 +76,7 @@ function ProductController(ProductFactory, $stateParams) {
   ];
 
   controller.canapesMenu = [
-    'Meat', 'Fish', 'Veg'
+    'meat', 'fish', 'veg'
   ];
 
 }
