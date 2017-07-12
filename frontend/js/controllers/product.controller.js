@@ -11,6 +11,11 @@ function ProductController(ProductFactory, $stateParams) {
     controller.lunchNavShow = !controller.lunchNavShow;
   };
 
+  controller.canapesNavShow = false;
+  controller.toggleLunchNav = function() {
+    controller.canapesNavShow = !controller.canapesNavShow;
+  };
+
   controller.getAllProducts = function() {
     ProductFactory.getAllProducts().then(
       function success(success) {
@@ -63,11 +68,15 @@ function ProductController(ProductFactory, $stateParams) {
   };
 
   controller.breakfastMenu = [
-    'pastries', 'bagel', 'roll', 'sandwich', 'baguette', 'yoghurt', 'fruit', 'breakfastDrinks'
+    'pastries', 'bagel', 'roll', 'sandwich', 'baguette', 'healthy', 'breakfastDrinks', 'setBreakfast'
   ];
 
   controller.lunchMenu = [
-    'platter', 'setLunch', 'finger', 'coldFork', 'coldForkBuffet', 'hotFork', 'lunchDrinks'
+    'platter', 'setLunch', 'finger', 'coldFork', 'coldForkBuffet', 'hotFork', 'lunchDrinks', 'packedLunch', 'specialPlatter'
+  ];
+
+  controller.canapesMenu = [
+    'Meat', 'Fish', 'Veg'
   ];
 
 }
