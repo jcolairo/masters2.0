@@ -8,10 +8,14 @@
       <li ui-sref="sub_category({category:'lunch', sub_category:'{{lunchMenu}}'})" class="subNavDiv">{{lunchMenu}}</li>
       <li class="pipe" ng-class="{ 'last': $last }">|</li>
     </ul>
+    <ul ng-if="product.canapesNavShow" ng-repeat="canapesMenu in product.canapesMenu" class="subNavUl">
+      <li ui-sref="sub_category({category:'lunch', sub_category:'{{canapesMenu}}'})" class="subNavDiv">{{canapesMenu}}</li>
+      <li class="pipe" ng-class="{ 'last': $last }">|</li>
+    </ul>
   </nav>
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">
     <div class="titleDiv productDiv">
-      <ul ng-repeat="prod in product.subCat | orderBy: 'title'" class="productUl">
+      <ul ng-repeat="prod in product.subCat | orderBy: ['price', -'title']" class="productUl">
         <li class="productTitle">
           <a ui-sref="singleProduct({id: prod._id })">{{prod.title}}</a>
         </li>
@@ -19,7 +23,7 @@
           {{desc}}
         </li>
         <li class="productPrice">
-          <p>{{prod.price | price}}</p>
+          <p>{{prod.price | price}} per person</p>
         </li>
       </ul>
     </div>
