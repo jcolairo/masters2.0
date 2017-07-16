@@ -4,6 +4,12 @@ function sendOrderConfirmation (user) {
   var products = user.basket.items;
   var productsHTML = '';
 
+  var helper = require('sendgrid').mail;
+  var fromEmail = new helper.Email('jamescolairo37@gmail.com');
+  var toEmail = new helper.Email(user.email);
+  var subject = 'Order Confirmation';
+
+
   products.forEach(function(prod) {
     productsHTML += generateSingleProductHTML(prod);
   });
@@ -27,14 +33,11 @@ function sendOrderConfirmation (user) {
     ].join('');
   }
 
-  var helper = require('sendgrid').mail;
-  var fromEmail = new helper.Email('jamescolairo37@gmail.com');
-  var toEmail = new helper.Email(user.email);
-  var subject = 'Order Confirmation';
   var content = new helper.Content('text/html', productsHTML);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
 
   var sg = require('sendgrid')(process.env.MASTERS_SENDGRIB);
+
   var request = sg.emptyRequest({
     method: 'POST',
     path: '/v3/mail/send',
@@ -47,11 +50,7 @@ function sendOrderConfirmation (user) {
     }
   });
 
-  helper = require('sendgrid').mail;
-  fromEmail = new helper.Email('jamescolairo37@gmail.com');
   toEmail = new helper.Email('jamescolairo37@gmail.com');
-  subject = 'Order Confirmation';
-  content = new helper.Content('text/html', productsHTML);
   mail = new helper.Mail(fromEmail, subject, toEmail, content);
 
   sg = require('sendgrid')(process.env.MASTERS_SENDGRIB);

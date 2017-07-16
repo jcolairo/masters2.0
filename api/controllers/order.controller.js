@@ -22,7 +22,7 @@ function addProductsToBasket (req, res) {
 
     var productToTest = new RegExp(product.product, 'ig');
     if (productToTest.test(currentBasketProducts)) {
-      for (var j = 0; j < liveOrders[0].items.length; j++) {
+      for (var j = 0; j < user.basket.items.length; j++) {
         if (user.basket.items[j].product == product.product) {
           user.basket.items[j].qty += product.qty;
         }
@@ -119,6 +119,7 @@ function submitOrder (req, res) {
 
       user.basket.has_been_submitted = true;
       var orderInfo = user.toObject();
+      orderInfo.basket.total = user.basket.total;
 
       user.submitOrder(function (err) {
         if (err) {
@@ -127,6 +128,7 @@ function submitOrder (req, res) {
           // moved email to here, just so we dont send an email if order has failed.
           emailManager.sendOrderConfirmation(orderInfo);
           res.json(user);
+          console.log('******** total price:', user.basket);
         }
       })
   });
