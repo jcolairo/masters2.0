@@ -14,6 +14,8 @@ function sendOrderConfirmation (user) {
     productsHTML += generateSingleProductHTML(prod);
   });
 
+  productsHTML += '<b>' + 'Total:' + user.basket.total  + '</b>';
+
   function generateSingleProductHTML(prod) {
 
     return [

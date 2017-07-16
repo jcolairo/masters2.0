@@ -125,10 +125,8 @@ function submitOrder (req, res) {
         if (err) {
           return Err.miscError(res, error.message);
         } else {
-          // moved email to here, just so we dont send an email if order has failed.
           emailManager.sendOrderConfirmation(orderInfo);
           res.json(user);
-          console.log('******** total price:', user.basket);
         }
       })
   });
