@@ -18,7 +18,9 @@ var OrderSchema = new mongoose.Schema({
 OrderSchema.virtual("total").get(function () {
   var total = 0;
   for (var i = 0; i < this.items.length; i++) {
-    total += (this.items[i].product.price * this.items[i].qty);
+    if (this.items[i].product) {
+      total += (this.items[i].product.price * this.items[i].qty);
+    }
   }
   return total.toFixed(2);
 });
