@@ -31,7 +31,11 @@
     border-bottom: 2px solid $black;
   }
 }
-
+.admin-order {
+  width: 40%;
+  margin: 0px 15px;
+  display: inline-block;
+}
 .basket {
   .basket-message {
     font-size: 18px;

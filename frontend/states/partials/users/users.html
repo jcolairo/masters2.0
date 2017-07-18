@@ -1,10 +1,33 @@
-<h1>Users</h1>
+
 <section ng-controller="UserController as user">
   <div ng-init="user.getAllUsers()">
+
+
+  <h1>Unprocessed Orders</h1>
+  <section class="userDiv">
+
+    <div ng-repeat="customer in user.users">
+      <h2><a href="#" ui-sref="user({uid: customer.uid})">{{customer.email}}</a></h2>
+      <ul class="admin-order" ng-repeat="thisOrder in customer.orders | filter: { has_been_processed: false }" >
+
+        <Order order="thisOrder" showItems="true"></Order>
+        <button ng-click="user.processOrder(customer.uid, thisOrder._id)"> Process Order </button>
+      </ul>
+
+
+    </div>
+
+  </section>
+
+  <br>
+
+  <h1>All Users</h1>
+
     <ul ng-repeat="details in user.users">
       <li>
-        uid: <a ui-sref="user({uid: details.uid })">{{details.uid}}</a>
+        uid: <a ui-sref="user({uid: details.uid })">{{details.email}}</a>
       </li>
     </ul>
+
   </div>
 </section>
