@@ -27,8 +27,19 @@ function OrderFactory($http) {
         url: '/orders/submit',
         data: notes
       });
+    },
+    processOrder: function (userUid, orderId) {
+      return $http({
+        method: 'POST',
+        url: '/orders/process-order',
+        data: {
+          userUid: userUid,
+          orderId: orderId
+        }
+      });
     }
   };
+
 }
 
 OrderFactory.$inject = ['$http'];

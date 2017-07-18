@@ -132,6 +132,36 @@ function submitOrder (req, res) {
   });
 }
 
+function processOrder (req, res) {
+  var userUid = req && req.body && req.body.userUid;
+  var orderId = req && req.body && req.body.orderId;
+
+  if (!userUid || !orderId) {
+    return Err.missingParams(res, ['userUid', 'orderId']);
+  }
+  User
+    .findOne({ uid: userUid })
+    .populate('orders.items.product')
+    .exec(function (err, user) {
+
+      var orderToProcess = user.orders.id(orderId);
+      orderToProcess.has_been_processed = true;
+
+      user.save(function(error){
+        if (error) {
+          return Err.missingParams(res, ['PRODUCTS']);
+        } else {
+          res.json(user);
+        }
+      });
+
+    });
+
+
+
+
+}
+
 function validateProducts (products) {
   for (var i = 0; i < products.length; i++) {
 
@@ -144,9 +174,12 @@ function validateProducts (products) {
   return true;
 }
 
+
+
 module.exports = {
   addProducts: addProductsToBasket,
   editOrder: editOrder,
   removeProduct: removeProductFromBasket,
-  submitOrder: submitOrder
+  submitOrder: submitOrder,
+  processOrder: processOrder
 };
