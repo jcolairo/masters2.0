@@ -2,9 +2,9 @@
 <section>
   <div ng-init="product.getOneProduct()">
     {{product.oneProduct.title}}
-    <ul ng-repeat="desc in product.oneProduct.description">
+    <ul ng-repeat="option in product.oneProduct.options">
       <li>
-        {{desc}}
+        {{option}}
       </li>
     </ul>
   </div>
