@@ -1,0 +1,54 @@
+<section class="combo-order-page">
+
+  <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" >
+    <h1>Combo Order Page</h1>
+    <b>Cold Fork Buffet £18.50+VAT per head</b>
+    <p>Choose two mains, three salads and one dessert from the list below. If you are ordering for ten people or more then please choose an additional dessert.</p>
+
+    <div>
+      <label>
+        Number Of People:
+        <input type="number" ng-model="numberOfPeople">
+      </label>
+    </div>
+
+
+    <div class="option-group" ng-repeat="prod in product.subCat | orderBy: ['price', -'title']">
+
+
+        <div class="productTitle">
+          <a>{{prod.title}}</a>
+        </div>
+
+        <!-- <div ng-repeat="option in prod.options" class="productDesc">
+          {{option}}
+        </div> -->
+
+        <meal-options dish-options="prod.options"
+                      bonus-thresh="prod.meta.combo_dish_count"
+                      option-count="2"
+                      people-qty="numberOfPeople">
+        </meal-options>
+
+        <div id="combo-summary">
+          
+        </div>
+
+        <!-- <div class="productPrice">
+          <p>{{prod.price | price}} per person</p>
+        </div> -->
+
+        <!-- <form ng-controller="OrderController as order" ng-submit="order.addToOrder(prod._id, order.addToOrder.order.products.qty)">
+          <div>
+            <input ng-model="order.newOrder" type="submit" value="add to order">
+            <input ng-model="order.addToOrder.order.products.qty" type="number" min="1">
+          </div>
+        </form> -->
+
+
+    </div>
+  </div>
+
+
+
+</section>

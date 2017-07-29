@@ -1,0 +1,14 @@
+<ul>
+  Please choose {{maxSelection}}
+  <li ng-repeat="option in dishOptions track by $index">
+
+    <label>
+      <input type="checkbox"
+             ng-model="selection[$index]"
+             ng-change="dishSelected(option, $index)"
+             ng-disabled="!selection[$index] && disabled()"/>
+      {{option}}
+    </label>
+  </li>
+
+</ul>

@@ -514,8 +514,10 @@ function seed () {
           'title': 'Mains',
           'price': '18.50',
           'category': 'lunch',
+          'type': 'combo',
           'sub_category': 'coldFork',
-          'description': [
+          'description': "Please select 2 ...",
+          'options': [
             'Gammon Ham',
             'Roast Beef',
             'Grilled Breast of Chicken',
@@ -531,8 +533,10 @@ function seed () {
           'title': 'Salads',
           'price': '18.50',
           'category': 'lunch',
+          'type': 'combo',
           'sub_category': 'coldFork',
-          'description': [
+          'description': "Please select 3 ...",
+          'options': [
             'Mixed Leaf Salad',
             'Greek Salad',
             'Cherry Tomato & Mozzarella',
@@ -547,8 +551,13 @@ function seed () {
           'title': 'Desserts',
           'price': '18.50',
           'category': 'lunch',
+          'type': 'combo',
           'sub_category': 'coldFork',
-          'description': [
+          'description': "Please select 2 ...",
+          'meta': {
+            'combo_dish_count': 2
+          },
+          'options': [
             'Apple & Blackberry Pie',
             'Pecan & Treacle Tart',
             'Banoffee Triple Decker Pie',

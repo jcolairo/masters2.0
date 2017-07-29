@@ -115,6 +115,15 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         'footer@sub_category': {templateUrl: '/states/partials/footer/footer.html'}
       }
     })
+    .state('combo', {
+      url: `/combo/:category/:sub_category`,
+      views: {
+        '': {templateUrl: '/states/partials/template.html'},
+        'aside@combo': {templateUrl: '/states/partials/menu/aside.html'},
+        'menu@combo': {templateUrl: '/states/partials/menu/subCat/combo-order.html'},
+        'footer@combo': {templateUrl: '/states/partials/footer/footer.html'}
+      }
+    })
     .state('breakfast', {
       url: '/menu/breakfast',
       views: {
