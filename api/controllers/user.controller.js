@@ -25,7 +25,9 @@ function getSingleUser (req, res) {
 }
 
 function getAllUsers (req, res) {
-  User.find({}, function (err, users) {
+  User.find({ is_admin: false })
+  .populate('orders.items.product')
+  .exec(function (err, users) {
     if (err) return Err.recordNotFound(res, err.message);
     res.json(users);
   });
@@ -46,7 +48,7 @@ function addNewAddress (req, res) {
     if (err || !user) return Err.recordNotFound(res, err.message);
 
     user.address.push(newAddress);
-    
+
     user.save(function (err) {
       if (err) return Err.recordNotFound(res, err.message);
       res.json(user);
