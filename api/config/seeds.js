@@ -45,7 +45,8 @@ function seed () {
           'price': '1.30',
           'category': 'breakfast',
           'sub_category': 'pastries',
-          'description': [
+          'description': 'Please select one pastries',
+          'options': [
             'Served on Platters',
             'Plain Croissant',
             'Pain au Chocolat',
@@ -60,7 +61,8 @@ function seed () {
           'price': '3.50',
           'category': 'breakfast',
           'sub_category': 'bagel',
-          'description': [
+          'description': 'Please select one bagel',
+          'options': [
             'Smoked Salmon & Cream Cheese',
             'Ham & Cheese',
             'Cream Cheese & Cucumber'
@@ -72,9 +74,7 @@ function seed () {
           'price': '2.00',
           'category': 'breakfast',
           'sub_category': 'roll',
-          'description': [
-            'free-range'
-          ],
+          'description': 'free-range',
           'img_path': '../some_location'
         },
         {
@@ -122,9 +122,7 @@ function seed () {
           'price': '3.00',
           'category': 'breakfast',
           'sub_category': 'sandwich',
-          'description': [
-            'free-range'
-          ],
+          'description': 'free-range',
           'img_path': '../some_location'
         },
         {
@@ -172,9 +170,7 @@ function seed () {
           'price': '3.50',
           'category': 'breakfast',
           'sub_category': 'baguette',
-          'description': [
-            'free-range'
-          ],
+          'description': 'free-range',
           'img_path': '../some_location'
         },
         {
@@ -182,8 +178,7 @@ function seed () {
           'price': '4.00',
           'category': 'breakfast',
           'sub_category': 'baguette',
-          'description': [
-          ],
+          'description': [],
           'img_path': '../some_location'
         },
         {
@@ -249,9 +244,7 @@ function seed () {
           'price': '2.00',
           'category': 'breakfast',
           'sub_category': 'healthy',
-          'description': [
-            'Slices of seasonal fresh fruit'
-          ],
+          'description': 'Slices of seasonal fresh fruit',
           'img_path': '../some_location'
         },
         {
@@ -267,9 +260,7 @@ function seed () {
           'price': '3.50',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': [
-            'Served in Flasks with a Selection of Biscuits'
-          ],
+          'description': 'Served in Flasks with a Selection of Biscuits',
           'img_path': '../some_location'
         },
         {
@@ -277,9 +268,7 @@ function seed () {
           'price': '7.50',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': [
-            '2.2 litres'
-          ],
+          'description': '2.2 litres',
           'img_path': '../some_location'
         },
         {
@@ -287,9 +276,7 @@ function seed () {
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': [
-            '750ml'
-          ],
+          'description': '750ml',
           'img_path': '../some_location'
         },
         {
@@ -297,9 +284,7 @@ function seed () {
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': [
-            '750ml'
-          ],
+          'description': '750ml',
           'img_path': '../some_location'
         },
         {
@@ -307,9 +292,7 @@ function seed () {
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': [
-            '1 litre'
-          ],
+          'description': '1 litre',
           'img_path': '../some_location'
         },
         {
@@ -317,9 +300,7 @@ function seed () {
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': [
-            '1 litre'
-          ],
+          'description': '1 litre',
           'img_path': '../some_location'
         },
         {
@@ -327,9 +308,7 @@ function seed () {
           'price': '7.00',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': [
-            '1 litre'
-          ],
+          'description': '1 litre',
           'img_path': '../some_location'
         },
         {
@@ -337,9 +316,7 @@ function seed () {
           'price': '7.00',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': [
-            '1 litre'
-          ],
+          'description': '1 litre',
           'img_path': '../some_location'
         },
         {
@@ -347,9 +324,7 @@ function seed () {
           'price': '7.00',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': [
-            '1 litre'
-          ],
+          'description': '1 litre',
           'img_path': '../some_location'
         },
         {
@@ -511,7 +486,7 @@ function seed () {
           'category': 'lunch',
           'sub_category': 'coldForkBuffet',
           'description': [
-            'Assorted Sandwiches/Assorted wraps/Assorted Rolls (subject to availability)',
+            'Assorted Sandwiches/Assorted wraps/Assorted Rolls',
             'Chicken Tikka Skewers',
             'Breaded Torpedo Prawn',
             'Mini Vegetable Spring Roll',
@@ -526,7 +501,7 @@ function seed () {
           'category': 'lunch',
           'sub_category': 'coldForkBuffet',
           'description': [
-            'Assorted Sandwiches/Assorted wraps/Assorted Rolls (subject to availability)',
+            'Assorted Sandwiches/Assorted wraps/Assorted Rolls',
             'Lemon Chicken Skewers with mixed herbs',
             'Marinated Tiger Prawns on Skewers',
             'Vegetarian Quiche',
@@ -622,7 +597,8 @@ function seed () {
           'price': '3.30',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [
+          'description': 'Please select one sandwich',
+          'options': [
             'Meat',
             'Fish',
             'Veg',
@@ -635,7 +611,8 @@ function seed () {
           'price': '3.30',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [
+          'description': 'Please select one wrap',
+          'options': [
             'Meat',
             'Fish',
             'Veg',
@@ -648,7 +625,8 @@ function seed () {
           'price': '2.50',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [
+          'description': 'Please select one mini roll',
+          'options': [
             'Meat',
             'Fish',
             'Veg',
@@ -661,7 +639,8 @@ function seed () {
           'price': '4.00',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [
+          'description': 'Please select one baguette',
+          'options': [
             '1 Baguette of Meat, Fish or Veg'
           ],
           'img_path': '../some_location'
@@ -739,9 +718,7 @@ function seed () {
           'price': '2.20',
           'category': 'lunch',
           'sub_category': 'lunchDrinks',
-          'description': [
-            '750ml'
-          ],
+          'description': '750ml',
           'img_path': '../some_location'
         },
         {
@@ -749,9 +726,7 @@ function seed () {
           'price': '1.60',
           'category': 'lunch',
           'sub_category': 'lunchDrinks',
-          'description': [
-            '300ml'
-          ],
+          'description': '300ml',
           'img_path': '../some_location'
         },
         {
@@ -759,9 +734,7 @@ function seed () {
           'price': '7.50',
           'category': 'lunch',
           'sub_category': 'lunchDrinks',
-          'description': [
-            '2.2 litres'
-          ],
+          'description': '2.2 litres',
           'img_path': '../some_location'
         },
         {
@@ -769,9 +742,7 @@ function seed () {
           'price': '2.20',
           'category': 'lunch',
           'sub_category': 'lunchDrinks',
-          'description': [
-            '1 litre'
-          ],
+          'description': '1 litre',
           'img_path': '../some_location'
         },
         {
@@ -835,9 +806,7 @@ function seed () {
           'price': '4.00',
           'category': 'lunch',
           'sub_category': 'specialPlatter',
-          'description': [
-            'selection of British, French & Italian cheeses'
-          ],
+          'description': 'selection of British, French & Italian cheeses',
           'img_path': '../some_location'
         },
         {
