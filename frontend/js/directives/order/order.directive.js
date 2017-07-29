@@ -6,6 +6,7 @@ function orderDirective () {
     transclude: true,
     scope: {
       order: '=',
+      showItems: '=',
     },
     templateUrl: 'js/directives/order/order.directive.html',
     link: function (scope, element, attrs) {

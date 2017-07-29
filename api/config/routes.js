@@ -53,4 +53,7 @@ router.route('/orders/submit')
 router.route('/sendgrid/mail')
   .post(orderController.submitOrder);
 
+router.route('/orders/process-order')
+  .post(orderController.processOrder);
+
 module.exports = router;

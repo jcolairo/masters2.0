@@ -1,4 +1,4 @@
-function UserController(UserFactory, $stateParams) {
+function UserController(UserFactory, OrderFactory, $stateParams) {
   var controller = this;
 
   controller.getAllUsers = function() {
@@ -26,9 +26,23 @@ function UserController(UserFactory, $stateParams) {
     );
   };
 
+  controller.processOrder = function (userUid, orderId) {
+    console.log(userUid)
+    console.log(orderId)
+    OrderFactory.processOrder(userUid, orderId).then(
+      function (success) {
+        console.log('success processing order');
+        controller.getAllUsers();
+      },
+      function (error) {
+        console.warn('Could not process:', error);
+      }
+    )
+  }
+
 }
 
-UserController.$inject = ['UserFactory', '$stateParams'];
+UserController.$inject = ['UserFactory', 'OrderFactory', '$stateParams'];
 
 angular
   .module('MastersApp')
