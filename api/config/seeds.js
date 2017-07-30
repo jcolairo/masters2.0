@@ -511,7 +511,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Mains',
+          'title': 'Cold Meal Deal',
           'price': '18.50',
           'category': 'lunch',
           'type': 'combo',

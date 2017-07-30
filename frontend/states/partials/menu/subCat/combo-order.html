@@ -5,46 +5,52 @@
     <b>Cold Fork Buffet £18.50+VAT per head</b>
     <p>Choose two mains, three salads and one dessert from the list below. If you are ordering for ten people or more then please choose an additional dessert.</p>
 
-    <div ng-init="numberOfPeople = 2">
+    <div ng-init="numberOfPeople = 2; product.comboOrder = {}">
       <label>
         Number Of People:
         <input type="number" ng-model="numberOfPeople">
       </label>
     </div>
 
-    <div class="option-group" ng-repeat="group in product.subCat[0].combo_options | orderBy: ['price', -'title']">
+    <div class="option-group"
+         ng-repeat="group in product.subCat[0].combo_options track by $index ">
 
         <div class="productTitle">
-          <a>{{group.name}}</a>
+          <h1>{{group.name}}</h1>
         </div>
 
         <meal-options dish-options="group.options"
                       meta="group.meta"
-                      people-qty="numberOfPeople">
+                      people-qty="numberOfPeople"
+                      order="product.comboOrder[group.name]"
+                      selection-complete="product.comboStatus[$index]">
         </meal-options>
 
-        <br>
-        <div id="combo-summary">
-         <p>You have selected: </p>
-          <ul>
-            <!-- <li ng-repeat="selection in product.selection"></li> -->
-          </ul>
-
-        </div>
-
-        <!-- <div class="productPrice">
-          <p>{{prod.price | price}} per person</p>
-        </div> -->
-
-        <!-- <form ng-controller="OrderController as order" ng-submit="order.addToOrder(prod._id, order.addToOrder.order.products.qty)">
-          <div>
-            <input ng-model="order.newOrder" type="submit" value="add to order">
-            <input ng-model="order.addToOrder.order.products.qty" type="number" min="1">
-          </div>
-        </form> -->
-
-
     </div>
+
+    <br>
+    <div id="combo-summary">
+      <p ng-if="product.showTotal">You have selected: </p>
+
+      <div ng-repeat="(orderGroup, items) in product.comboOrder">
+        <br>
+        <h1>{{ orderGroup }}</h1>
+        <ol ng-init="product.showTotal = true">
+          <li ng-repeat="dish in items track by $index"> {{$index + 1}}. {{ dish }} </li>
+        </ol>
+      </div>
+      <br><br>
+      <p ng-if="product.showTotal"> Total: {{ numberOfPeople * product.subCat[0].price | price}} </p>
+    </div>
+
+    <combo-order-button
+      ng-if="product.activateComboOrderButton()"
+      dish-options="product.comboOrder"
+      people-qty="numberOfPeople"
+      title="product.subCat[0].title">
+    </combo-order-button>
+
+
   </div>
 
 
