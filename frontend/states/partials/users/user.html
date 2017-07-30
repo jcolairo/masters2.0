@@ -1,9 +1,11 @@
 <section ng-controller="UserController as user">
   <div ng-init="user.getSingleUser()" class="userDiv">
 
-    <div>
+    <div class="basketOrder">
       <h2>Your Basket</h2>
-      <Basket basket="user.user.basket" addresses="user.user.address" class="basket"></Basket>
+      <div class="basketOrderDiv">
+        <Basket basket="user.user.basket" addresses="user.user.address" class="basket pendingOrderUl"></Basket>
+      </div>
     </div>
 
     <br>

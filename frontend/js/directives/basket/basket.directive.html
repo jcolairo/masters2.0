@@ -1,7 +1,7 @@
-<section ng-controller="OrderController as orderCTRL" ng-if="basket.items.length">
+<section ng-controller="OrderController as orderCTRL" ng-if="basket.items.length" class="basketSection">
 
   <!-- List out items in order -->
-  <li ng-repeat="item in basket.items" class="userLi">
+  <li ng-repeat="item in basket.items" class="userLi basketUl">
 
     <form ng-submit="orderCTRL.removeProduct(item.product._id)" class="removeForm">
       <input type="submit" value="X" class="removeInput">
