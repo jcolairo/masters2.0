@@ -2,7 +2,7 @@
   // display: flex;
   margin-top: 2vh;
   .titleDiv {
-    width: 100vw;
+    // width: 100vw;
     display: flex;
   }
   .userLi {
@@ -11,6 +11,7 @@
     @include font-properties($letter-spacing: 1, $font-size: 1rem, $line-height: 2rem);
     // padding: 1rem;
     // border-bottom: 1px solid $black;
+    // max-width: 50%;
     .titleOrder {
       display: inline-block;
       }
@@ -19,18 +20,31 @@
       display: inline-block;
     }
   }
-}
-.userDiv {
-  display: flex;
-  .order-total {
-    display: flex;
-    justify-content: flex-end;
-    @include font-properties($letter-spacing: 1, $font-size: 1rem, $line-height: 2rem);
-    // height: 8vh;
-    border-top: 1px solid $black;
-    border-bottom: 2px solid $black;
+  .pendingOrder {
+    .pendingOrderDiv {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: row;
+      flex-wrap: wrap;
+      ul {
+        max-width: 45%;
+        min-width: 45%;
+      }
+    }
   }
 }
+// .userDiv {
+//   display: flex;
+//   .order-total {
+//     display: flex;
+//     justify-content: flex-end;
+//     @include font-properties($letter-spacing: 1, $font-size: 1rem, $line-height: 2rem);
+//     // height: 8vh;
+//     border-top: 1px solid $black;
+//     border-bottom: 2px solid $black;
+//   }
+// }
 .admin-order {
   width: 40%;
   margin: 0px 15px;
@@ -54,6 +68,14 @@
   margin-top: 30px;
   border: solid 2px black;
   padding: 5px;
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  .userLi {
+    align-items: center;
+  }
 }
 
 .hide {
