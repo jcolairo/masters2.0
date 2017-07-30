@@ -227,7 +227,6 @@ body {
       min-width: 45%; }
 
 .basketOrder {
-  border: 1px solid rgba(41, 41, 41, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
