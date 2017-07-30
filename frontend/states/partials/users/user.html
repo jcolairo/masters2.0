@@ -8,13 +8,13 @@
 
     <br>
 
-    <div>
+    <div class="pendingOrder">
       <h2>Your Pending Orders</h2>
-
-      <ul ng-repeat="thisOrder in user.user.orders | filter: { has_been_processed: false }" >
-        <Order order="thisOrder"></Order>
-      </ul>
-
+      <div class="pendingOrderDiv">
+        <ul ng-repeat="thisOrder in user.user.orders | filter: { has_been_processed: false }" class="pendingOrderUl">
+          <Order order="thisOrder"></Order>
+        </ul>
+      </div>
     </div>
 
 
