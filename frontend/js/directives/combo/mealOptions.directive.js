@@ -6,28 +6,23 @@ function mealOptions () {
     transclude: true,
     scope: {
       dishOptions: '=',
-      optionCount: '=',
+      meta: '=',
       peopleQty: '=',
-      bonusThresh: '='
     },
     templateUrl: 'js/directives/combo/mealOptions.directive.html',
     link: function (scope, element, attrs) {
-
-      scope.maxSelection = false;
+      console.log(scope)
       scope.selection = [];
-      scope.maxSelection = 2;
-
-      scope.dishSelected = function (option, index) {
-        scope.maxSelection = scope.selection.filter(Boolean).length === Number(scope.maxSelection);
-      }
 
       scope.disabled = function () {
-        if (scope.bonusThresh) {
-          scope.maxSelection = scope.peopleQty > scope.bonusThresh ? scope.bonusThresh + 1 : scope.bonusThresh
-        }
-        return scope.selection.filter(Boolean).length === Number(scope.maxSelection);
+        var dishesSelected = scope.selection.filter(Boolean).length;
+        scope.permittedDishes = scope.meta.bouns_dish && Number(scope.peopleQty) > 10 ? scope.meta.combo_dish_count + 1 : scope.meta.combo_dish_count
+        return scope.permittedDishes == dishesSelected;
       }
 
+      scope.dishSelected = function (option, index) {
+
+      }
 
     }
   };

@@ -5,33 +5,31 @@
     <b>Cold Fork Buffet £18.50+VAT per head</b>
     <p>Choose two mains, three salads and one dessert from the list below. If you are ordering for ten people or more then please choose an additional dessert.</p>
 
-    <div>
+    <div ng-init="numberOfPeople = 2">
       <label>
         Number Of People:
         <input type="number" ng-model="numberOfPeople">
       </label>
     </div>
 
-
-    <div class="option-group" ng-repeat="prod in product.subCat | orderBy: ['price', -'title']">
-
+    <div class="option-group" ng-repeat="group in product.subCat[0].combo_options | orderBy: ['price', -'title']">
 
         <div class="productTitle">
-          <a>{{prod.title}}</a>
+          <a>{{group.name}}</a>
         </div>
 
-        <!-- <div ng-repeat="option in prod.options" class="productDesc">
-          {{option}}
-        </div> -->
-
-        <meal-options dish-options="prod.options"
-                      bonus-thresh="prod.meta.combo_dish_count"
-                      option-count="2"
+        <meal-options dish-options="group.options"
+                      meta="group.meta"
                       people-qty="numberOfPeople">
         </meal-options>
 
+        <br>
         <div id="combo-summary">
-          
+         <p>You have selected: </p>
+          <ul>
+            <!-- <li ng-repeat="selection in product.selection"></li> -->
+          </ul>
+
         </div>
 
         <!-- <div class="productPrice">
