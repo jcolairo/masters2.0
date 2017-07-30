@@ -222,7 +222,7 @@ body {
     align-items: center;
     flex-flow: row;
     flex-wrap: wrap; }
-    .userDiv .pendingOrder .pendingOrderDiv ul {
+    .userDiv .pendingOrder .pendingOrderDiv .pendingOrderUl {
       max-width: 45%;
       min-width: 45%; }
 
@@ -266,6 +266,13 @@ body {
   flex-flow: column; }
   .single-order .userLi {
     align-items: center; }
+  .single-order .orderLi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column; }
+    .single-order .orderLi p {
+      width: 100%; }
 
 .basketSection {
   display: flex;

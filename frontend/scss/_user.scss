@@ -27,7 +27,7 @@
       align-items: center;
       flex-flow: row;
       flex-wrap: wrap;
-      ul {
+      .pendingOrderUl {
         max-width: 45%;
         min-width: 45%;
       }
@@ -90,6 +90,15 @@
   flex-flow: column;
   .userLi {
     align-items: center;
+  }
+  .orderLi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    p {
+      width: 100%;
+    }
   }
 }
 .basketSection {
