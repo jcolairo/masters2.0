@@ -226,6 +226,20 @@ body {
       max-width: 45%;
       min-width: 45%; }
 
+.basketOrder {
+  border: 1px solid rgba(41, 41, 41, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column; }
+  .basketOrder .basketOrderDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row; }
+  .basketOrder h2 {
+    margin-bottom: 2%; }
+
 .admin-order {
   width: 40%;
   margin: 0px 15px;
@@ -253,6 +267,14 @@ body {
   flex-flow: column; }
   .single-order .userLi {
     align-items: center; }
+
+.basketSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column; }
+  .basketSection .basketUl {
+    margin: 1% 0; }
 
 .hide {
   display: none; }

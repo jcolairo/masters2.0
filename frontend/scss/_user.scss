@@ -34,6 +34,22 @@
     }
   }
 }
+.basketOrder {
+  border: 1px solid $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  .basketOrderDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row;
+  }
+  h2 {
+    margin-bottom: 2%;
+  }
+}
 // .userDiv {
 //   display: flex;
 //   .order-total {
@@ -77,6 +93,16 @@
     align-items: center;
   }
 }
+.basketSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  .basketUl {
+    margin: 1% 0;
+  }
+}
+
 
 .hide {
   display: none;
