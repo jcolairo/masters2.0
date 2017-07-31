@@ -12,20 +12,22 @@
       </label>
     </div>
 
-    <div class="option-group"
-         ng-repeat="group in product.subCat[0].combo_options track by $index ">
+    <div class="option-group-outer">
+      <div class="option-group"
+           ng-repeat="group in product.subCat[0].combo_options track by $index ">
 
-        <div class="productTitle">
-          <h1>{{group.name}}</h1>
-        </div>
+          <div class="productTitle">
+            <h1>{{group.name}}</h1>
+          </div>
 
-        <meal-options dish-options="group.options"
-                      meta="group.meta"
-                      people-qty="numberOfPeople"
-                      order="product.comboOrder[group.name]"
-                      selection-complete="product.comboStatus[$index]">
-        </meal-options>
+          <meal-options dish-options="group.options"
+                        meta="group.meta"
+                        people-qty="numberOfPeople"
+                        order="product.comboOrder[group.name]"
+                        selection-complete="product.comboStatus[$index]">
+          </meal-options>
 
+      </div>
     </div>
 
     <br>
