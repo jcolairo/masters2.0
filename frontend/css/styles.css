@@ -211,11 +211,6 @@ body {
     text-transform: uppercase;
     font-weight: 500;
     color: rgba(41, 41, 41, 0.8); }
-    .userDiv .userLi .titleOrder {
-      display: inline-block; }
-    .userDiv .userLi .priceOrder {
-      float: right;
-      display: inline-block; }
   .userDiv .pendingOrder .pendingOrderDiv {
     display: flex;
     justify-content: center;
@@ -271,8 +266,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-flow: column; }
-    .single-order .orderLi p {
-      width: 100%; }
+    .single-order .orderLi .qtyPrice {
+      display: flex;
+      flex-flow: row;
+      width: 100%;
+      justify-content: space-around; }
 
 .basketSection {
   display: flex;
