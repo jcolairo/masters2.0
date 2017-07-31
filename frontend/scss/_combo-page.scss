@@ -8,8 +8,15 @@
     font-weight: bold;
   }
 
-  .option-group {
-    margin: 10px 0px;
-
+  .option-group-outer {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    flex-wrap: wrap;
+    .option-group {
+      margin: 10px 10px;
+      padding: 5px;
+      border: $border-dev-green;
+    }
   }
 }

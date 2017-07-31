@@ -310,5 +310,12 @@ body {
     font-size: 20px;
     margin-bottom: 10px;
     font-weight: bold; }
-  .combo-order-page .option-group {
-    margin: 10px 0px; }
+  .combo-order-page .option-group-outer {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    flex-wrap: wrap; }
+    .combo-order-page .option-group-outer .option-group {
+      margin: 10px 10px;
+      padding: 5px;
+      border: 1px solid #00C853; }
