@@ -33,8 +33,8 @@
     <br>
     <div id="combo-summary">
       <p ng-if="product.showTotal">You have selected: </p>
-
-      <div ng-repeat="(orderGroup, items) in product.comboOrder">
+    <div class="selected-group-outer">
+      <div ng-repeat="(orderGroup, items) in product.comboOrder" class="selected-group">
         <br>
         <h1>{{ orderGroup }}</h1>
         <ol ng-init="product.showTotal = true">
@@ -42,8 +42,8 @@
         </ol>
       </div>
       <br><br>
-      <p ng-if="product.showTotal"> Total: {{ numberOfPeople * product.subCat[0].price | price}} </p>
     </div>
+      <p ng-if="product.showTotal"> Total: {{ numberOfPeople * product.subCat[0].price | price}} </p>
 
     <combo-order-button
       ng-if="product.activateComboOrderButton()"
