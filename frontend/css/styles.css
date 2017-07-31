@@ -319,3 +319,16 @@ body {
       margin: 10px 10px;
       padding: 5px;
       border: 1px solid #00C853; }
+  .combo-order-page #combo-summary {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-items: center; }
+    .combo-order-page #combo-summary .selected-group-outer {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      margin: 20px 0; }
+      .combo-order-page #combo-summary .selected-group-outer .selected-group {
+        margin: 10px; }

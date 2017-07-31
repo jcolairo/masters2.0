@@ -19,4 +19,20 @@
       border: $border-dev-green;
     }
   }
+  #combo-summary {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-items: center;
+    .selected-group-outer {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      margin: 20px 0;
+      .selected-group {
+        margin: 10px;
+      }
+    }
+  }
 }
