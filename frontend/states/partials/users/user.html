@@ -20,13 +20,13 @@
     </div>
 
 
-    <div>
+    <div class="pendingOrder">
       <h2>Order History</h2>
-
-      <ul ng-repeat="thisOrder in user.user.orders | filter: { has_been_processed: true }" >
-        <Order order="thisOrder"></Order>
-      </ul>
-
+      <div class="pendingOrderDiv">
+        <ul ng-repeat="thisOrder in user.user.orders | filter: { has_been_processed: true }" class="pendingOrderUl">
+          <Order order="thisOrder"></Order>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
