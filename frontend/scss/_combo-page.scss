@@ -33,6 +33,15 @@
       .selected-group {
         margin: 10px;
       }
+      .mains {
+        order: 1;
+      }
+      .salads{
+        order: 2;
+      }
+      .deserts {
+        order: 3;
+      }
     }
   }
 }

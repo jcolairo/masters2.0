@@ -332,3 +332,9 @@ body {
       margin: 20px 0; }
       .combo-order-page #combo-summary .selected-group-outer .selected-group {
         margin: 10px; }
+      .combo-order-page #combo-summary .selected-group-outer .mains {
+        order: 1; }
+      .combo-order-page #combo-summary .selected-group-outer .salads {
+        order: 2; }
+      .combo-order-page #combo-summary .selected-group-outer .deserts {
+        order: 3; }
