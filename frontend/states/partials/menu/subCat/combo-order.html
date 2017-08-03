@@ -36,7 +36,7 @@
     <div class="selected-group-outer">
       <div ng-repeat="(orderGroup, items) in product.comboOrder" class="selected-group {{orderGroup}}">
         <br>
-        <h1>{{ orderGroup }}</h1>
+        <h1 ng-if="!items.length == 0">{{ orderGroup }}</h1>
         <ol ng-init="product.showTotal = true">
           <li ng-repeat="dish in items track by $index"> {{$index + 1}}. {{ dish }} </li>
         </ol>
