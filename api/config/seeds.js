@@ -551,9 +551,9 @@ function seed () {
                 ],
               },
               {
-                'name': 'deserts',
+                'name': 'desserts',
                 'meta': {
-                  'combo_dish_count': 2,
+                  'combo_dish_count': 1,
                   'bouns_dish': 'true'
                 },
                 'options': [
