@@ -17,7 +17,7 @@ function mealOptions () {
 
       scope.disabled = function () {
         var dishesSelected = scope.selection.filter(Boolean).length;
-        scope.permittedDishes = scope.meta.bouns_dish && Number(scope.peopleQty) > 10 ? scope.meta.combo_dish_count + 1 : scope.meta.combo_dish_count
+        scope.permittedDishes = scope.meta.bouns_dish && Number(scope.peopleQty) >= 10 ? scope.meta.combo_dish_count + 1 : scope.meta.combo_dish_count
         scope.selectionComplete = scope.permittedDishes == dishesSelected;
         return scope.permittedDishes == dishesSelected;
       }
