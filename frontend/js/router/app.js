@@ -189,7 +189,7 @@ function authInteceptor ($httpProvider) {
 authInteceptor.$inject = ['$httpProvider'];
 
 angular
-.module('MastersApp', ['ui.router', 'firebase', 'sticky'])
+.module('MastersApp', ['ui.router', 'firebase', 'sticky', 'ngMaterial', 'ngMessages'])
 .config(MainRouter)
 .factory('httpRequestInteceptor', tokenHeader)
 .config(authInteceptor)
