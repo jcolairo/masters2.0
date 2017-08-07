@@ -4,6 +4,18 @@
     <div>
       <h2>Your Basket</h2>
       <Basket basket="user.user.basket" addresses="user.user.address" class="basket"></Basket>
+
+<!-- datepicker -->
+      <div flex-gt-xs ng-controller="MainController as main">
+        <h4>Standard date-picker</h4>
+        <md-datepicker ng-model="main.myDate" md-placeholder="Enter date" ng-click="main.selectDate"></md-datepicker>
+      {{main.myDate}}
+      </div>
+
+<!-- timepicker -->
+      <input mdc-datetime-picker="" time="true" type="text" id="time2"
+        placeholder="Time" min-date="minDate" format="HH:mm" ng-model="main.myDate" class=" md-input"
+        readonly="readonly">
     </div>
 
     <br>
