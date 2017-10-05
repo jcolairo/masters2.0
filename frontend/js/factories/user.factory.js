@@ -19,6 +19,13 @@ function UserFactory($http) {
         url: `/users/add-address`,
         data: { newAddress: newAddress }
       });
+    },
+    getDeliveryDate: function (date) {
+      return $http({
+        method: 'POST',
+        url: `/users/delivery`,
+        data: date
+      });
     }
   };
 }

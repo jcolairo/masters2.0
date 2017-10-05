@@ -22,6 +22,8 @@ router.route('/users/add-address')
 router.route('/users/:uid')
   .get(userController.getUser);
 
+// router.route('/users/delivery')
+//   .get(userController.getDeliveryDate);
 
 // Product Routes
 router.route('/products')

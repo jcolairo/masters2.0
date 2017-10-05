@@ -56,6 +56,10 @@ function addNewAddress (req, res) {
   })
 }
 
+function getDeliveryDate (req, res) {
+  
+}
+
 
 module.exports = {
   getUser: getSingleUser,

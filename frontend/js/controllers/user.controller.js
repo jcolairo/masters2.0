@@ -38,7 +38,31 @@ function UserController(UserFactory, OrderFactory, $stateParams) {
         console.warn('Could not process:', error);
       }
     )
-  }
+  };
+
+  controller.datetimePicker = function() {
+    var date = document.getElementById(date).value;
+    var time = document.getElementById(time).value;
+
+    date = document.getElementById('deliveredByDate').innerHTML;
+    time = document.getElementById('deliveredByTime').innerHTML;
+  };
+
+  controller.getDeliveryDate = function () {
+    var date = document.getElementById(date).value;
+    var time = document.getElementById(time).value;
+
+    date = document.getElementById('deliveredByDate').innerHTML;
+    time = document.getElementById('deliveredByTime').innerHTML;
+    // UserFactory.getDeliveryDate(date).then(
+    //   function (success) {
+    //     console.log('success deliverying date');
+    //   },
+    //   function (error) {
+    //     console.warn('could not process date:', error);
+    //   }
+    // );
+  };
 
 }
 
