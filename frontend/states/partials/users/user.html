@@ -1,16 +1,25 @@
 <section ng-controller="UserController as user">
   <div ng-init="user.getSingleUser()" class="userDiv">
+    <script type="text/javascript">
+    function datetimePicker (date, time) {
+        var date = document.getElementById(date).value;
+        var time = document.getElementById(time).value;
 
-    <form method="post" ng-submit="">
+        document.getElementById('deliveredByDate').innerHTML = date
+        document.getElementById('deliveredByTime').innerHTML = time
+      };
+    </script>
+    <!-- <form method="post" ng-submit=""> -->
 
       <h2>Date:<input type="date" name="date" id="date" ng-model="date"></h2>
       <h2>Time:<input type="time" name="time" id="time" ng-model="time"></h2>
 
-      <input type="submit" onclick="datetimePicker('date', 'time')" ng-click="user.getDeliveryDate('deliveredByDate', 'deliveredByTime')">
+      <input type="submit" onclick="datetimePicker('date', 'time')">
       Date:<p id="deliveredByDate"></p>
       Time:<p id="deliveredByTime"></p>
 
-    </form>
+
+    <!-- </form> -->
 
     <div>
       <h2>Your Basket</h2>

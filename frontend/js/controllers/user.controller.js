@@ -41,6 +41,7 @@ function UserController(UserFactory, OrderFactory, $stateParams) {
   };
 
   controller.datetimePicker = function() {
+
     var date = document.getElementById(date).value;
     var time = document.getElementById(time).value;
 
@@ -48,21 +49,21 @@ function UserController(UserFactory, OrderFactory, $stateParams) {
     time = document.getElementById('deliveredByTime').innerHTML;
   };
 
-  controller.getDeliveryDate = function () {
-    var date = document.getElementById(date).value;
-    var time = document.getElementById(time).value;
-
-    date = document.getElementById('deliveredByDate').innerHTML;
-    time = document.getElementById('deliveredByTime').innerHTML;
-    // UserFactory.getDeliveryDate(date).then(
-    //   function (success) {
-    //     console.log('success deliverying date');
-    //   },
-    //   function (error) {
-    //     console.warn('could not process date:', error);
-    //   }
-    // );
-  };
+  // controller.getDeliveryDate = function () {
+  //   var date = document.getElementById(date).value;
+  //   var time = document.getElementById(time).value;
+  //
+  //   date = document.getElementById('deliveredByDate').innerHTML;
+  //   time = document.getElementById('deliveredByTime').innerHTML;
+  //   // UserFactory.getDeliveryDate(date).then(
+  //   //   function (success) {
+  //   //     console.log('success deliverying date');
+  //   //   },
+  //   //   function (error) {
+  //   //     console.warn('could not process date:', error);
+  //   //   }
+  //   // );
+  // };
 
 }
 
