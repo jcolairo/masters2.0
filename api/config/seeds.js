@@ -47,7 +47,6 @@ function seed () {
           'sub_category': 'pastries',
           'description': 'Please select one pastries',
           'options': [
-            'Served on Platters',
             'Plain Croissant',
             'Pain au Chocolat',
             'Pain au Raisin',
