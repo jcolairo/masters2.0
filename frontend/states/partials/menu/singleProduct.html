@@ -7,8 +7,10 @@
         {{desc}}
       </li>
     </ul>
-    <ul ng-repeat="opt in product.oneProduct.options | limitTo: 1">
-      <li><select><option ng-repeat="opt in product.oneProduct.options">{{opt}}</option></select></li>
+    <ul  ng-repeat="opt in product.oneProduct.options">
+      <li>
+        {{opt}}
+      </li>
     </ul>
   </div>
   <form ng-controller="OrderController as order" ng-submit="order.addToOrder(product.oneProduct._id, order.addToOrder.order.products.qty)">
