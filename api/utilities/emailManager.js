@@ -17,7 +17,7 @@ function sendOrderConfirmation (user) {
   productsHTML += '<b>' + 'Total:' + user.basket.total  + '</b>';
 
   function generateSingleProductHTML(prod) {
-
+    console.log(prod)
     if (prod.product.type === 'combo') {
       var productData =  [
         '<p>',
@@ -29,14 +29,13 @@ function sendOrderConfirmation (user) {
         '<p>',
         '<b>' + 'Salads:' + '</b>'+ prod.dishOptions.salads.join(', '),
         '<b>' + 'Mains:' + '</b>'+ prod.dishOptions.mains.join(', '),
-        '<b>' + 'Desers:' + '</b>'+ prod.dishOptions.derserts.join(', '),
+        '<b>' + 'Desers:' + '</b>'+ prod.dishOptions.deserts.join(', '),
         '</p>',
         '<p>',
         '<b>' + 'QTY:' + '</b>'+ prod.qty,
         '</p>',
         '<br>'
       ].join('');
-
 
       return productData;
 
@@ -74,6 +73,7 @@ function sendOrderConfirmation (user) {
 
   sg.API(request, function (error) {
     if (error) {
+      console.error(error.response.body.errors)
       console.log('Error response received');
     }
   });
