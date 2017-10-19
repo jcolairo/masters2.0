@@ -18,21 +18,47 @@ function sendOrderConfirmation (user) {
 
   function generateSingleProductHTML(prod) {
 
-    return [
-      '<p>',
-      '<b>' + 'Title:' + '</b>'+ prod.product.title ,
-      '</p>',
-      '<p>',
-      '<b>' + 'Price:'+ '</b>' + prod.product.price,
-      '</p>',
-      '<p>',
-      '<b>' + 'Description:' + '</b>'+ prod.product.description,
-      '</p>',
-      '<p>',
-      '<b>' + 'QTY:' + '</b>'+ prod.qty,
-      '</p>',
-      '<br>'
-    ].join('');
+    if (prod.product.type === 'combo') {
+      var productData =  [
+        '<p>',
+        '<b>' + 'Title:' + '</b>'+ prod.product.title ,
+        '</p>',
+        '<p>',
+        '<b>' + 'Price:'+ '</b>' + prod.product.price,
+        '</p>',
+        '<p>',
+        '<b>' + 'Salads:' + '</b>'+ prod.dishOptions.salads.join(', '),
+        '<b>' + 'Mains:' + '</b>'+ prod.dishOptions.mains.join(', '),
+        '<b>' + 'Desers:' + '</b>'+ prod.dishOptions.derserts.join(', '),
+        '</p>',
+        '<p>',
+        '<b>' + 'QTY:' + '</b>'+ prod.qty,
+        '</p>',
+        '<br>'
+      ].join('');
+
+
+      return productData;
+
+    } else {
+      return [
+        '<p>',
+        '<b>' + 'Title:' + '</b>'+ prod.product.title ,
+        '</p>',
+        '<p>',
+        '<b>' + 'Price:'+ '</b>' + prod.product.price,
+        '</p>',
+        '<p>',
+        '<b>' + 'Description:' + '</b>'+ prod.product.description,
+        '</p>',
+        '<p>',
+        '<b>' + 'QTY:' + '</b>'+ prod.qty,
+        '</p>',
+        '<br>'
+      ].join('');
+    }
+
+
   }
 
   var content = new helper.Content('text/html', productsHTML);
