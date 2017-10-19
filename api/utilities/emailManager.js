@@ -14,6 +14,14 @@ function sendOrderConfirmation (user) {
     productsHTML += generateSingleProductHTML(prod);
   });
 
+  productsHTML += [
+    '<br>',
+    '<b>' + 'Time Slot:' + '</b>'+ user.basket.time_slot,
+    '<br>',
+    '<b>' + 'Delivery Address:' + '</b>'+ user.basket.delivery_address,
+    '<br>'
+  ].join('');
+
   productsHTML += '<b>' + 'Total:' + user.basket.total  + '</b>';
 
   function generateSingleProductHTML(prod) {
@@ -35,6 +43,7 @@ function sendOrderConfirmation (user) {
         '</p>',
         '<p>',
         '<b>' + 'QTY:' + '</b>'+ prod.qty,
+        '<br>',
         '</p>',
         '<br>'
       ].join('');

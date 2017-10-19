@@ -10,7 +10,7 @@ var OrderSchema = new mongoose.Schema({
       deserts: [String]
     }
   }],
-  time_slot:     { type: String },
+  time_slot: {type: String },
   has_been_processed: { type: Boolean, default: false },
   has_been_submitted: { type: Boolean, default: false },
   delivery_address: { type: String },
@@ -22,7 +22,7 @@ var OrderSchema = new mongoose.Schema({
 });
 
 OrderSchema.virtual('total').get(function () {
-  var total = 0;
+  var total = 0; 
   for (var i = 0; i < this.items.length; i++) {
     if (this.items[i].product) {
       total += (this.items[i].product.price * this.items[i].qty);
