@@ -14,25 +14,64 @@ function sendOrderConfirmation (user) {
     productsHTML += generateSingleProductHTML(prod);
   });
 
-  productsHTML += '<b>' + 'Total:' + user.basket.total  + '</b>';
+  productsHTML += [
+    '<br>',
+    '<p>',
+    '<b>' + 'Time Slot:' + '</b>'+ user.basket.time_slot,
+    '</p>',
+    '<p>',
+    '<b>' + 'Delivery Address:' + '</b>'+ user.basket.delivery_address,
+    '</p>',
+    '<br>'
+  ].join('');
+
+  productsHTML += '<p>' + '</p>' + '<b>' + 'Total:' + '</b>' + user.basket.total +'<p>' + '</p>' ;
 
   function generateSingleProductHTML(prod) {
 
-    return [
-      '<p>',
-      '<b>' + 'Title:' + '</b>'+ prod.product.title ,
-      '</p>',
-      '<p>',
-      '<b>' + 'Price:'+ '</b>' + prod.product.price,
-      '</p>',
-      '<p>',
-      '<b>' + 'Description:' + '</b>'+ prod.product.description,
-      '</p>',
-      '<p>',
-      '<b>' + 'QTY:' + '</b>'+ prod.qty,
-      '</p>',
-      '<br>'
-    ].join('');
+    if (prod.product.type === 'combo') {
+      var productData =  [
+        '<p>',
+        '<b>' + 'Title:' + '</b>'+ prod.product.title ,
+        '</p>',
+        '<p>',
+        '<b>' + 'Price:'+ '</b>' + prod.product.price,
+        '</p>',
+        '<p>',
+        '<b>' + 'Salads:' + '</b>'+ prod.dishOptions.salads.join(', '),
+        '</p>',
+        '<p>',
+        '<b>' + 'Mains:' + '</b>'+ prod.dishOptions.mains.join(', '),
+        '</p>',
+        '<p>',
+        '<b>' + 'Desers:' + '</b>'+ prod.dishOptions.deserts.join(', '),
+        '</p>',
+        '<p>',
+        '<b>' + 'QTY:' + '</b>'+ prod.qty,
+        '</p>'
+      ].join('');
+
+      return productData;
+
+    } else {
+      return [
+        '<p>',
+        '<b>' + 'Title:' + '</b>'+ prod.product.title ,
+        '</p>',
+        '<p>',
+        '<b>' + 'Price:'+ '</b>' + prod.product.price,
+        '</p>',
+        '<p>',
+        '<b>' + 'Description:' + '</b>'+ prod.product.description,
+        '</p>',
+        '<p>',
+        '<b>' + 'QTY:' + '</b>'+ prod.qty,
+        '</p>',
+        '<br>'
+      ].join('');
+    }
+
+
   }
 
   var content = new helper.Content('text/html', productsHTML);
@@ -48,6 +87,7 @@ function sendOrderConfirmation (user) {
 
   sg.API(request, function (error) {
     if (error) {
+      console.error(error.response.body.errors)
       console.log('Error response received');
     }
   });
