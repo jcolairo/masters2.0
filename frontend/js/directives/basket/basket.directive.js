@@ -43,7 +43,7 @@ function basketDirective (UserFactory) {
   };
 }
 
-basketDirective.$inject = ['UserFactory']
+basketDirective.$inject = ['UserFactory'];
 
 angular
   .module('MastersApp')

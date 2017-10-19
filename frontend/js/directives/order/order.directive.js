@@ -6,7 +6,7 @@ function orderDirective () {
     transclude: true,
     scope: {
       order: '=',
-      showItems: '=',
+      showItems: '='
     },
     templateUrl: 'js/directives/order/order.directive.html',
     link: function (scope, element, attrs) {
@@ -14,7 +14,7 @@ function orderDirective () {
 
       scope.toggleExpand = function () {
         scope.expand = !scope.expand;
-      }
+      };
 
     }
   };
