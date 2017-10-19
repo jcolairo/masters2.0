@@ -47,12 +47,17 @@ function ProductController(ProductFactory, $stateParams) {
       function success(success) {
         console.log('success getting specific product by category');
         controller.subCat = success.data;
+        controller.comboStatus = new Array(controller.subCat[0].combo_options.length);
       },
       function error(error) {
         console.warn('Could not get specific product: ', error);
       }
     );
   };
+
+  controller.activateComboOrderButton = function (total) {
+    return controller.comboStatus ? controller.comboStatus.filter(Boolean).length === controller.subCat[0].combo_options.length : false
+  }
 
   controller.getOneProduct = function() {
     var id = $stateParams.id;

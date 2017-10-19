@@ -3,7 +3,12 @@ var OrderSchema = new mongoose.Schema({
 
   items: [{
     product: { ref: 'Product', type: mongoose.Schema.ObjectId },
-    qty: { type: Number, default: 1 }
+    qty: { type: Number, default: 1 },
+    dishOptions: {
+      salads: [String],
+      mains: [String],
+      deserts: [String]
+    }
   }],
   has_been_processed: { type: Boolean, default: false },
   has_been_submitted: { type: Boolean, default: false },

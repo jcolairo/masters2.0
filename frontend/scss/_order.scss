@@ -6,3 +6,21 @@
     align-items: center;
   }
 }
+
+
+.basket-option {
+  text-align: left;
+  font-size: 8px;
+  width: 150px;
+
+  h5 {
+    font-weight: 900;
+  }
+
+  .option-group {
+    display: inline-block;
+    li {
+      height: 11px;
+    }
+  }
+}

@@ -11,10 +11,15 @@ function basketDirective (UserFactory) {
     templateUrl: 'js/directives/basket/basket.directive.html',
     link: function (scope, element, attrs) {
       scope.showNotes = false;
+      scope.showDetails = false;
       scope.showNewAddress = false;
       scope.newAddress = {};
       scope.placeOrder = function () {
         scope.showNotes = true;
+      };
+
+      scope.toggleDetails = function () {
+        scope.showDetails = !scope.showDetails;
       };
 
       scope.toggleNewAddressForm = function () {
