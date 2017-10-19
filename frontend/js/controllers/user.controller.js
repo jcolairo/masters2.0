@@ -27,8 +27,8 @@ function UserController(UserFactory, OrderFactory, $stateParams) {
   };
 
   controller.processOrder = function (userUid, orderId) {
-    console.log(userUid)
-    console.log(orderId)
+    console.log(userUid);
+    console.log(orderId);
     OrderFactory.processOrder(userUid, orderId).then(
       function (success) {
         console.log('success processing order');
@@ -37,8 +37,8 @@ function UserController(UserFactory, OrderFactory, $stateParams) {
       function (error) {
         console.warn('Could not process:', error);
       }
-    )
-  }
+    );
+  };
 
 }
 

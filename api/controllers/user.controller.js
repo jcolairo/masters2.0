@@ -26,23 +26,23 @@ function getSingleUser (req, res) {
 
 function getAllUsers (req, res) {
   User.find({ is_admin: false })
-  .populate('orders.items.product')
-  .exec(function (err, users) {
-    if (err) return Err.recordNotFound(res, err.message);
-    res.json(users);
-  });
+    .populate('orders.items.product')
+    .exec(function (err, users) {
+      if (err) return Err.recordNotFound(res, err.message);
+      res.json(users);
+    });
 }
 
 function addNewAddress (req, res) {
 
-  var newAddress = req && req.body && req.body.newAddress
+  var newAddress = req && req.body && req.body.newAddress;
   if (!newAddress) return Err.missingParams(res, ['newAddress']);
 
   if (!req.user && !req.user.user_id ) {
     return Err.unauthorizedReq(res);
   }
 
-  var query = { uid: req.user.uid, email: req.user.email}
+  var query = { uid: req.user.uid, email: req.user.email};
 
   User.findOne(query, function (err, user) {
     if (err || !user) return Err.recordNotFound(res, err.message);
@@ -52,8 +52,8 @@ function addNewAddress (req, res) {
     user.save(function (err) {
       if (err) return Err.recordNotFound(res, err.message);
       res.json(user);
-    })
-  })
+    });
+  });
 }
 
 
