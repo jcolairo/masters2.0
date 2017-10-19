@@ -12,36 +12,38 @@
       </label>
     </div>
 
-    <div class="option-group"
-         ng-repeat="group in product.subCat[0].combo_options track by $index ">
+    <div class="option-group-outer">
+      <div class="option-group"
+           ng-repeat="group in product.subCat[0].combo_options track by $index ">
 
-        <div class="productTitle">
-          <h1>{{group.name}}</h1>
-        </div>
+          <div class="productTitle">
+            <h1>{{group.name}}</h1>
+          </div>
 
-        <meal-options dish-options="group.options"
-                      meta="group.meta"
-                      people-qty="numberOfPeople"
-                      order="product.comboOrder[group.name]"
-                      selection-complete="product.comboStatus[$index]">
-        </meal-options>
+          <meal-options dish-options="group.options"
+                        meta="group.meta"
+                        people-qty="numberOfPeople"
+                        order="product.comboOrder[group.name]"
+                        selection-complete="product.comboStatus[$index]">
+          </meal-options>
 
+      </div>
     </div>
 
     <br>
     <div id="combo-summary">
       <p ng-if="product.showTotal">You have selected: </p>
-
-      <div ng-repeat="(orderGroup, items) in product.comboOrder">
+    <div class="selected-group-outer">
+      <div ng-repeat="(orderGroup, items) in product.comboOrder" class="selected-group {{orderGroup}}">
         <br>
-        <h1>{{ orderGroup }}</h1>
+        <h1 ng-if="!items.length == 0">{{ orderGroup }}</h1>
         <ol ng-init="product.showTotal = true">
           <li ng-repeat="dish in items track by $index"> {{$index + 1}}. {{ dish }} </li>
         </ol>
       </div>
       <br><br>
-      <p ng-if="product.showTotal"> Total: {{ numberOfPeople * product.subCat[0].price | price}} </p>
     </div>
+      <p ng-if="product.showTotal"> Total: {{ numberOfPeople * product.subCat[0].price | price}} </p>
 
     <combo-order-button
       ng-if="product.activateComboOrderButton()"
