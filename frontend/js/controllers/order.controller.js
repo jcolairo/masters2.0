@@ -44,7 +44,7 @@ function OrderController(OrderFactory, $state, $window) {
   };
 
   controller.submitOrder = function () {
-    OrderFactory.submitOrder({ notes: controller.notes, deliveryAddress: controller.deliveryAddress}).then(
+    OrderFactory.submitOrder({ notes: controller.notes, deliveryAddress: controller.deliveryAddress, timeSlot: controller.timeSlot}).then(
       function success(success) {
         controller.notes = '';
         console.log('Submited order', success);
@@ -58,6 +58,7 @@ function OrderController(OrderFactory, $state, $window) {
 
   function init() {
     controller.newOrder = {};
+    controller.timeSlot = null;
   }
   init();
 }

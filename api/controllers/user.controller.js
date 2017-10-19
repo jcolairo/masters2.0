@@ -56,7 +56,6 @@ function addNewAddress (req, res) {
   });
 }
 
-
 module.exports = {
   getUser: getSingleUser,
   getAllUsers: getAllUsers,

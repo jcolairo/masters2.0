@@ -11,9 +11,13 @@
     </div>
     </li>
   </ul>
-  Delivery Address:
-  <span>{{ order.delivery_address }}</span>
 
+  <span><strong>Address: </strong>{{ order.delivery_address }}</span>
+  <br>
+  <br>
+  <span><strong>Time Slot: </strong>{{ order.time_slot }}</span>
+  <br>
+  <br>
   <p ng-if="order.has_been_submitted">Status: {{ order.has_been_processed ? "Complete" : "Being Prepaired!"}}</p>
 
   <p class="order-total userLi">£ {{ order.total }} </p>

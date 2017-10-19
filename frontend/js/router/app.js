@@ -198,15 +198,15 @@ function authInteceptor ($httpProvider) {
 authInteceptor.$inject = ['$httpProvider'];
 
 angular
-  .module('MastersApp', ['ui.router', 'firebase', 'sticky'])
-  .config(MainRouter)
-  .factory('httpRequestInteceptor', tokenHeader)
-  .config(authInteceptor)
-  .run(['$rootScope', '$state', function ($rootScope, $state) {
-    $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
-      console.log('State Change Error: ', error);
-      if (error === 'AUTH_REQUIRED' || error === 'ADMIN_REQUIRED') {
-        $state.go('auth-required');
-      }
-    });
-  }]);
+.module('MastersApp', ['ui.router', 'firebase', 'sticky', 'moment-picker'])
+.config(MainRouter)
+.factory('httpRequestInteceptor', tokenHeader)
+.config(authInteceptor)
+.run(['$rootScope', '$state', function ($rootScope, $state) {
+  $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+    console.log('State Change Error: ', error)
+    if (error === 'AUTH_REQUIRED' || error === 'ADMIN_REQUIRED') {
+      $state.go('auth-required');
+    }
+  });
+}]);

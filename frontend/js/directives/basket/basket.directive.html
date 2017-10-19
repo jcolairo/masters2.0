@@ -70,6 +70,18 @@
         </form>
       </div>
 
+      <div class="input-group"
+           moment-picker="orderCTRL.timeSlot"
+           format="DD-MM-YYYY HH:mm">
+          <span class="input-group-addon">
+              <i class="octicon octicon-calendar"></i>
+          </span>
+          <input class="form-control"
+                 placeholder="Select a date and time"
+                 ng-model="orderCTRL.timeSlot"
+                 ng-model-options="{ updateOn: 'blur' }">
+      </div>
+
       <button ng-disabled="delivery_address" ng-click="orderCTRL.submitOrder()">Confirm</button>
     </div>
 
