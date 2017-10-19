@@ -16,13 +16,16 @@ function sendOrderConfirmation (user) {
 
   productsHTML += [
     '<br>',
+    '<p>',
     '<b>' + 'Time Slot:' + '</b>'+ user.basket.time_slot,
-    '<br>',
+    '</p>',
+    '<p>',
     '<b>' + 'Delivery Address:' + '</b>'+ user.basket.delivery_address,
+    '</p>',
     '<br>'
   ].join('');
 
-  productsHTML += '<b>' + 'Total:' + user.basket.total  + '</b>';
+  productsHTML += '<p>' + '</p>' + '<b>' + 'Total:' + '</b>' + user.basket.total +'<p>' + '</p>' ;
 
   function generateSingleProductHTML(prod) {
 
@@ -36,16 +39,16 @@ function sendOrderConfirmation (user) {
         '</p>',
         '<p>',
         '<b>' + 'Salads:' + '</b>'+ prod.dishOptions.salads.join(', '),
-        '<br>',
+        '</p>',
+        '<p>',
         '<b>' + 'Mains:' + '</b>'+ prod.dishOptions.mains.join(', '),
-        '<br>',
+        '</p>',
+        '<p>',
         '<b>' + 'Desers:' + '</b>'+ prod.dishOptions.deserts.join(', '),
         '</p>',
         '<p>',
         '<b>' + 'QTY:' + '</b>'+ prod.qty,
-        '<br>',
-        '</p>',
-        '<br>'
+        '</p>'
       ].join('');
 
       return productData;
