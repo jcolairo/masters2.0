@@ -20,16 +20,16 @@ function AuthController($state, AuthFactory, $rootScope) {
   controller.signIn = () => {
     controller.error = null;
     AuthFactory.$signInWithEmailAndPassword(controller.email, controller.password).then(
-        () => {
-          resetCredentials();
-          $state.go('home');
-        },
-        (error) => {
-          controller.error = error;
-          console.warn('could not log in user with email and password:', error);
-          resetCredentials();
-        }
-      );
+      () => {
+        resetCredentials();
+        $state.go('home');
+      },
+      (error) => {
+        controller.error = error;
+        console.warn('could not log in user with email and password:', error);
+        resetCredentials();
+      }
+    );
   };
 
 

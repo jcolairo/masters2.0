@@ -15,11 +15,11 @@ function basketDirective (UserFactory) {
       scope.newAddress = {};
       scope.placeOrder = function () {
         scope.showNotes = true;
-      }
+      };
 
       scope.toggleNewAddressForm = function () {
         scope.showNewAddress = !scope.showNewAddress;
-      }
+      };
 
       scope.addAddress = function (event) {
         angular.element(event.target).addClass('hide');
@@ -32,13 +32,13 @@ function basketDirective (UserFactory) {
           .catch(function (err) {
             console.error(err);
           });
-      }
+      };
 
     }
   };
 }
 
-basketDirective.$inject = ['UserFactory']
+basketDirective.$inject = ['UserFactory'];
 
 angular
   .module('MastersApp')

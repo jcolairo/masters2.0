@@ -18,7 +18,7 @@ function addProductsToBasket (req, res) {
     var product = products[0];
     var currentBasketProducts = user.basket.items.map(function (prod) {
       return prod.product;
-    }).join('|') || ''
+    }).join('|') || '';
 
     var productToTest = new RegExp(product.product, 'ig');
     if (productToTest.test(currentBasketProducts)) {
@@ -106,15 +106,15 @@ function submitOrder (req, res) {
     .findOne(query)
     .populate('orders.items.product basket.items.product')
     .exec(function (err, user) {
-    if (err || !user) return Err.recordNotFound(res, err);
-      var a = req && req.body && req.body.deliveryAddress
-      var notes = req && req.body && req.body.notes
+      if (err || !user) return Err.recordNotFound(res, err);
+      var a = req && req.body && req.body.deliveryAddress;
+      var notes = req && req.body && req.body.notes;
 
       if (a) {
-        user.basket.delivery_address = `${a.line_one || ''}, ${a.line_two || ''}, ${a.line_three || ''}, ${a.post_code || ''}`
+        user.basket.delivery_address = `${a.line_one || ''}, ${a.line_two || ''}, ${a.line_three || ''}, ${a.post_code || ''}`;
       }
       if (notes) {
-        user.basket.customer_notes = notes
+        user.basket.customer_notes = notes;
       }
 
       user.basket.has_been_submitted = true;
@@ -128,8 +128,8 @@ function submitOrder (req, res) {
           emailManager.sendOrderConfirmation(orderInfo);
           res.json(user);
         }
-      })
-  });
+      });
+    });
 }
 
 function processOrder (req, res) {

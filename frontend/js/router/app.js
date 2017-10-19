@@ -1,26 +1,26 @@
 function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
 
   var authRequired = {
-    "currentAuth": ['AuthFactory', function(AuthFactory) {
+    'currentAuth': ['AuthFactory', function(AuthFactory) {
       return AuthFactory.$requireSignIn();
     }]
-  }
+  };
 
   var currentUser = {
-    "currentUser": ['UserFactory', 'currentAuth', '$rootScope', function(UserFactory, currentAuth, $rootScope) {
-      $rootScope.token = currentAuth._lat
+    'currentUser': ['UserFactory', 'currentAuth', '$rootScope', function(UserFactory, currentAuth, $rootScope) {
+      $rootScope.token = currentAuth._lat;
       return UserFactory.getSingleUser(currentAuth.uid);
     }]
-  }
+  };
 
   var isAdmin = {
-    "isAdmin": ['currentUser', function (currentUser) {
+    'isAdmin': ['currentUser', function (currentUser) {
       return new Promise(function (resolve, reject){
         if (currentUser.data.is_admin) resolve(true);
         else reject('ADMIN_REQUIRED');
       });
     }]
-  }
+  };
 
   $stateProvider
     .state('home', {
@@ -189,15 +189,15 @@ function authInteceptor ($httpProvider) {
 authInteceptor.$inject = ['$httpProvider'];
 
 angular
-.module('MastersApp', ['ui.router', 'firebase', 'sticky'])
-.config(MainRouter)
-.factory('httpRequestInteceptor', tokenHeader)
-.config(authInteceptor)
-.run(['$rootScope', '$state', function ($rootScope, $state) {
-  $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
-    console.log('State Change Error: ', error)
-    if (error === 'AUTH_REQUIRED' || error === 'ADMIN_REQUIRED') {
-      $state.go('auth-required');
-    }
-  });
-}]);
+  .module('MastersApp', ['ui.router', 'firebase', 'sticky'])
+  .config(MainRouter)
+  .factory('httpRequestInteceptor', tokenHeader)
+  .config(authInteceptor)
+  .run(['$rootScope', '$state', function ($rootScope, $state) {
+    $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+      console.log('State Change Error: ', error);
+      if (error === 'AUTH_REQUIRED' || error === 'ADMIN_REQUIRED') {
+        $state.go('auth-required');
+      }
+    });
+  }]);
