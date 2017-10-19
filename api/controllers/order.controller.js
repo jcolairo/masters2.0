@@ -18,10 +18,10 @@ function addProductsToBasket (req, res) {
     var product = products[0];
     var currentBasketProducts = user.basket.items.map(function (prod) {
       return prod.product;
-    }).join('|') || ''
+    }).join('|') || '';
 
     var productToTest = new RegExp(product.product, 'ig');
-    if (productToTest.test(currentBasketProducts)) {
+    if (product.type !== 'combo' && productToTest.test(currentBasketProducts)) {
       for (var j = 0; j < user.basket.items.length; j++) {
         if (user.basket.items[j].product == product.product) {
           user.basket.items[j].qty += product.qty;
@@ -112,10 +112,10 @@ function submitOrder (req, res) {
       var timeSlot = req && req.body && req.body.timeSlot;
 
       if (a) {
-        user.basket.delivery_address = `${a.line_one || ''}, ${a.line_two || ''}, ${a.line_three || ''}, ${a.post_code || ''}`
+        user.basket.delivery_address = `${a.line_one || ''}, ${a.line_two || ''}, ${a.line_three || ''}, ${a.post_code || ''}`;
       }
       if (notes) {
-        user.basket.customer_notes = notes
+        user.basket.customer_notes = notes;
       }
       if (timeSlot) {
         user.basket.time_slot = timeSlot;
@@ -132,8 +132,8 @@ function submitOrder (req, res) {
           emailManager.sendOrderConfirmation(orderInfo);
           res.json(user);
         }
-      })
-  });
+      });
+    });
 }
 
 function processOrder (req, res) {

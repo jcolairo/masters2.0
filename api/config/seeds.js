@@ -511,48 +511,58 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Mains',
+          'title': 'Cold Meal Deal',
           'price': '18.50',
           'category': 'lunch',
+          'type': 'combo',
           'sub_category': 'coldFork',
-          'description': [
-            'Gammon Ham',
-            'Roast Beef',
-            'Grilled Breast of Chicken',
-            'Roast Turkey',
-            'Poached Salmon',
-            'Quiche',
-            'Goats Cheese and Baked Vegetables in Filo',
-            'Ricotta Cheese with Spinach tart'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Salads',
-          'price': '18.50',
-          'category': 'lunch',
-          'sub_category': 'coldFork',
-          'description': [
-            'Mixed Leaf Salad',
-            'Greek Salad',
-            'Cherry Tomato & Mozzarella',
-            'Coleslaw',
-            '3 Bean Salad',
-            'Pasta salad with mozzarella balls',
-            'New Potatoes with Red Onion and French dressing salad'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Desserts',
-          'price': '18.50',
-          'category': 'lunch',
-          'sub_category': 'coldFork',
-          'description': [
-            'Apple & Blackberry Pie',
-            'Pecan & Treacle Tart',
-            'Banoffee Triple Decker Pie',
-            'Carrot CakeRed Velvet Gateau'
+          'description': 'Please select from the following options ... ',
+
+          'combo_options': [
+            {
+              'meta': {
+                'combo_dish_count': 2
+              },
+              'name': 'mains',
+              'options': [
+                'Gammon Ham',
+                'Roast Beef',
+                'Grilled Breast of Chicken',
+                'Roast Turkey',
+                'Poached Salmon',
+                'Quiche',
+                'Goats Cheese and Baked Vegetables in Filo',
+                'Ricotta Cheese with Spinach tart'
+              ]
+            },
+            {
+              'name': 'salads',
+              'meta': {
+                'combo_dish_count': 3
+              },
+              'options': [
+                'Mixed Leaf Salad',
+                'Greek Salad',
+                'Cherry Tomato & Mozzarella',
+                'Coleslaw',
+                '3 Bean Salad',
+                'Pasta salad with mozzarella balls',
+                'New Potatoes with Red Onion and French dressing salad'
+              ]
+            },
+            {
+              'name': 'desserts',
+              'meta': {
+                'combo_dish_count': 1,
+                'bouns_dish': 'true'
+              },
+              'options': [
+                'Apple & Blackberry Pie',
+                'Pecan & Treacle Tart',
+                'Banoffee Triple Decker Pie',
+                'Carrot CakeRed Velvet Gateau'
+              ]
+            }
           ],
           'img_path': '../some_location'
         },

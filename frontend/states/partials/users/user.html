@@ -1,29 +1,32 @@
 <section ng-controller="UserController as user">
   <div ng-init="user.getSingleUser()" class="userDiv">
 
-    <div>
+    <div class="basketOrder">
       <h2>Your Basket</h2>
-      <Basket basket="user.user.basket" addresses="user.user.address" class="basket"></Basket>
+      <div class="basketOrderDiv">
+        <Basket basket="user.user.basket" addresses="user.user.address" class="basket pendingOrderUl"></Basket>
+      </div>
     </div>
 
     <br>
 
-    <div>
+    <div class="pendingOrder">
       <h2>Your Pending Orders</h2>
-
-      <ul ng-repeat="thisOrder in user.user.orders | filter: { has_been_processed: false }" >
-        <Order order="thisOrder"></Order>
-      </ul>
-
+      <div class="pendingOrderDiv">
+        <ul ng-repeat="thisOrder in user.user.orders | filter: { has_been_processed: false }" class="pendingOrderUl">
+          <Order order="thisOrder"></Order>
+        </ul>
+      </div>
     </div>
 
-    <div>
+
+    <div class="pendingOrder">
       <h2>Order History</h2>
-
-      <ul ng-repeat="thisOrder in user.user.orders | filter: { has_been_processed: true }" >
-        <Order order="thisOrder"></Order>
-      </ul>
-
+      <div class="pendingOrderDiv">
+        <ul ng-repeat="thisOrder in user.user.orders | filter: { has_been_processed: true }" class="pendingOrderUl">
+          <Order order="thisOrder"></Order>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

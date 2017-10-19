@@ -1,13 +1,15 @@
 var mongoose      = require('mongoose');
 var ProductSchema = new mongoose.Schema({
 
-  title:        { type: String, required: true },
-  price:        { type: Number, required: true },
-  category:     { type: String, required: true },
+  title: { type: String, required: true },
+  price: { type: Number, required: true },
+  type: { type: String, default: 'static' },
+  category: { type: String, required: true },
   sub_category: { type: String, required: true },
-  description:  { type: String },
-  options:      [],
-  image_path:   { type: String }
+  combo_options: [],
+  description: { type: String },
+  options: [],
+  image_path: { type: String }
 
 },{
 

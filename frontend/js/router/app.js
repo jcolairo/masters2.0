@@ -1,26 +1,26 @@
 function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
 
   var authRequired = {
-    "currentAuth": ['AuthFactory', function(AuthFactory) {
+    'currentAuth': ['AuthFactory', function(AuthFactory) {
       return AuthFactory.$requireSignIn();
     }]
-  }
+  };
 
   var currentUser = {
-    "currentUser": ['UserFactory', 'currentAuth', '$rootScope', function(UserFactory, currentAuth, $rootScope) {
-      $rootScope.token = currentAuth._lat
+    'currentUser': ['UserFactory', 'currentAuth', '$rootScope', function(UserFactory, currentAuth, $rootScope) {
+      $rootScope.token = currentAuth._lat;
       return UserFactory.getSingleUser(currentAuth.uid);
     }]
-  }
+  };
 
   var isAdmin = {
-    "isAdmin": ['currentUser', function (currentUser) {
+    'isAdmin': ['currentUser', function (currentUser) {
       return new Promise(function (resolve, reject){
         if (currentUser.data.is_admin) resolve(true);
         else reject('ADMIN_REQUIRED');
       });
     }]
-  }
+  };
 
   $stateProvider
     .state('home', {
@@ -113,6 +113,15 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         'aside@sub_category': {templateUrl: '/states/partials/menu/aside.html'},
         'menu@sub_category': {templateUrl: '/states/partials/menu/subCat/sub_category.html'},
         'footer@sub_category': {templateUrl: '/states/partials/footer/footer.html'}
+      }
+    })
+    .state('combo', {
+      url: `/combo/:category/:sub_category`,
+      views: {
+        '': {templateUrl: '/states/partials/template.html'},
+        'aside@combo': {templateUrl: '/states/partials/menu/aside.html'},
+        'menu@combo': {templateUrl: '/states/partials/menu/subCat/combo-order.html'},
+        'footer@combo': {templateUrl: '/states/partials/footer/footer.html'}
       }
     })
     .state('breakfast', {

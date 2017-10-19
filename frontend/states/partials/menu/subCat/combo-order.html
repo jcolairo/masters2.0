@@ -1,0 +1,61 @@
+<section class="combo-order-page">
+
+  <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" >
+    <h1>Combo Order Page</h1>
+    <b>Cold Fork Buffet £18.50+VAT per head</b>
+    <p>Choose two mains, three salads and one dessert from the list below. If you are ordering for ten people or more then please choose an additional dessert.</p>
+
+    <div ng-init="numberOfPeople = 2; product.comboOrder = {}">
+      <label>
+        Number Of People:
+        <input type="number" ng-model="numberOfPeople">
+      </label>
+    </div>
+
+    <div class="option-group-outer">
+      <div class="option-group"
+           ng-repeat="group in product.subCat[0].combo_options track by $index ">
+
+          <div class="productTitle">
+            <h1>{{group.name}}</h1>
+          </div>
+
+          <meal-options dish-options="group.options"
+                        meta="group.meta"
+                        people-qty="numberOfPeople"
+                        order="product.comboOrder[group.name]"
+                        selection-complete="product.comboStatus[$index]">
+          </meal-options>
+
+      </div>
+    </div>
+
+    <br>
+    <div id="combo-summary">
+      <p ng-if="product.showTotal">You have selected: </p>
+    <div class="selected-group-outer">
+      <div ng-repeat="(orderGroup, items) in product.comboOrder" class="selected-group {{orderGroup}}">
+        <br>
+        <h1 ng-if="!items.length == 0">{{ orderGroup }}</h1>
+        <ol ng-init="product.showTotal = true">
+          <li ng-repeat="dish in items track by $index"> {{$index + 1}}. {{ dish }} </li>
+        </ol>
+      </div>
+      <br><br>
+    </div>
+      <p ng-if="product.showTotal"> Total: {{ numberOfPeople * product.subCat[0].price | price}} </p>
+
+    <combo-order-button
+      ng-if="product.activateComboOrderButton()"
+      dish-options="product.comboOrder"
+      people-qty="numberOfPeople"
+      product-id="product.subCat[0]._id"
+      title="product.subCat[0].title">
+    </combo-order-button>
+
+
+  </div>
+
+
+
+</section>

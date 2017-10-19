@@ -27,8 +27,8 @@ function UserController(UserFactory, OrderFactory, $stateParams) {
   };
 
   controller.processOrder = function (userUid, orderId) {
-    console.log(userUid)
-    console.log(orderId)
+    console.log(userUid);
+    console.log(orderId);
     OrderFactory.processOrder(userUid, orderId).then(
       function (success) {
         console.log('success processing order');
@@ -37,33 +37,8 @@ function UserController(UserFactory, OrderFactory, $stateParams) {
       function (error) {
         console.warn('Could not process:', error);
       }
-    )
+    );
   };
-
-  controller.datetimePicker = function() {
-
-    var date = document.getElementById(date).value;
-    var time = document.getElementById(time).value;
-
-    date = document.getElementById('deliveredByDate').innerHTML;
-    time = document.getElementById('deliveredByTime').innerHTML;
-  };
-
-  // controller.getDeliveryDate = function () {
-  //   var date = document.getElementById(date).value;
-  //   var time = document.getElementById(time).value;
-  //
-  //   date = document.getElementById('deliveredByDate').innerHTML;
-  //   time = document.getElementById('deliveredByTime').innerHTML;
-  //   // UserFactory.getDeliveryDate(date).then(
-  //   //   function (success) {
-  //   //     console.log('success deliverying date');
-  //   //   },
-  //   //   function (error) {
-  //   //     console.warn('could not process date:', error);
-  //   //   }
-  //   // );
-  // };
 
 }
 
