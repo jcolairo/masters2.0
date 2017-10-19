@@ -19,10 +19,6 @@ function OrderController(OrderFactory, $state, $window) {
     );
   };
 
-  controller.addComboToOrder = function (name, selection, peopleQty) {
-    console.log(Arguments);
-  }
-
   controller.editOrder = function (updatedItems) {
     OrderFactory.editOrder(updatedItems).then(
       function success(success) {
