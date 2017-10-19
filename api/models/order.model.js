@@ -5,6 +5,7 @@ var OrderSchema = new mongoose.Schema({
     product:    { ref: 'Product', type: mongoose.Schema.ObjectId },
     qty:        { type: Number, default: 1 }
   }],
+  time_slot:     { type: String },
   has_been_processed: { type: Boolean, default: false },
   has_been_submitted: { type: Boolean, default: false },
   delivery_address:   { type: String },
