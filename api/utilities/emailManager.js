@@ -17,7 +17,7 @@ function sendOrderConfirmation (user) {
   productsHTML += '<b>' + 'Total:' + user.basket.total  + '</b>';
 
   function generateSingleProductHTML(prod) {
-    console.log(prod)
+
     if (prod.product.type === 'combo') {
       var productData =  [
         '<p>',
@@ -28,7 +28,9 @@ function sendOrderConfirmation (user) {
         '</p>',
         '<p>',
         '<b>' + 'Salads:' + '</b>'+ prod.dishOptions.salads.join(', '),
+        '<br>',
         '<b>' + 'Mains:' + '</b>'+ prod.dishOptions.mains.join(', '),
+        '<br>',
         '<b>' + 'Desers:' + '</b>'+ prod.dishOptions.deserts.join(', '),
         '</p>',
         '<p>',
