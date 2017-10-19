@@ -109,12 +109,16 @@ function submitOrder (req, res) {
     if (err || !user) return Err.recordNotFound(res, err);
       var a = req && req.body && req.body.deliveryAddress
       var notes = req && req.body && req.body.notes
+      var timeSlot = req && req.body && req.body.timeSlot;
 
       if (a) {
         user.basket.delivery_address = `${a.line_one || ''}, ${a.line_two || ''}, ${a.line_three || ''}, ${a.post_code || ''}`
       }
       if (notes) {
         user.basket.customer_notes = notes
+      }
+      if (timeSlot) {
+        user.basket.time_slot = timeSlot;
       }
 
       user.basket.has_been_submitted = true;
@@ -123,7 +127,7 @@ function submitOrder (req, res) {
 
       user.submitOrder(function (err) {
         if (err) {
-          return Err.miscError(res, error.message);
+          return Err.miscError(res, err.message);
         } else {
           emailManager.sendOrderConfirmation(orderInfo);
           res.json(user);
