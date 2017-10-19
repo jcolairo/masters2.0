@@ -15,6 +15,18 @@
       <input type="submit" value="edit order">
     </form>
 
+    <div class="basket-option" ng-if="item.product.type === 'combo'">
+
+      <button ng-click="toggleDetails()">{{ showDetails ? "Hide" : "Show" }} Details</button>
+
+      <div ng-repeat="(key, value) in item.dishOptions">
+        <h5>{{key}}</h5>
+        <ul class="option-group">
+          <li ng-repeat="option in value">{{option}}</li>
+        </ul>
+      </div>
+    </div>
+
     <p class="priceOrder">{{item.product.price * item.qty | price}}</p>
   </li>
 

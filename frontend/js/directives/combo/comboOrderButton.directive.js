@@ -1,5 +1,5 @@
 
-function comboOrderButton () {
+function comboOrderButton (OrderFactory, $state) {
   return {
     restrict: 'E',
     replace: true,
@@ -7,18 +7,36 @@ function comboOrderButton () {
     scope: {
       dishOptions: '=',
       peopleQty: '=',
+      productId: '=',
       title: '='
     },
     template: '<button>Click To Order</button>',
-    link: function (scope, element, attrs) {
+    link: function (scope, element) {
+
       angular.element(element).on('click', function () {
-        console.log(scope.dishOptions);
-        console.log(scope.peopleQty);
-        console.log(scope.title);
+
+        var order = [{
+          type: 'combo',
+          product: scope.productId,
+          qty: scope.peopleQty,
+          dishOptions: scope.dishOptions
+        }];
+
+
+        OrderFactory.addToOrder({ products: order })
+          .then(function () {
+            $state.go('menu');
+          })
+          .catch(function (err) {
+            console.error(err);
+          });
       });
+      
     }
   };
 }
+
+comboOrderButton.$inject = ['OrderFactory', '$state'];
 
 angular
   .module('MastersApp')
