@@ -9,6 +9,13 @@
 
       <p class="priceOrder">{{item.product.price * item.qty | price}}</p>
     </div>
+
+    <form ng-controller="OrderController as order" ng-submit="order.addToOrder(item._id, item.qty)">
+      <div>
+        <input type="submit" value="add to order" ng-model="item._id">
+      </div>
+    </form>
+
     </li>
   </ul>
 
