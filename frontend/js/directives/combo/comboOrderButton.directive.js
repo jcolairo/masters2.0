@@ -22,7 +22,6 @@ function comboOrderButton (OrderFactory, $state) {
           dishOptions: scope.dishOptions
         }];
 
-
         OrderFactory.addToOrder({ products: order })
           .then(function () {
             $state.go('menu');
@@ -31,7 +30,7 @@ function comboOrderButton (OrderFactory, $state) {
             console.error(err);
           });
       });
-      
+
     }
   };
 }

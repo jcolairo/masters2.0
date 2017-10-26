@@ -19,24 +19,6 @@ function OrderController(OrderFactory, $state, $window) {
     );
   };
 
-  controller.reOrderToOrder = function (id, qty) {
-    var order = {
-      products: [{
-        product: id,
-        qty: qty
-      }]
-    };
-    OrderFactory.addToOrder(order).then(
-      function success(success) {
-        console.log('Created new order:', success);
-        $state.reload();
-      },
-      function error(error) {
-        console.warn('Error creating order:', error);
-      }
-    );
-  };
-
   controller.editOrder = function (updatedItems) {
     OrderFactory.editOrder(updatedItems).then(
       function success(success) {

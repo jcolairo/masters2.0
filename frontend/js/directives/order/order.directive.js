@@ -1,5 +1,5 @@
 
-function orderDirective () {
+function orderDirective (OrderFactory, $state) {
   return {
     restrict: 'E',
     replace: false,
@@ -16,9 +16,52 @@ function orderDirective () {
         scope.expand = !scope.expand;
       };
 
+      scope.reOrderToOrder = function (id, qty, dishOptions) {
+        var order;
+
+        if (dishOptions) {
+
+          order = {
+            products: [{
+              type: 'combo',
+              product: id,
+              qty: qty,
+              dishOptions: dishOptions
+            }]
+          };
+
+        } else {
+
+          order = {
+            products: [{
+              product: id,
+              qty: qty
+            }]
+          };
+
+        }
+
+        executeReOrder(order);
+
+      };
+
+      function executeReOrder (order) {
+        OrderFactory.addToOrder(order).then(
+          function success(success) {
+            console.log('Created new order:', success);
+            $state.reload();
+          },
+          function error(error) {
+            console.warn('Error creating order:', error);
+          }
+        );
+      }
+
     }
   };
 }
+
+orderDirective.$inject = ['OrderFactory', '$state'];
 
 angular
   .module('MastersApp')

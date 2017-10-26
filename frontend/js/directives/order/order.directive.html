@@ -10,11 +10,12 @@
       <p class="priceOrder">{{item.product.price * item.qty | price}}</p>
     </div>
 
-    <div ng-controller="OrderController as order">
-      <form ng-submit="order.reOrderToOrder(item.product._id, item.qty)">
-          <input type="submit" value="re-order" ng-model="order.newOrder">
+    <div>
+      <form ng-submit="reOrderToOrder(item.product._id, item.qty, item.dishOptions)">
+          <input type="submit" value="re-order">
       </form>
     </div>
+
 
     </li>
   </ul>
