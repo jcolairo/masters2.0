@@ -29,7 +29,7 @@ function sendOrderConfirmation (user) {
         '<p>',
         '<b>' + 'Salads:' + '</b>'+ prod.dishOptions.salads.join(', '),
         '<b>' + 'Mains:' + '</b>'+ prod.dishOptions.mains.join(', '),
-        '<b>' + 'Desers:' + '</b>'+ prod.dishOptions.derserts.join(', '),
+        '<b>' + 'Desers:' + '</b>'+ prod.dishOptions.deserts.join(', '),
         '</p>',
         '<p>',
         '<b>' + 'QTY:' + '</b>'+ prod.qty,
