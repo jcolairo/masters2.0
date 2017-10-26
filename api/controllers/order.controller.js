@@ -21,8 +21,10 @@ function addProductsToBasket (req, res) {
     }).join('|') || '';
 
     var productToTest = new RegExp(product.product, 'ig');
+
     if (product.type !== 'combo' && productToTest.test(currentBasketProducts)) {
       for (var j = 0; j < user.basket.items.length; j++) {
+
         if (user.basket.items[j].product == product.product) {
           user.basket.items[j].qty += product.qty;
         }

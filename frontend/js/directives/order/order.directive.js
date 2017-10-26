@@ -16,10 +16,10 @@ function orderDirective (OrderFactory, $state) {
         scope.expand = !scope.expand;
       };
 
-      scope.reOrderToOrder = function (id, qty, dishOptions) {
+      scope.reOrderToOrder = function (id, qty, dishOptions, type) {
         var order;
 
-        if (dishOptions) {
+        if (type === 'combo') {
 
           order = {
             products: [{
@@ -30,7 +30,7 @@ function orderDirective (OrderFactory, $state) {
             }]
           };
 
-        } else {
+        } else if (type === 'static'){
 
           order = {
             products: [{
