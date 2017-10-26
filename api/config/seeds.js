@@ -516,53 +516,54 @@ function seed () {
           'category': 'lunch',
           'type': 'combo',
           'sub_category': 'coldFork',
-          'description': "Please select from the following options ... ",
+          'description': 'Please select from the following options ... ',
 
           'combo_options': [
-              {
-                'meta': {
-                  'combo_dish_count': 2
-                },
-                'name': 'mains',
-                'options': [
-                  'Gammon Ham',
-                  'Roast Beef',
-                  'Grilled Breast of Chicken',
-                  'Roast Turkey',
-                  'Poached Salmon',
-                  'Quiche',
-                  'Goats Cheese and Baked Vegetables in Filo',
-                  'Ricotta Cheese with Spinach tart'
-                ]
+            {
+              'meta': {
+                'combo_dish_count': 2
               },
-              {
-                'name': 'salads',
-                'meta': {
-                  'combo_dish_count': 3
-                },
-                'options': [
-                  'Mixed Leaf Salad',
-                  'Greek Salad',
-                  'Cherry Tomato & Mozzarella',
-                  'Coleslaw',
-                  '3 Bean Salad',
-                  'Pasta salad with mozzarella balls',
-                  'New Potatoes with Red Onion and French dressing salad'
-                ],
+              'name': 'mains',
+              'options': [
+                'Gammon Ham',
+                'Roast Beef',
+                'Grilled Breast of Chicken',
+                'Roast Turkey',
+                'Poached Salmon',
+                'Quiche',
+                'Goats Cheese and Baked Vegetables in Filo',
+                'Ricotta Cheese with Spinach tart'
+              ]
+            },
+            {
+              'name': 'salads',
+              'meta': {
+                'combo_dish_count': 3
               },
-              {
-                'name': 'desserts',
-                'meta': {
-                  'combo_dish_count': 1,
-                  'bouns_dish': 'true'
-                },
-                'options': [
-                  'Apple & Blackberry Pie',
-                  'Pecan & Treacle Tart',
-                  'Banoffee Triple Decker Pie',
-                  'Carrot CakeRed Velvet Gateau'
-                ],
-              }
+              'options': [
+                'Mixed Leaf Salad',
+                'Greek Salad',
+                'Cherry Tomato & Mozzarella',
+                'Coleslaw',
+                '3 Bean Salad',
+                'Pasta salad with mozzarella balls',
+                'New Potatoes with Red Onion and French dressing salad'
+              ]
+            },
+            {
+              'name': 'desserts',
+              'meta': {
+                'combo_dish_count': 1,
+                'bouns_dish': 'true'
+              },
+              'options': [
+                'Apple & Blackberry Pie',
+                'Pecan & Treacle Tart',
+                'Banoffee Triple Decker Pie',
+                'Carrot CakeRed',
+                'Velvet Gateau'
+              ]
+            }
           ],
           'img_path': '../some_location'
         },
@@ -607,41 +608,83 @@ function seed () {
         //   'img_path': '../some_location'
         // },
         {
-          'title': 'Mains',
+          'title': 'Hot Fork Meal',
           'price': '19.50',
-          'category': 'lunch',
+          'type': 'combo',
           'sub_category': 'hotFork',
-          'description': [
-            'Roast Chicken',
-            'Roast Beef with Yorkshire Pudding',
-            'Meat Lasagna',
-            'Shepherd\'s Pie and Baked Beans',
-            'Bangers & Mash',
-            'Chilli Con Carne with Rice',
-            'Chicken KievBeef Bourguignon',
-            'Poached SalmonFillets of Seabass',
-            'Vegetable Lasagna',
-            'Ricotta & Spinach Lasagna',
-            'Pasta with Mozzarella basil and Napoli Sauce',
-            'Veggie Mince Shepherd\'s pie'
-          ],
-          'img_path': '../some_location'
-
+          'description': 'Please select from the following options ...',
+          'combo-options': [
+            {
+              'meta': {
+                'combo_dish_count': 2
+              },
+              'name': 'mains',
+              'options': [
+                'Roast Chicken',
+                'Roast Beef with Yorkshire Pudding',
+                'Meat Lasagna',
+                'Shepherd\'s Pie and Baked Beans',
+                'Bangers & Mash',
+                'Chilli Con Carne with Rice',
+                'Chicken KievBeef Bourguignon',
+                'Poached SalmonFillets of Seabass',
+                'Vegetable Lasagna',
+                'Ricotta & Spinach Lasagna',
+                'Pasta with Mozzarella basil and Napoli Sauce',
+                'Veggie Mince Shepherd\'s pie'
+              ]
+            },
+            {'name': 'desserts',
+              'meta': {
+                'combo_dish_count': 1,
+                'bonus_dish': 'true'
+              },
+              'options': [
+                'Apple & Blackberry Pie',
+                'Pecan & Treacle Tart',
+                'Banoffee Triple Decker Pie',
+                'Carrot Cake',
+                'Red Velvet Gateau'
+              ]
+            }
+          ]
         },
-        {
-          'title': 'Desserts',
-          'price': '19.50',
-          'category': 'lunch',
-          'sub_category': 'hotFork',
-          'description': [
-            'Apple & Blackberry Pie',
-            'Pecan & Treacle Tart',
-            'Banoffee Triple Decker Pie',
-            'Carrot Cake',
-            'Red Velvet Gateau'
-          ],
-          'img_path': '../some_location'
-        },
+        // {
+        //   'title': 'Mains',
+        //   'price': '19.50',
+        //   'category': 'lunch',
+        //   'sub_category': 'hotFork',
+        //   'description': [
+        //     'Roast Chicken',
+        //     'Roast Beef with Yorkshire Pudding',
+        //     'Meat Lasagna',
+        //     'Shepherd\'s Pie and Baked Beans',
+        //     'Bangers & Mash',
+        //     'Chilli Con Carne with Rice',
+        //     'Chicken KievBeef Bourguignon',
+        //     'Poached SalmonFillets of Seabass',
+        //     'Vegetable Lasagna',
+        //     'Ricotta & Spinach Lasagna',
+        //     'Pasta with Mozzarella basil and Napoli Sauce',
+        //     'Veggie Mince Shepherd\'s pie'
+        //   ],
+        //   'img_path': '../some_location'
+        //
+        // },
+        // {
+        //   'title': 'Desserts',
+        //   'price': '19.50',
+        //   'category': 'lunch',
+        //   'sub_category': 'hotFork',
+        //   'description': [
+        //     'Apple & Blackberry Pie',
+        //     'Pecan & Treacle Tart',
+        //     'Banoffee Triple Decker Pie',
+        //     'Carrot Cake',
+        //     'Red Velvet Gateau'
+        //   ],
+        //   'img_path': '../some_location'
+        // },
         {
           'title': 'Selection of Sandwiches',
           'price': '3.30',
