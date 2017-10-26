@@ -14,7 +14,18 @@ function sendOrderConfirmation (user) {
     productsHTML += generateSingleProductHTML(prod);
   });
 
-  productsHTML += '<b>' + 'Total:' + user.basket.total  + '</b>';
+  productsHTML += [
+    '<br>',
+    '<p>',
+    '<b>' + 'Time Slot:' + '</b>'+ user.basket.time_slot,
+    '</p>',
+    '<p>',
+    '<b>' + 'Delivery Address:' + '</b>'+ user.basket.delivery_address,
+    '</p>',
+    '<br>'
+  ].join('');
+
+  productsHTML += '<p>' + '</p>' + '<b>' + 'Total:' + '</b>' + user.basket.total +'<p>' + '</p>' ;
 
   function generateSingleProductHTML(prod) {
 
@@ -28,15 +39,17 @@ function sendOrderConfirmation (user) {
         '</p>',
         '<p>',
         '<b>' + 'Salads:' + '</b>'+ prod.dishOptions.salads.join(', '),
+        '</p>',
+        '<p>',
         '<b>' + 'Mains:' + '</b>'+ prod.dishOptions.mains.join(', '),
+        '</p>',
+        '<p>',
         '<b>' + 'Desers:' + '</b>'+ prod.dishOptions.deserts.join(', '),
         '</p>',
         '<p>',
         '<b>' + 'QTY:' + '</b>'+ prod.qty,
-        '</p>',
-        '<br>'
+        '</p>'
       ].join('');
-
 
       return productData;
 
@@ -74,6 +87,7 @@ function sendOrderConfirmation (user) {
 
   sg.API(request, function (error) {
     if (error) {
+      console.error(error.response.body.errors)
       console.log('Error response received');
     }
   });
