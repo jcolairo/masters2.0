@@ -127,9 +127,10 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('breakfast', {
       url: '/menu/breakfast',
       views: {
-        '': {templateUrl: '/states/partials/template.html'},
+        '': {templateUrl: '/states/partials/templateCart.html'},
         'aside@breakfast': {templateUrl: '/states/partials/menu/aside.html'},
         'menu@breakfast': {templateUrl: '/states/partials/menu/breakfast.html'},
+        'asidecart@breakfast': {templateUrl: '/states/partials/menu/asideCart.html'},
         'footer@breakfast': {templateUrl: '/states/partials/footer/footer.html'}
       }
     })
