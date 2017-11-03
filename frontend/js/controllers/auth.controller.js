@@ -1,4 +1,4 @@
-function AuthController($state, AuthFactory, $rootScope) {
+function AuthController($state, AuthFactory, $rootScope, UserFactory) {
   var controller = this;
 
   controller.createUser = function() {
@@ -43,10 +43,17 @@ function AuthController($state, AuthFactory, $rootScope) {
     controller.password = null;
   }
 
+  function getUserRecordFromDb(uid) {
+    UserFactory.getSingleUser(uid).then(user => {
+      controller.user = Object.assign({}, controller.user, user.data);
+    });
+  }
+
 
   function assignToken () {
     AuthFactory.$getAuth().getToken(false).then(function (token) {
       $rootScope.token = token;
+      getUserRecordFromDb(controller.user.uid);
     });
   }
   function init() {
@@ -58,6 +65,7 @@ function AuthController($state, AuthFactory, $rootScope) {
       controller.user = fbUser;
       if (fbUser) {
         assignToken();
+
       } else {
         $rootScope.token = null;
       }
@@ -70,7 +78,7 @@ function AuthController($state, AuthFactory, $rootScope) {
 
 }
 
-AuthController.$inject = ['$state', 'AuthFactory', '$rootScope'];
+AuthController.$inject = ['$state', 'AuthFactory', '$rootScope', 'UserFactory'];
 
 angular
   .module('MastersApp')

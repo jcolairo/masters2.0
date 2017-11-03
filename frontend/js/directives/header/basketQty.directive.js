@@ -6,9 +6,8 @@ function basketTotal (userInfoService) {
     transclude: true,
     scope: {
     },
-    template: '<span>{{ basketLength }}</span>',
-    link: function (scope, element, attrs) {
-
+    template: '<div ng-if="basketLength" class="basket-total-container"> <strong>{{ basketLength }}</strong></div>',
+    link: function (scope) {
       // watch to see if the variable containing the user's info changed then run function.
       scope.$watch(function(){
         return userInfoService.user;
