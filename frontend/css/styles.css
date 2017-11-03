@@ -71,6 +71,13 @@ body .masters_homepage {
   .mainNav li {
     display: inline-block;
     padding: 0 0.75rem; }
+  .mainNav .basket-total-container {
+    display: inline-block;
+    border-radius: 10px;
+    background: #f5f0e1;
+    width: 30px; }
+  .mainNav strong {
+    font-weight: 600; }
 
 .asideNav {
   border: 1px solid #0288D1;

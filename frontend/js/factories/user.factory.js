@@ -1,4 +1,10 @@
-function UserFactory($http) {
+function UserFactory($http, userInfoService) {
+
+  var updateUserRecord = function (user) {
+    userInfoService.user = user.data;
+    return user;
+  };
+  
   return {
     getAllUsers: function() {
       return $http({
@@ -11,7 +17,7 @@ function UserFactory($http) {
         method: 'GET',
         url: `/users/${uid}`,
         data: uid
-      });
+      }).then(updateUserRecord);
     },
     addAddress: function (newAddress) {
       return $http({
@@ -30,7 +36,7 @@ function UserFactory($http) {
   };
 }
 
-UserFactory.$inject = ['$http'];
+UserFactory.$inject = ['$http', 'userInfoService'];
 
 angular
   .module('MastersApp')
