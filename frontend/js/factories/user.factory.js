@@ -1,9 +1,10 @@
 function UserFactory($http, userInfoService) {
+
   var updateUserRecord = function (user) {
-    console.log(user.data);
     userInfoService.user = user.data;
     return user;
   };
+  
   return {
     getAllUsers: function() {
       return $http({
