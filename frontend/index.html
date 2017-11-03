@@ -39,6 +39,9 @@
   <script src="js/directives/order/order.directive.js"></script>
   <script src="js/directives/combo/mealOptions.directive.js"></script>
   <script src="js/directives/combo/comboOrderButton.directive.js"></script>
+  <script src="js/directives/header/basketQty.directive.js"></script>
+
+  <script src="js/services/userInfo.service.js"></script>
 
   <script src="js/factories/main.factory.js"></script>
   <script src="js/factories/auth.factory.js"></script>
@@ -68,7 +71,7 @@
       <!-- {{auth.admin}} -->
       <li ui-sref="home"><a>Home</a></li>
       <li ui-sref="menu"><a>Menu</a></li>
-      <li ui-sref="user({uid: auth.user.uid })"><a>My Order</a></li>
+      <li ui-sref="user({uid: auth.user.uid })"><a>My Order</a> <basket-qty></basket-qty> </li>
       <li ui-sref="users" ><a>Users</a></li>
       <li ui-sref="contact"><a>Contact</a></li>
       <li ui-sref="about"><a>About</a></li>

@@ -1,4 +1,4 @@
-function ProductFactory($http) {
+function ProductFactory($http) {  
   return {
     getAllProducts: function() {
       return $http({
