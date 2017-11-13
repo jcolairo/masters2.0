@@ -119,6 +119,8 @@ body .masters_homepage {
     color: rgba(41, 41, 41, 0.8); }
   .basketItems ul {
     margin-top: 2rem; }
+  .basketItems .editInput {
+    width: 3rem; }
 
 .subNavNav {
   text-align: center;
