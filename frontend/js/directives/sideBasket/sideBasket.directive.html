@@ -1,11 +1,20 @@
-<nav>
+<nav ng-controller="OrderController as orderCTRL">
   <ul ng-if="basketLength" ng-repeat="basket in basketItems">
     <li class="basketTitle">
       {{ basket.product.title }}
     </li>
     <li>
-      {{ basket.qty }} @ {{ basket.product.price | price }}
+      <form ng-submit="orderCTRL.editOrder(basketItems)">
+        <p class="titleOrder">{{item.product.title}}</p>
+        qty:
+        <input type="number" ng-model="basket.qty" min="1" class="editInput">
+      @ {{ basket.product.price | price }}
       <p class="priceOrder">{{basket.product.price * basket.qty | price}}</p>
+      <input type="submit" value="edit order">
+    </form>
+    <form ng-submit="orderCTRL.removeProduct(basket.product._id)" class="removeForm">
+      <input type="submit" value="X" class="removeInput">
+    </form>
     </li>
   </ul>
   <ul>
@@ -14,3 +23,4 @@
     </li>
   </ul>
 </nav>
+<button type="button" ui-sref="user({uid: userUid })">Submit Order</button>
