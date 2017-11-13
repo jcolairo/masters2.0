@@ -10,7 +10,7 @@ function comboOrderButton (OrderFactory, $state) {
       productId: '=',
       title: '='
     },
-    template: '<button>Click To Order</button>',
+    template: '<button onclick="window.location.reload()">Click To Order</button>',
     link: function (scope, element) {
 
       angular.element(element).on('click', function () {

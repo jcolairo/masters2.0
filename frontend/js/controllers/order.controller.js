@@ -12,6 +12,7 @@ function OrderController(OrderFactory, $state, $window) {
       function success(success) {
         console.log('Created new order:', success);
         $window.history.back();
+        $window.location.reload();
       },
       function error(error) {
         console.warn('Error creating order:', error);
@@ -23,7 +24,7 @@ function OrderController(OrderFactory, $state, $window) {
     OrderFactory.editOrder(updatedItems).then(
       function success(success) {
         console.log('Success editing order:', success);
-        $state.reload();
+        $window.location.reload();
       },
       function error(error) {
         console.warn('Error editing order:', error);
@@ -35,7 +36,7 @@ function OrderController(OrderFactory, $state, $window) {
     OrderFactory.removeFromOrder({id: id}).then(
       function success(success) {
         console.log('Removed product from order', success);
-        $state.reload();
+        $window.location.reload();
       },
       function error(error) {
         console.warn('Error removing product from order', error);
