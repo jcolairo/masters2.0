@@ -105,10 +105,11 @@ body .masters_homepage {
   margin-top: 15px;
   overflow: scroll;
   padding: 1rem 0; }
+  .basketItems .basketTitle {
+    font-weight: bold; }
   .basketItems nav ul li {
     display: block;
     text-align: center;
-    margin-top: 3rem;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1rem;
     letter-spacing: 1;
@@ -116,6 +117,8 @@ body .masters_homepage {
     text-transform: uppercase;
     font-weight: 500;
     color: rgba(41, 41, 41, 0.8); }
+  .basketItems ul {
+    margin-top: 2rem; }
 
 .subNavNav {
   text-align: center;

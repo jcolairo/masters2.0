@@ -12,6 +12,7 @@ function OrderController(OrderFactory, $state, $window) {
       function success(success) {
         console.log('Created new order:', success);
         $window.history.back();
+        $window.location.reload();
       },
       function error(error) {
         console.warn('Error creating order:', error);

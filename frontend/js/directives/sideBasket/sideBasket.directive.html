@@ -1,9 +1,16 @@
-<div ng-if="basketLength" ng-repeat="basket in basketItems">
-  <strong>{{ basket.product.title }} </strong>
-  <br>
-  <strong>QTY: {{ basket.qty }} </strong>
-  <strong>£{{ basket.product.price }} </strong>
-</div>
-<div>
-  Total £{{ basketTotal }}
-</div>
+<nav>
+  <ul ng-if="basketLength" ng-repeat="basket in basketItems">
+    <li class="basketTitle">
+      {{ basket.product.title }}
+    </li>
+    <li>
+      {{ basket.qty }} @ {{ basket.product.price | price }}
+      <p class="priceOrder">{{basket.product.price * basket.qty | price}}</p>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      Total £{{ basketTotal }}
+    </li>
+  </ul>
+</nav>

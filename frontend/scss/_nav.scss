@@ -43,11 +43,16 @@
   margin-top: 15px;
   overflow: scroll;
   padding: 1rem 0;
+  .basketTitle {
+    font-weight: bold;
+  }
   nav ul li {
     display: block;
     text-align: center;
-    margin-top: 3rem;
     @include font-properties($letter-spacing: 1, $font-size: 1rem, $line-height: 1rem);
+  }
+  ul {
+    margin-top: 2rem;
   }
 }
 .subNavNav {
