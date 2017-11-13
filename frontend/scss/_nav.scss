@@ -11,7 +11,7 @@
   .basket-total-container {
     display: inline-block;
     border-radius: 10px;
-    background: #f5f0e1;
+    background: $creme;
     width: 30px;
   }
   strong {
@@ -33,13 +33,21 @@
 .basketItems {
   border: $border-dev-blue;
   text-align: center;
-  position: absolute;
-  display: block;
+  position: fixed;
+  background: $creme;
+  display: inline-block;
+  right: 0px;
+  top: 150px;
+  width: 12vw;
+  height: 75vh;
+  margin-top: 15px;
+  overflow: scroll;
+  padding: 1rem 0;
   nav ul li {
     display: block;
     text-align: center;
     margin-top: 3rem;
-    @include font-properties($letter-spacing: 1, $font-size: 1.5rem, $line-height: 3rem);
+    @include font-properties($letter-spacing: 1, $font-size: 1rem, $line-height: 1rem);
   }
 }
 .subNavNav {
