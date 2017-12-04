@@ -1,23 +1,9 @@
 <section>
-  <nav class="subNavNav">
-    <ul ng-if="product.breakfastNavShow" ng-repeat="breakfastMenu in product.breakfastMenu" class="subNavUl">
-      <li ui-sref="sub_category({category:'breakfast', sub_category:'{{breakfastMenu}}'})" class="subNavDiv">{{breakfastMenu}}</li>
-      <li class="pipe" ng-class="{ 'last': $last }">|</li>
-    </ul>
-    <ul ng-if="product.lunchNavShow" ng-repeat="lunchMenu in product.lunchMenu" class="subNavUl">
-      <li ui-sref="sub_category({category:'lunch', sub_category:'{{lunchMenu}}'})" class="subNavDiv">{{lunchMenu}}</li>
-      <li class="pipe" ng-class="{ 'last': $last }">|</li>
-    </ul>
-    <ul ng-if="product.canapesNavShow" ng-repeat="canapesMenu in product.canapesMenu" class="subNavUl">
-      <li ui-sref="sub_category({category:'canapes', sub_category:'{{canapesMenu}}'})" class="subNavDiv">{{canapesMenu}}</li>
-      <li class="pipe" ng-class="{ 'last': $last }">|</li>
-    </ul>
-  </nav>
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">
     <div class="titleDiv productDiv">
       <ul ng-repeat="prod in product.subCat | orderBy: ['price', -'title']" class="productUl">
         <li class="productTitle">
-          <a ui-sref="singleProduct({id: prod._id })"><strong class="adminEditStrong">Title: </strong>{{prod.title}}</a>
+          <a ui-sref="adminSingleProduct({id: prod._id })"><strong class="adminEditStrong">Title: </strong>{{prod.title}}</a>
         </li>
         <li ng-repeat="option in prod.options" class="productDesc">
           <strong class="adminEditStrong" ng-if="option">Options: </strong>{{option}}
@@ -25,22 +11,7 @@
         <li class="productPrice">
           <p><strong class="adminEditStrong">Price: </strong>{{prod.price | price}} per person</p>
         </li>
-        <form ng-controller="OrderController as order" ng-submit="order.addToOrder(prod._id, order.addToOrder.order.products.qty)">
-          <div>
-            <input ng-model="order.newOrder" type="submit" value="add to order">
-            <input ng-model="order.addToOrder.order.products.qty" type="number" min="1">
-          </div>
-        </form>
       </ul>
     </div>
   </div>
 </section>
-
-
-
-<!-- <ul ng-repeat="prod in product.products">
-  <li><strong class="adminEditStrong">Title: </strong>{{prod.title}}</li>
-  <li><strong class="adminEditStrong">Price: </strong>{{prod.price}}</li>
-  <li><strong class="adminEditStrong">Category: </strong>{{prod.category}}</li>
-  <li><strong class="adminEditStrong">Sub Categoy: </strong>{{prod.sub_category}}</li>
-</ul> -->

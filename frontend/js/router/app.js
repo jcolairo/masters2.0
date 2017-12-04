@@ -106,33 +106,33 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
       },
       resolve: Object.assign({}, authRequired, currentUser, isAdmin)
     })
-    .state('adminBreakfast', {
-      url: '/admin/edit/breakfast',
-      views: {
-        '': {templateUrl: '/states/partials/templateMain.html'},
-        'menu@adminBreakfast': {templateUrl: '/states/partials/admin/breakfast.html'},
-        'footer@adminBreakfast': {templateUrl: '/states/partials/footer/footer.html'}
-      },
-      resolve: Object.assign({}, authRequired, currentUser, isAdmin)
-    })
-    .state('adminLunch', {
-      url: '/admin/edit/lunch',
-      views: {
-        '': {templateUrl: '/states/partials/templateMain.html'},
-        'menu@adminLunch': {templateUrl: '/states/partials/admin/lunch.html'},
-        'footer@adminLunch': {templateUrl: '/states/partials/footer/footer.html'}
-      },
-      resolve: Object.assign({}, authRequired, currentUser, isAdmin)
-    })
-    .state('adminCanapes', {
-      url: '/admin/edit/canapes',
-      views: {
-        '': {templateUrl: '/states/partials/templateMain.html'},
-        'menu@adminCanapes': {templateUrl: '/states/partials/admin/canapes.html'},
-        'footer@adminCanapes': {templateUrl: '/states/partials/footer/footer.html'}
-      },
-      resolve: Object.assign({}, authRequired, currentUser, isAdmin)
-    })
+    // .state('adminBreakfast', {
+    //   url: '/admin/edit/breakfast',
+    //   views: {
+    //     '': {templateUrl: '/states/partials/templateMain.html'},
+    //     'menu@adminBreakfast': {templateUrl: '/states/partials/admin/breakfast.html'},
+    //     'footer@adminBreakfast': {templateUrl: '/states/partials/footer/footer.html'}
+    //   },
+    //   resolve: Object.assign({}, authRequired, currentUser, isAdmin)
+    // })
+    // .state('adminLunch', {
+    //   url: '/admin/edit/lunch',
+    //   views: {
+    //     '': {templateUrl: '/states/partials/templateMain.html'},
+    //     'menu@adminLunch': {templateUrl: '/states/partials/admin/lunch.html'},
+    //     'footer@adminLunch': {templateUrl: '/states/partials/footer/footer.html'}
+    //   },
+    //   resolve: Object.assign({}, authRequired, currentUser, isAdmin)
+    // })
+    // .state('adminCanapes', {
+    //   url: '/admin/edit/canapes',
+    //   views: {
+    //     '': {templateUrl: '/states/partials/templateMain.html'},
+    //     'menu@adminCanapes': {templateUrl: '/states/partials/admin/canapes.html'},
+    //     'footer@adminCanapes': {templateUrl: '/states/partials/footer/footer.html'}
+    //   },
+    //   resolve: Object.assign({}, authRequired, currentUser, isAdmin)
+    // })
     .state('adminSub_category', {
       url: `/admin/edit/:category/:sub_category`,
       views: {
@@ -140,6 +140,16 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         // 'aside@adminSub_category': {templateUrl: '/states/partials/menu/aside.html'},
         'menu@adminSub_category': {templateUrl: '/states/partials/admin/sub_category.html'},
         'footer@adminSub_category': {templateUrl: '/states/partials/footer/footer.html'}
+      },
+      resolve: Object.assign({}, authRequired, currentUser, isAdmin)
+    })
+    .state('adminSingleProduct', {
+      url: '/admin/edit/:id',
+      views: {
+        '': {templateUrl: '/states/partials/templateMain.html'},
+        // 'aside@adminSingleProduct': {templateUrl: '/states/partials/menu/aside.html'},
+        'menu@adminSingleProduct': {templateUrl: '/states/partials/admin/singleProduct.html'},
+        'footer@adminSingleProduct': {templateUrl: '/states/partials/footer/footer.html'}
       },
       resolve: Object.assign({}, authRequired, currentUser, isAdmin)
     })
