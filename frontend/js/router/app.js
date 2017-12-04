@@ -97,6 +97,15 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
       },
       resolve: Object.assign({}, authRequired, currentUser, isAdmin)
     })
+    .state('admin', {
+      url: '/admin/edit',
+      views: {
+        '': {templateUrl: '/states/partials/templateMain.html'},
+        'menu@admin': {templateUrl: '/states/partials/admin/admin.html'},
+        'footer@admin': {templateUrl: '/states/partials/footer/footer.html'}
+      },
+      resolve: Object.assign({}, authRequired, currentUser, isAdmin)
+    })
     .state('user', {
       url: '/user/:uid',
       views: {
