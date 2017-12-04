@@ -5,6 +5,7 @@ var staticController    = require('../controllers/static.controller');
 var userController      = require('../controllers/user.controller');
 var productController   = require('../controllers/product.controller');
 var orderController     = require('../controllers/order.controller');
+var editController      = require('../controllers/edit.controller');
 
 
 // Static Routes
@@ -57,5 +58,16 @@ router.route('/sendgrid/mail')
 
 router.route('/orders/process-order')
   .post(orderController.processOrder);
+
+
+// Admin Edit Routes
+router.route('/api/admin/createProduct')
+  .post(editController.createProduct);
+
+router.route('/api/admin/:id')
+  .put(editController.updateProduct);
+
+router.route('/api/admin/:id')
+  .post(editController.deleteProduct);
 
 module.exports = router;

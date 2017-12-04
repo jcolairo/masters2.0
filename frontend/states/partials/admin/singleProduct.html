@@ -1,20 +1,13 @@
 <h1>Edit Single Product</h1>
-<section>
+<section ng-controller="EditController as edit">
   <div ng-init="product.getOneProduct()">
     <strong class="adminEditStrong">Title: </strong><input ng-model="product.oneProduct.title">
-    <!-- {{product.oneProduct.title}} -->
     <ul ng-repeat="option in product.oneProduct.options">
       <li>
         <strong class="adminEditStrong">Options: </strong><input ng-model="option">
-        <!-- {{option}} -->
       </li>
     </ul>
     <strong class="adminEditStrong">Price: </strong><input ng-model="product.oneProduct.price">
+    <button ng-click="edit.updateProduct(product.oneProduct)" type="button">Update</button>
   </div>
-  <!-- <form ng-controller="OrderController as order" ng-submit="order.addToOrder(product.oneProduct._id, order.addToOrder.order.products.qty)">
-    <div>
-      <input ng-model="order.newOrder" type="submit" value="add to order">
-      <input ng-model="order.addToOrder.order.products.qty" type="number" min="1">
-    </div>
-  </form> -->
 </section>
