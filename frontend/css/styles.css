@@ -356,3 +356,6 @@ body {
         order: 2; }
       .combo-order-page #combo-summary .selected-group-outer .desserts {
         order: 3; }
+
+.adminEditStrong {
+  font-weight: 600; }
