@@ -1,4 +1,4 @@
-function EditController(EditFactory, $window, $stateParams) {
+function EditController(EditFactory, $window) {
   var controller = this;
 
   controller.createProduct = function() {
@@ -15,7 +15,6 @@ function EditController(EditFactory, $window, $stateParams) {
   };
 
   controller.updateProduct = function(updatedItem) {
-    // var updatedItem = $stateParams.productId;
     EditFactory.updateProduct(updatedItem).then(
       function(success) {
         console.log('successfully updated product', success);
@@ -40,7 +39,7 @@ function EditController(EditFactory, $window, $stateParams) {
   };
 }
 
-EditController.$inject = ['EditFactory', '$window', '$stateParams'];
+EditController.$inject = ['EditFactory', '$window'];
 
 angular
   .module('MastersApp')
