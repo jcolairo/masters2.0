@@ -11,6 +11,10 @@ function createDirective (EditFactory, $state) {
     templateUrl: 'js/directives/createProduct/create.directive.html',
     link: function (scope, element, attrs) {
 
+      scope.typeOptions = ['static', 'combo'];
+      scope.defaultType = scope.typeOptions[0];
+      scope.categoryOptions = ['breakfast', 'lunch', 'afternoonTea', 'canapes'];
+      scope.selectedCategory = scope.categoryOptions[0];
 
       scope.createProduct = function (title, price, type, category, subCategory, description, options) {
         var product;
@@ -37,8 +41,8 @@ function createDirective (EditFactory, $state) {
             // product: id,
             title: title,
             price: price,
-            type: 'static',
-            category: category,
+            type: scope.defaultType,
+            category: scope.selectedCategory,
             sub_category: subCategory,
             description: description,
             options: options

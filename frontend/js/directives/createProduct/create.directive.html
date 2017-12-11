@@ -1,12 +1,24 @@
 <li class="single-order">
 
-      title:        <input type="text" ng-model="product.products.title">{{ product.products.title }}
-      price:        <input type="number" ng-model="product.products.price">{{product.products.price}}
-      type:         <input type="text" ng-model="product.products.type">{{product.products.type }}
-      category:     <input type="text" ng-model="product.products.category">{{product.products.category }}
-      sub_category: <input type="text" ng-model="product.products.subCategory">{{product.products.subCategory }}
-      description:  <input type="text" ng-model="product.products.description">{{product.products.description }}
-      options:      <input type="text" ng-model="product.products.options">{{product.products.options }}
+      <div>Title:        <input type="text" ng-model="product.products.title"></div>
+      <div>Price:        <input type="number" ng-model="product.products.price"></div>
+      <div>Type: <select
+              ng-model="defaultType"
+              ng-options="type for type in typeOptions"
+              type="text"
+              selected>
+              {{type}}
+      </select></div>
+      <div>Category: <select
+              ng-model="selectedCategory"
+              ng-options="cat for cat in categoryOptions"
+              type="text"
+              selected>
+              {{cat}}
+      </select></div>
+      <div>Sub Category: <input type="text" ng-model="product.products.subCategory"></div>
+      <div>Description:  <input type="text" ng-model="product.products.description"></div>
+      <div>Options:      <input type="text" ng-model="product.products.options"></div>
 
     <div>
       <form ng-submit="createProduct(product.products.title, product.products.price, product.products.type, product.products.category, product.products.subCategory, product.products.description, product.products.options)">
