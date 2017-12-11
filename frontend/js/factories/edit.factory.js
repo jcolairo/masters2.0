@@ -5,7 +5,7 @@ function EditFactory($http) {
       return $http({
         method: 'POST',
         url: `/api/admin/createProduct`,
-        data: product
+        data: product.products
       });
     },
     updateProduct: function(productId) {
