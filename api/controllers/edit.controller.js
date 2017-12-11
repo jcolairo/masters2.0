@@ -3,11 +3,12 @@ var Err     = require('../utilities/badRequestHandler');
 
 function createProduct(req, res) {
   var product = req.body;
+  console.log('product', product);
   Product
     .create(product)
     .then(
-      function (productObj) {
-        res.json(productObj);
+      function () {
+        res.json(product);
       },
       function(err) {
         return Err.miscError(res, err.message);
