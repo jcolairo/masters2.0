@@ -1,4 +1,4 @@
-<section>
+<section ng-controller="EditController as edit">
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">
     <div class="titleDiv productDiv">
       <ul ng-repeat="prod in product.subCat | orderBy: ['price', -'title']" class="productUl">
@@ -10,6 +10,9 @@
         </li>
         <li class="productPrice">
           <p><strong class="adminEditStrong">Price: </strong>{{prod.price | price}} per person</p>
+        </li>
+        <li>
+          <button ng-click="edit.deleteProduct(prod._id)">X</button>
         </li>
       </ul>
     </div>
