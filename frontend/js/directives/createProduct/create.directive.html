@@ -1,0 +1,17 @@
+<li class="single-order">
+
+      title:        <input type="text" ng-model="product.products.title">{{ product.products.title }}
+      price:        <input type="number" ng-model="product.products.price">{{product.products.price}}
+      type:         <input type="text" ng-model="product.products.type">{{product.products.type }}
+      category:     <input type="text" ng-model="product.products.category">{{product.products.category }}
+      sub_category: <input type="text" ng-model="product.products.subCategory">{{product.products.subCategory }}
+      description:  <input type="text" ng-model="product.products.description">{{product.products.description }}
+      options:      <input type="text" ng-model="product.products.options">{{product.products.options }}
+
+    <div>
+      <form ng-submit="createProduct(product.products.title, product.products.price, product.products.type, product.products.category, product.products.subCategory, product.products.description, product.products.options)">
+          <input type="submit" value="create">
+      </form>
+    </div>
+
+</li>
