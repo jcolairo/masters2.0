@@ -18,7 +18,22 @@
       </select></div>
       <div>Sub Category: <input type="text" ng-model="product.products.subCategory"></div>
       <div>Description:  <input type="text" ng-model="product.products.description"></div>
-      <div>Options:      <input type="text" ng-model="product.products.options"></div>
+
+      Options:
+      <fieldset data-ng-repeat="option in options track by $index">
+        <input type="text" ng-model="option.name[$index]">
+        <button type="button" ng-click="removeOption()">X</button>
+        {{option.name[$index]}}
+      </fieldset>
+      <button type="button" ng-click="addNewOption()">+</button>
+
+      <!-- <ul ng-model="product.products.options">Options:
+        <li ng-repeat="option in options">
+          <input type="text" ng-model="option.value">
+          <button ng-click="addOptions()">+</button>
+        </li>
+      </ul> -->
+
 
     <div>
       <form ng-submit="createProduct(product.products.title, product.products.price, product.products.type, product.products.category, product.products.subCategory, product.products.description, product.products.options)">

@@ -1,4 +1,4 @@
-function EditController(EditFactory, $window) {
+function EditController(EditFactory, $window, $state) {
   var controller = this;
 
   // controller.createProduct = function(title, price, type, category, subCategory, comboOptions, description, options) {
@@ -50,7 +50,7 @@ function EditController(EditFactory, $window) {
     EditFactory.deleteProduct(productId).then(
       function(success) {
         console.log('successfully delete product', success);
-        $window.history.back();
+        $state.reload();
       },
       function (err) {
         console.warn(err);
@@ -59,7 +59,7 @@ function EditController(EditFactory, $window) {
   };
 }
 
-EditController.$inject = ['EditFactory', '$window'];
+EditController.$inject = ['EditFactory', '$window', '$state'];
 
 angular
   .module('MastersApp')
