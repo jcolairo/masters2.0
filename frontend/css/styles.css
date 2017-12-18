@@ -47,13 +47,10 @@ table {
   text-shadow: 1px 1px 1px rgba(41, 41, 41, 0.004); }
 
 body .masters_homepage {
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+  justify-content: center;
+  align-items: center;
   margin: 1rem 0; }
 
 .mainNav {
@@ -97,18 +94,13 @@ body .masters_homepage {
 
 .subNavNav {
   text-align: center;
-  display: -ms-flexbox;
   display: flex; }
   .subNavNav .subNavUl {
     width: 100%;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: row;
-        flex-direction: row;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; }
   .subNavNav .subNavDiv {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1rem;
@@ -152,14 +144,10 @@ body {
   background-color: #e3e3e3; }
 
 .menuBlocks {
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-positive: 1;
-      flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
   border: 1px solid #C62828;
   margin-top: 15px;
   text-align: center;
@@ -169,71 +157,49 @@ body {
     height: 35vh;
     display: inline-block;
     border: 1px solid #00C853;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-direction: column;
-        flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     top: 0;
     left: 0;
-    display: -ms-inline-flexbox;
     display: inline-flex; }
 
 .mainMenuDiv {
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   border: 1px solid #C62828;
-  -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   text-align: center;
   margin-top: 15px; }
   .mainMenuDiv .menuDiv {
     border: 1px solid #00C853;
     margin: 1rem;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
+    flex-shrink: 0;
     min-width: 15vw;
     min-height: 23vh;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-direction: column;
-        flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     top: 0;
     left: 0;
-    display: -ms-inline-flexbox;
     display: inline-flex; }
 
 .productDiv {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   min-width: 20vw; }
   .productDiv .productUl {
     border: 1px solid #0288D1;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     min-height: 15vh;
     min-width: 15vw;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-positive: 1;
-        flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-grow: 1;
     margin: 1rem; }
     .productDiv .productUl .productTitle {
       font-size: 1.2rem; }
@@ -241,7 +207,6 @@ body {
 .userDiv {
   margin-top: 2vh; }
   .userDiv .titleDiv {
-    display: -ms-flexbox;
     display: flex; }
   .userDiv .userLi {
     background-color: #f4efe1;
@@ -254,38 +219,25 @@ body {
     font-weight: 500;
     color: rgba(41, 41, 41, 0.8); }
   .userDiv .pendingOrder .pendingOrderDiv {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-flow: row;
-        flex-flow: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+    justify-content: center;
+    align-items: center;
+    flex-flow: row;
+    flex-wrap: wrap; }
     .userDiv .pendingOrder .pendingOrderDiv .pendingOrderUl {
       max-width: 45%;
       min-width: 45%; }
 
 .basketOrder {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-flow: column;
-      flex-flow: column; }
+  justify-content: center;
+  align-items: center;
+  flex-flow: column; }
   .basketOrder .basketOrderDiv {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-flow: row;
-        flex-flow: row; }
+    justify-content: center;
+    align-items: center;
+    flex-flow: row; }
   .basketOrder h2 {
     margin-bottom: 2%; }
 
@@ -296,7 +248,6 @@ body {
 
 .basket {
   width: 100%;
-  display: -ms-flexbox;
   display: flex; }
   .basket .basket-message {
     font-size: 18px;
@@ -311,44 +262,28 @@ body {
   border: solid 2px black;
   padding: 5px;
   margin: 5%;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-flow: column;
-      flex-flow: column; }
+  justify-content: center;
+  align-items: center;
+  flex-flow: column; }
   .single-order .userLi {
-    -ms-flex-align: center;
-        align-items: center; }
+    align-items: center; }
   .single-order .orderLi {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-flow: column;
-        flex-flow: column; }
+    justify-content: center;
+    align-items: center;
+    flex-flow: column; }
     .single-order .orderLi .qtyPrice {
-      display: -ms-flexbox;
       display: flex;
-      -ms-flex-flow: row;
-          flex-flow: row;
+      flex-flow: row;
       width: 100%;
-      -ms-flex-pack: distribute;
-          justify-content: space-around; }
+      justify-content: space-around; }
 
 .basketSection {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-flow: column;
-      flex-flow: column; }
+  justify-content: center;
+  align-items: center;
+  flex-flow: column; }
   .basketSection .basketUl {
     margin: 1% 0; }
 
@@ -356,7 +291,6 @@ body {
   display: none; }
 
 .footer {
-  display: -ms-flexbox;
   display: flex;
   text-align: center;
   width: 75%;
@@ -365,22 +299,16 @@ body {
   background-color: #f4efe1; }
   .footer div {
     display: block;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex: 1 1 0px;
-        flex: 1 1 0;
+    justify-content: center;
+    flex: 1 1 0;
     margin: 1rem; }
 
 .userLi {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between; }
+  justify-content: space-between; }
   .userLi .removeForm {
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -ms-flex-align: center;
-        align-items: center; }
+    align-items: center; }
 
 .basket-option {
   text-align: left;
@@ -400,46 +328,37 @@ body {
     font-size: 20px;
     margin-bottom: 10px;
     font-weight: bold; }
+  .combo-order-page .horizontalLi {
+    display: inline-block; }
+    .combo-order-page .horizontalLi li {
+      display: inline-block; }
+    .combo-order-page .horizontalLi .space {
+      margin-left: 5px; }
   .combo-order-page .option-group-outer {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-flow: row;
-        flex-flow: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+    justify-content: center;
+    flex-flow: row;
+    flex-wrap: wrap; }
     .combo-order-page .option-group-outer .option-group {
       margin: 10px 10px;
       padding: 5px;
       border: 1px solid #00C853; }
   .combo-order-page #combo-summary {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-flow: column;
-        flex-flow: column;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-align: center;
-        align-items: center; }
+    justify-content: center;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-items: center; }
     .combo-order-page #combo-summary .selected-group-outer {
-      display: -ms-flexbox;
       display: flex;
-      -ms-flex-flow: row;
-          flex-flow: row;
-      -ms-flex-pack: center;
-          justify-content: center;
+      flex-flow: row;
+      justify-content: center;
       margin: 20px 0; }
       .combo-order-page #combo-summary .selected-group-outer .selected-group {
         margin: 10px; }
       .combo-order-page #combo-summary .selected-group-outer .mains {
-        -ms-flex-order: 1;
-            order: 1; }
+        order: 1; }
       .combo-order-page #combo-summary .selected-group-outer .salads {
-        -ms-flex-order: 2;
-            order: 2; }
+        order: 2; }
       .combo-order-page #combo-summary .selected-group-outer .desserts {
-        -ms-flex-order: 3;
-            order: 3; }
+        order: 3; }

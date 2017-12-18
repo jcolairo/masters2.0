@@ -1,9 +1,24 @@
 <section class="combo-order-page">
 
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" >
-    <h1>Combo Order Page</h1>
-    <b>Cold Fork Buffet £18.50+VAT per head</b>
-    <p>Choose two mains, three salads and one dessert from the list below. If you are ordering for ten people or more then please choose an additional dessert.</p>
+    <div class="horizontalLi">
+      <h1>Combo Order Page</h1>
+      <ul ng-repeat="product in product.subCat">
+        <li>
+          <b>{{ product.title }} {{ product.price | price }}+VAT per head</b>
+        </li>
+        <ul class="horizontalLi">
+          Choose
+          <li ng-repeat="combo in product.combo_options" class="space">
+            <p class="horizontalLi">{{combo.meta.combo_dish_count}} {{combo.name}} </p>
+          </li>
+          from the list below. If you are ordering for ten people or more then please choose an additional
+          <li ng-repeat="combo in product.combo_options">
+            <p ng-if="combo.meta.bouns_dish == 'true'">{{ combo.name }}</p>
+          </li>
+        </ul>
+      </ul>
+  </div>
 
     <div ng-init="numberOfPeople = 2; product.comboOrder = {}">
       <label>
