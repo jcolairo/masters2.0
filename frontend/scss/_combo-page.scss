@@ -8,6 +8,15 @@
     font-weight: bold;
   }
 
+  .horizontalLi {
+    li {
+      display: inline-block;
+    }
+    .space {
+      margin-left: 5px;
+    }
+  }
+
   .option-group-outer {
     display: flex;
     justify-content: center;
