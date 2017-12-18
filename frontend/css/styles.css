@@ -328,12 +328,10 @@ body {
     font-size: 20px;
     margin-bottom: 10px;
     font-weight: bold; }
-  .combo-order-page .horizontalLi {
+  .combo-order-page .horizontalLi li {
     display: inline-block; }
-    .combo-order-page .horizontalLi li {
-      display: inline-block; }
-    .combo-order-page .horizontalLi .space {
-      margin-left: 5px; }
+  .combo-order-page .horizontalLi .space {
+    margin-left: 5px; }
   .combo-order-page .option-group-outer {
     display: flex;
     justify-content: center;
