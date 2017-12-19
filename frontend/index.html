@@ -48,12 +48,14 @@
   <script src="js/factories/product.factory.js"></script>
   <script src="js/factories/user.factory.js"></script>
   <script src="js/factories/order.factory.js"></script>
+  <script src="js/factories/special.factory.js"></script>
 
   <script src="js/controllers/main.controller.js"></script>
   <script src="js/controllers/auth.controller.js"></script>
   <script src="js/controllers/product.controller.js"></script>
   <script src="js/controllers/user.controller.js"></script>
   <script src="js/controllers/order.controller.js"></script>
+  <script src="js/controllers/special.controller.js"></script>
   <!-- endbuild -->
 
   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
@@ -71,6 +73,7 @@
       <!-- {{auth.admin}} -->
       <li ui-sref="home"><a>Home</a></li>
       <li ui-sref="menu"><a>Menu</a></li>
+      <li ui-sref="dailySpecials"><a>Daily Specials</a></li>
       <li ui-sref="user({uid: auth.user.uid })"><a>My Order</a> <basket-qty></basket-qty> </li>
       <li ui-sref="users" ><a>Users</a></li>
       <li ui-sref="contact"><a>Contact</a></li>

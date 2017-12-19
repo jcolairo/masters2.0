@@ -1,0 +1,20 @@
+<section ng-controller="SpecialController as special" ng-init="special.getAllSpecials()">
+  <h1>Daily Specials</h1>
+  <ul>
+    <li>
+      Date: <input type="date" ng-model="special.special.date"> {{ special.special.date }}
+    </li>
+    <li>
+      Title: <input type="text" ng-model="special.special.title"> {{ special.special.title }}
+    </li>
+    <li>
+      Price: <input type="number" ng-model="special.special.price"> {{ special.special.price }}
+    </li>
+    <li>
+      Description: <input type="text" ng-model="special.special.description"> {{ special.special.description }}
+    </li>
+    <li>
+      <button type="button" name="button" ng-click="special.createSpecial(special.special.date, special.special.title, special.special.price, special.special.description)">+</button>
+    </li>
+  </ul>
+</section>

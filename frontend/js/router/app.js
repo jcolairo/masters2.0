@@ -88,6 +88,14 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
         'footer@menu': {templateUrl: '/states/partials/footer/footer.html'}
       }
     })
+    .state('dailySpecials', {
+      url: '/dailySpecials',
+      views: {
+        '': {templateUrl: '/states/partials/templateMain.html'},
+        'menu@dailySpecials': {templateUrl: '/states/partials/specials/specials.html'},
+        'footer@dailySpecials': {templateUrl: '/states/partials/footer/footer.html'}
+      }
+    })
     .state('users', {
       url: '/admin',
       views: {
