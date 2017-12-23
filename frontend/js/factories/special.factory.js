@@ -20,11 +20,18 @@ function SpecialFactory($http) {
         data: special
       });
     },
-    updateSpecial: function(specialId) {
+    editSpecial: function(specialId) {
+      return $http({
+        method: 'GET',
+        url: `/specials/${specialId}`,
+        data: specialId
+      });
+    },
+    updateSpecial: function(special) {
       return $http({
         method: 'PUT',
-        url: `/specials/${specialId._id}`,
-        data: specialId
+        url: `/specials/${special._id}`,
+        data: special
       });
     },
     deleteSpecial: function(specialId) {

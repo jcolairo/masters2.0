@@ -1,4 +1,4 @@
-function SpecialController(SpecialFactory, $stateParams, $window) {
+function SpecialController(SpecialFactory, $stateParams, $window, $state, $filter) {
   var controller = this;
 
   controller.getAllSpecials = function() {
@@ -6,6 +6,7 @@ function SpecialController(SpecialFactory, $stateParams, $window) {
       function success(success) {
         console.log('success getting all specials');
         controller.specials = success.data;
+        console.log('special', controller.specials);
       },
       function error(error) {
         console.warn('Could not get all specials:', error);
@@ -36,7 +37,7 @@ function SpecialController(SpecialFactory, $stateParams, $window) {
     SpecialFactory.createSpecial(special).then(
       function success(success) {
         console.log('Created new order:', success);
-        $window.history.back();
+        $state.reload();
       },
       function error(error) {
         console.warn('Error creating order:', error);
@@ -44,11 +45,24 @@ function SpecialController(SpecialFactory, $stateParams, $window) {
     );
   };
 
-  controller.updateSpecial = function(updatedItem) {
-    SpecialFactory.updateSpecial(updatedItem).then(
+  controller.editSpecial = function(specialId) {
+    SpecialFactory.editSpecial(specialId).then(
+      function(selectedSpecial) {
+        controller.special = selectedSpecial.data;
+        console.log('successfulled edited special', controller.special);
+      },
+      function(err) {
+        console.warn(err);
+      }
+    );
+  };
+
+  controller.updateSpecial = function() {
+    var special = controller.special;
+    SpecialFactory.updateSpecial(special).then(
       function(success) {
         console.log('successfully updated special', success);
-        $window.history.back();
+        $state.reload();
       },
       function (err) {
         console.warn(err);
@@ -60,7 +74,7 @@ function SpecialController(SpecialFactory, $stateParams, $window) {
     SpecialFactory.deleteSpecial(specialId).then(
       function(success) {
         console.log('successfully delete special', success);
-        $window.history.back();
+        $state.reload();
       },
       function (err) {
         console.warn(err);
@@ -68,13 +82,16 @@ function SpecialController(SpecialFactory, $stateParams, $window) {
     );
   };
 
+  controller.todayDate = new Date();
+
   function init() {
     controller.specials;
+    console.log('todayDate',controller.todayDate);
   }
   init();
 }
 
-SpecialController.$inject = ['SpecialFactory', '$stateParams', '$window'];
+SpecialController.$inject = ['SpecialFactory', '$stateParams', '$window', '$state', '$filter'];
 
 angular
   .module('MastersApp')

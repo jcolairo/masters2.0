@@ -1,8 +1,46 @@
 <section ng-controller="SpecialController as special" ng-init="special.getAllSpecials()">
   <h1>Daily Specials</h1>
-  <ul>
+  <!-- todays date: {{ special.todayDate | date: 'dd MM yyyy' }} -->
+  <ul ng-repeat="spec in special.specials | orderBy: 'date'" data-ng-if="spec.date | filter: {date: 'dd MM yyyy'} === special.todayDate | filter: {date: 'dd MM yyyy'}">
+    <!-- 1: {{ special.todayDate | date: 'dd MM yyyy' }}
+    2: {{ spec.date | date: 'dd MM yyyy' }} -->
+    <!-- <div data-ng-if="spec.date < todayDate"> -->
+    <!-- 1: {{ spec.date }}
+    2: {{ special.todayDate }} -->
+    <div>
+      <br>
+      <!-- {{ spec.date | filter: { date: 'dd MM yyyy' } }}
+      {{ special.todayDate | filter: { date: 'dd MM yyyy' } }} -->
+      <li>
+        Date: {{ spec.date | date: 'dd-MM-yyyy' }}
+      </li>
+      <li>
+        Title:{{ spec.title }}
+      </li>
+      <li>
+        Price:{{ spec.price }}
+      </li>
+      <li>
+        Description:{{ spec.description }}
+      </li>
+      <li>
+        <button type="button" name="button" ng-click="special.editSpecial(spec._id)">Edit</button>
+        <button type="button" name="button" ng-click="special.deleteSpecial(spec._id)">X</button>
+      </li>
+    </div>
+    <br>
+  </ul>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1>Create Daily Specials</h1>
+  <ul  ng-controller="OrderController as orderCTRL">
     <li>
-      Date: <input type="date" ng-model="special.special.date"> {{ special.special.date }}
+      Date: <input ng-model="special.special.date" min="special.todayDate" moment-picker="orderCTRL.timeSlot" format="DD-MM-YYYY"> {{ special.special.date | date: 'dd-MM-yyyy' }}
     </li>
     <li>
       Title: <input type="text" ng-model="special.special.title"> {{ special.special.title }}
@@ -15,6 +53,7 @@
     </li>
     <li>
       <button type="button" name="button" ng-click="special.createSpecial(special.special.date, special.special.title, special.special.price, special.special.description)">+</button>
+      <button type="button" name="button" ng-click="special.updateSpecial(special.special)">Update</button>
     </li>
   </ul>
 </section>
