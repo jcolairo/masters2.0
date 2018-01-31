@@ -1,35 +1,37 @@
 <section ng-controller="SpecialController as special" ng-init="special.getAllSpecials()">
   <h1>Daily Specials</h1>
   <!-- todays date: {{ special.todayDate | date: 'dd MM yyyy' }} -->
-  <ul ng-repeat="spec in special.specials | orderBy: 'date'" data-ng-if="spec.date | filter: {date: 'dd MM yyyy'} === special.todayDate | filter: {date: 'dd MM yyyy'}">
-    <!-- 1: {{ special.todayDate | date: 'dd MM yyyy' }}
-    2: {{ spec.date | date: 'dd MM yyyy' }} -->
-    <!-- <div data-ng-if="spec.date < todayDate"> -->
-    <!-- 1: {{ spec.date }}
-    2: {{ special.todayDate }} -->
-    <div>
+  11: {{ special.todayDate | date: 'dd MM yyyy' }}
+  12: {{ special.specials.date | date: 'dd MM yyyy' }}
+    <ul ng-repeat="spec in special.specials | orderBy: 'date'" >
+      <!-- <div ng-if="spec.date < special.todayDate"> -->
+      1: {{ special.todayDate | date: 'dd MM yyyy' }}
+      2: {{ spec.date | date: 'dd MM yyyy' }}
+      <!-- <div data-ng-if="spec.date < todayDate"> -->
+      <div>
+        <br>
+        <!-- {{ spec.date | filter: { date: 'dd MM yyyy' } }}
+        {{ special.todayDate | filter: { date: 'dd MM yyyy' } }} -->
+        <li>
+          Date: {{ spec.date | date: 'dd-MM-yyyy' }}
+        </li>
+        <li>
+          Title:{{ spec.title }}
+        </li>
+        <li>
+          Price:{{ spec.price }}
+        </li>
+        <ul>
+          Description: SPEC {{ spec.description }}
+          <!-- <li ng-repeat="desc in spec.description">{{ desc }}</li> -->
+        </ul>
+        <li>
+          <button type="button" name="button" ng-click="special.editSpecial(spec._id)">Edit</button>
+          <button type="button" name="button" ng-click="special.deleteSpecial(spec._id)">X</button>
+        </li>
+      </div>
       <br>
-      <!-- {{ spec.date | filter: { date: 'dd MM yyyy' } }}
-      {{ special.todayDate | filter: { date: 'dd MM yyyy' } }} -->
-      <li>
-        Date: {{ spec.date | date: 'dd-MM-yyyy' }}
-      </li>
-      <li>
-        Title:{{ spec.title }}
-      </li>
-      <li>
-        Price:{{ spec.price }}
-      </li>
-      <li>
-        Description:{{ spec.description }}
-      </li>
-      <li>
-        <button type="button" name="button" ng-click="special.editSpecial(spec._id)">Edit</button>
-        <button type="button" name="button" ng-click="special.deleteSpecial(spec._id)">X</button>
-      </li>
-    </div>
-    <br>
-  </ul>
+    </ul>
   <br>
   <br>
   <br>
@@ -52,7 +54,7 @@
       Description: <input type="text" ng-model="special.special.description"> {{ special.special.description }}
     </li>
     <li>
-      <button type="button" name="button" ng-click="special.createSpecial(special.special.date, special.special.title, special.special.price, special.special.description)">+</button>
+      <button type="button" name="button" ng-click="special.createSpecial(special.special.date, special.special.title, special.special.price, special.desc)">+</button>
       <button type="button" name="button" ng-click="special.updateSpecial(special.special)">Update</button>
     </li>
   </ul>

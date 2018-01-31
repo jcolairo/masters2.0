@@ -14,6 +14,7 @@
     "angular-moment-picker": "^0.10.1",
     "body-parser": "^1.17.2",
     "bower": "^1.8.0",
+    "dateformat": "^3.0.2",
     "express": "^4.15.3",
     "firebase": "^4.0.0",
     "firebase-admin": "^5.0.0",

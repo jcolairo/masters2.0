@@ -6,7 +6,8 @@ function SpecialController(SpecialFactory, $stateParams, $window, $state, $filte
       function success(success) {
         console.log('success getting all specials');
         controller.specials = success.data;
-        console.log('special', controller.specials);
+        console.log('specials', controller.specials);
+        console.log('controller.compareDate', controller.compareDate);
       },
       function error(error) {
         console.warn('Could not get all specials:', error);
@@ -27,13 +28,23 @@ function SpecialController(SpecialFactory, $stateParams, $window, $state, $filte
     );
   };
 
-  controller.createSpecial = function (date, title, price, description) {
+  controller.createSpecial = function (date, title, price, desc) {
+    var splitSpecials = /[;]+/;
+    desc = controller.special.description.split(splitSpecials);
+    for (var i = 0; i < desc.length; i++) {
+      console.log('***************', desc[i]);
+    }
+    console.log('***************', desc);
+    console.log('spec', controller.special.description);
+    console.log('spec', controller.special.desc);
+
     var special = [{
       date: date,
       title: title,
       price: price,
-      description: description
+      description: desc
     }];
+    console.log('*!*!*!*!*!*!*!*!*!', controller.special.description);
     SpecialFactory.createSpecial(special).then(
       function success(success) {
         console.log('Created new order:', success);
@@ -82,7 +93,12 @@ function SpecialController(SpecialFactory, $stateParams, $window, $state, $filte
     );
   };
 
-  controller.todayDate = new Date();
+  controller.todayDateDate = new Date().getDate();
+  controller.todayDateMonth = new Date().getMonth() + 1;
+  controller.todayDateYear = new Date().getFullYear();
+
+  controller.todayDate = `${controller.todayDateYear}-${controller.todayDateMonth}-${controller.todayDateDate} `;
+  controller.compareDate = `${controller.todayDate == controller.specials}`;
 
   function init() {
     controller.specials;
