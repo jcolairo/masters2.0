@@ -41,11 +41,11 @@ function seed () {
       'model': 'Product',
       'documents': [
         {
-          'title': 'Selection of Mini Pastries',
-          'price': '1.30',
+          'title': 'Selection of Mini Sweet Pastries',
+          'price': '1.50',
           'category': 'breakfast',
           'sub_category': 'pastries',
-          'description': 'Please select one pastries',
+          'description': '',
           'options': [
             'Plain Croissant',
             'Pain au Chocolat',
@@ -56,15 +56,44 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Platter of Brick Lane Bagels',
-          'price': '3.50',
+          'title': 'Selection of Mini Savoury Croissants',
+          'price': '3.00',
+          'category': 'breakfast',
+          'sub_category': 'pastries',
+          'description': '',
+          'options': [
+            'Ham & Cheese',
+            'Cheese & Tomato'
+          ],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Selection of Large Sweet Pastries',
+          'price': '2.00',
+          'category': 'breakfast',
+          'sub_category': 'pastries',
+          'description': '',
+          'options': [
+            'Plain Croissant',
+            'Pain au Chocolat',
+            'Pain au Raisin',
+            'Almond Croissant',
+            'Fruit Danish'
+          ],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Selection of Mini Bagels',
+          'price': '2.80',
           'category': 'breakfast',
           'sub_category': 'bagel',
-          'description': 'Please select one bagel',
+          'description': '',
           'options': [
             'Smoked Salmon & Cream Cheese',
             'Ham & Cheese',
-            'Cream Cheese & Cucumber'
+            'Cheese & Tomato',
+            'Cream Cheese & Cucumber',
+            'Egg Mayonnaise & Cress'
           ],
           'img_path': '../some_location'
         },
@@ -85,7 +114,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage Roll',
+          'title': 'Cumberland Sausage Roll',
           'price': '2.50',
           'category': 'breakfast',
           'sub_category': 'roll',
@@ -101,7 +130,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage & Egg Roll',
+          'title': 'Cumberland Sausage & Egg Roll',
           'price': '3.00',
           'category': 'breakfast',
           'sub_category': 'roll',
@@ -109,7 +138,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage & Bacon Roll',
+          'title': 'Cumberland Sausage & Bacon Roll',
           'price': '3.00',
           'category': 'breakfast',
           'sub_category': 'roll',
@@ -133,7 +162,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage Sandwich',
+          'title': 'Cumberland Sausage Sandwich',
           'price': '3.50',
           'category': 'breakfast',
           'sub_category': 'sandwich',
@@ -149,7 +178,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage & Egg Sandwich',
+          'title': 'Cumberland Sausage & Egg Sandwich',
           'price': '4.00',
           'category': 'breakfast',
           'sub_category': 'sandwich',
@@ -157,7 +186,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage & Bacon Sandwich',
+          'title': 'Cumberland Sausage & Bacon Sandwich',
           'price': '4.00',
           'category': 'breakfast',
           'sub_category': 'sandwich',
@@ -181,7 +210,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage Baguette',
+          'title': 'Cumberland Sausage Baguette',
           'price': '4.00',
           'category': 'breakfast',
           'sub_category': 'baguette',
@@ -197,7 +226,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage & Egg Baguette',
+          'title': 'Cumberland Sausage & Egg Baguette',
           'price': '4.50',
           'category': 'breakfast',
           'sub_category': 'baguette',
@@ -205,7 +234,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Sausage & Bacon Baguette',
+          'title': 'Cumberland Sausage & Bacon Baguette',
           'price': '4.50',
           'category': 'breakfast',
           'sub_category': 'baguette',
@@ -218,20 +247,7 @@ function seed () {
           'category': 'breakfast',
           'sub_category': 'healthy',
           'description': [
-            'Natural Yoghurt',
-            'Granola',
-            'Fresh Mixed Berries',
-            'Honey'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Sharing Breakfast Bowls',
-          'price': '4.00',
-          'category': 'breakfast',
-          'sub_category': 'healthy',
-          'description': [
-            'Natural Yoghurt',
+            'Greek Yoghurt',
             'Granola',
             'Fresh Mixed Berries',
             'Honey'
@@ -247,16 +263,16 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Fresh Fruit Kebab',
+          'title': 'Individual Fresh Fruit Kebab',
           'price': '1.70',
           'category': 'breakfast',
           'sub_category': 'healthy',
-          'description': [],
+          'description': 'Slices of seasonal fresh fruit',
           'img_path': '../some_location'
         },
         {
-          'title': 'Selection of Tea/Coffee',
-          'price': '3.50',
+          'title': 'Selection of Teas & Coffee',
+          'price': '3.30',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
           'description': 'Served in Flasks with a Selection of Biscuits',
@@ -264,14 +280,14 @@ function seed () {
         },
         {
           'title': 'Freshly Squeezed Orange Juice',
-          'price': '7.50',
+          'price': '15.00',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
           'description': '2.2 litres',
           'img_path': '../some_location'
         },
         {
-          'title': 'Bottled Water Still',
+          'title': 'Bottled Mineral Water',
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
@@ -279,7 +295,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Bottled Water Sparkling',
+          'title': 'Bottled Sparkling Water',
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
@@ -287,7 +303,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Pure Orange Juice Carton',
+          'title': '100% Pure Orange Juice (made from concentrate)',
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
@@ -295,7 +311,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Pure Apple Juice Carton',
+          'title': '100% Pure Apple Juice (made from concentrate)',
           'price': '2.20',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
@@ -303,50 +319,42 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Freshly Pressed Orange, Ginger, Carrot & Apple Juice',
-          'price': '7.00',
+          'title': 'Apple Copella',
+          'price': '1.80',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': '1 litre',
+          'description': '500ml',
           'img_path': '../some_location'
         },
         {
-          'title': 'Freshly Pressed Mango, Pineapple & Passion Fruit Juice',
-          'price': '7.00',
+          'title': 'Orange Tropicana',
+          'price': '1.80',
           'category': 'breakfast',
           'sub_category': 'breakfastDrinks',
-          'description': '1 litre',
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Freshly Pressed Mixed Berries Juice',
-          'price': '7.00',
-          'category': 'breakfast',
-          'sub_category': 'breakfastDrinks',
-          'description': '1 litre',
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Menu 1',
-          'price': '5.50',
-          'category': 'breakfast',
-          'sub_category': 'setBreakfast',
-          'description': [
-            'Selection of Mini Pastries',
-            'Fresh Fruit Kebab',
-            'Granola Pots with Berries and Honey'
-          ],
+          'description': '500ml',
           'img_path': '../some_location'
         },
         {
           'title': 'Menu 2',
-          'price': '5.80',
+          'price': '6.00',
           'category': 'breakfast',
           'sub_category': 'setBreakfast',
           'description': [
-            'Selection of Bagels (Smoked Salmon & Cream Cheese, Ham & Cheese, Cream Cheese & Cucumber)',
-            'Selection of Mini Pastries',
-            'Fresh Fruit Kebab'
+            '1 x Mini Pastry',
+            '1 x Fresh Fruit Kebab',
+            '1 x Granola Pots with Berries and Honey'
+          ],
+          'img_path': '../some_location'
+        },
+        {
+          'title': 'Menu 1',
+          'price': '5.00',
+          'category': 'breakfast',
+          'sub_category': 'setBreakfast',
+          'description': [
+            '1 x Mini Bagel',
+            '1 x Mini Pastry',
+            '1 x Fresh Fruit Kebab'
           ],
           'img_path': '../some_location'
         },
@@ -377,18 +385,6 @@ function seed () {
         },
         {
           'title': 'Menu 3',
-          'price': '8.50',
-          'category': 'lunch',
-          'sub_category': 'setLunch',
-          'description': [
-            '1 Wrap',
-            '1 round of Sandwiches',
-            'Fresh Fruit Kebab'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Menu 4',
           'price': '8.70',
           'category': 'lunch',
           'sub_category': 'setLunch',
@@ -401,26 +397,13 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Menu 5',
-          'price': '8.70',
-          'category': 'lunch',
-          'sub_category': 'setLunch',
-          'description': [
-            '1 Wrap',
-            'Cruidities with dips',
-            'Fresh Fruit Kebab',
-            'Packet of Crisps'
-          ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Menu 6',
+          'title': 'Menu 4',
           'price': '10.00',
           'category': 'lunch',
           'sub_category': 'setLunch',
           'description': [
             'Tortilla (Potato)',
-            'Small filled rolls',
+            'Mini roll',
             'Chicken Skewer',
             'Humus & Crudités',
             'Mozzarella, Cherry Tomato & Basil Stick',
@@ -430,7 +413,7 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Menu 7',
+          'title': 'Menu 5',
           'price': '12.00',
           'category': 'lunch',
           'sub_category': 'setLunch',
@@ -447,13 +430,13 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Menu 8',
+          'title': 'Menu 6',
           'price': '12.50',
           'category': 'lunch',
           'sub_category': 'setLunch',
           'description': [
             'Vegetarian Quiche',
-            'Chicken Skewer & Poached Salmon Skewer',
+            'Chicken Skewer or Poached Salmon Skewer',
             'Greed Salad',
             'Caesar Salad',
             'Hot Buffet Selection (Spring Rolls, Tempura Prawns, Falafel)',
@@ -592,31 +575,27 @@ function seed () {
           'img_path': '../some_location'
         },
         {
-          'title': 'Selection of Sandwiches',
+          'title': 'Sandwiches',
           'price': '3.30',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': 'Please select one sandwich',
-          'options': [
-            'Meat',
-            'Fish',
-            'Veg',
-            '1 Sandwich'
+          'description': [
+            'Selection of Meat, Fish & Veg'
           ],
+          'options': [],
           'img_path': '../some_location'
         },
         {
           'title': 'Selection of Wraps',
-          'price': '3.30',
+          'price': '3.50',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': 'Please select one wrap',
-          'options': [
+          'description': [
             'Meat',
             'Fish',
-            'Veg',
-            '1 Wrap'
+            'Veg'
           ],
+          'options': [],
           'img_path': '../some_location'
         },
         {
@@ -646,22 +625,19 @@ function seed () {
         },
         {
           'title': 'Platter of Chacuterie with Ciabatta',
-          'price': '7.50',
+          'price': '12.00',
           'category': 'lunch',
           'sub_category': 'platter',
           'description': [
             'Milano Salami',
             'Spanish Chorizo',
-            'Parma Ham and Olives'
+            'Parma Ham',
+            'Mozzarella Balls',
+            'Sundried Tomatoes',
+            'Marinated Artichokes',
+            'Sweet Bell Peppers',
+            'Olives and Rockett'
           ],
-          'img_path': '../some_location'
-        },
-        {
-          'title': 'Platter of Mozzarella Balls, Sundried Tomatoes, Marinated Artichokes, Sweet Bell Peppers, Olives and Rockett',
-          'price': '6.00',
-          'category': 'lunch',
-          'sub_category': 'platter',
-          'description': [],
           'img_path': '../some_location'
         },
         {
