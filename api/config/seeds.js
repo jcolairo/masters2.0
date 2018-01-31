@@ -560,8 +560,8 @@ function seed () {
                 'Apple & Blackberry Pie',
                 'Pecan & Treacle Tart',
                 'Banoffee Triple Decker Pie',
-                'Carrot CakeRed',
-                'Velvet Gateau'
+                'Carrot Cake',
+                'Red Velvet Gateau'
               ]
             }
           ],

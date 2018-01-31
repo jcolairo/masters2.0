@@ -3,9 +3,9 @@
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" >
     <h1>Combo Order Page</h1>
     <b>Cold Fork Buffet £18.50+VAT per head</b>
-    <p>Choose two mains, three salads and one dessert from the list below. If you are ordering for ten people or more then please choose an additional dessert.</p>
+    <p>Choose two mains, three salads and one dessert from the list below. If you are ordering for 15 people or more then please choose an additional dessert.</p>
 
-    <div ng-init="numberOfPeople = 2; product.comboOrder = {}">
+    <div ng-init="numberOfPeople = 15; product.comboOrder = {}">
       <label>
         Number Of People:
         <input type="number" ng-model="numberOfPeople">
