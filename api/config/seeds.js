@@ -45,14 +45,14 @@ function seed () {
           'price': '1.50',
           'category': 'breakfast',
           'sub_category': 'pastries',
-          'description': '',
-          'options': [
+          'description': [
             'Plain Croissant',
             'Pain au Chocolat',
             'Pain au Raisin',
             'Almond Croissant',
             'Fruit Danish'
           ],
+          'options': '',
           'img_path': '../some_location'
         },
         {
@@ -60,11 +60,11 @@ function seed () {
           'price': '3.00',
           'category': 'breakfast',
           'sub_category': 'pastries',
-          'description': '',
-          'options': [
+          'description': [
             'Ham & Cheese',
             'Cheese & Tomato'
           ],
+          'options': '',
           'img_path': '../some_location'
         },
         {
@@ -72,14 +72,14 @@ function seed () {
           'price': '2.00',
           'category': 'breakfast',
           'sub_category': 'pastries',
-          'description': '',
-          'options': [
+          'description': [
             'Plain Croissant',
             'Pain au Chocolat',
             'Pain au Raisin',
             'Almond Croissant',
             'Fruit Danish'
           ],
+          'options': '',
           'img_path': '../some_location'
         },
         {
@@ -87,14 +87,14 @@ function seed () {
           'price': '2.80',
           'category': 'breakfast',
           'sub_category': 'bagel',
-          'description': '',
-          'options': [
+          'description': [
             'Smoked Salmon & Cream Cheese',
             'Ham & Cheese',
             'Cheese & Tomato',
             'Cream Cheese & Cucumber',
             'Egg Mayonnaise & Cress'
           ],
+          'options': '',
           'img_path': '../some_location'
         },
         {
@@ -579,48 +579,33 @@ function seed () {
           'price': '3.30',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [
-            'Selection of Meat, Fish & Veg'
-          ],
+          'description': 'Selection of Meat, Fish & Veg',
           'options': [],
           'img_path': '../some_location'
         },
         {
-          'title': 'Selection of Wraps',
+          'title': 'Wraps',
           'price': '3.50',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': [
-            'Meat',
-            'Fish',
-            'Veg'
-          ],
+          'description': 'Selection of Meat, Fish & Veg',
           'options': [],
           'img_path': '../some_location'
         },
         {
-          'title': 'Selection of Mini Rolls',
+          'title': 'Mini Rolls',
           'price': '2.50',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': 'Please select one mini roll',
-          'options': [
-            'Meat',
-            'Fish',
-            'Veg',
-            '1 Roll'
-          ],
+          'description': 'Selection of Meat, Fish & Veg',
           'img_path': '../some_location'
         },
         {
-          'title': 'Selection of Baguettes',
+          'title': 'Baguettes',
           'price': '4.00',
           'category': 'lunch',
           'sub_category': 'platter',
-          'description': 'Please select one baguette',
-          'options': [
-            '1 Baguette of Meat, Fish or Veg'
-          ],
+          'description': 'Selection of Meat, Fish & Veg',
           'img_path': '../some_location'
         },
         {
