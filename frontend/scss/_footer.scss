@@ -4,7 +4,8 @@
   width: 75%;
   margin-left: 12.5vw;
   margin-top: 1rem;
-  background-color: rgb(244,239,225);
+  background-color: $yellow;
+  border-radius: 10px;
   div {
     display: block;
     justify-content: center;
