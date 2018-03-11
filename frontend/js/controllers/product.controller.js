@@ -16,6 +16,25 @@ function ProductController(ProductFactory, $stateParams) {
     controller.canapesNavShow = !controller.canapesNavShow;
   };
 
+  var modal = document.getElementById('simpleModal');
+
+  // function to open modal
+  controller.openModal = function () {
+    modal.style.display = 'block';
+  };
+
+  // function to close modal
+  controller.closeBtn = function() {
+    modal.style.display = 'none';
+  };
+
+  // function to close modal outside
+  controller.outsideClick = function($event) {
+    if($event.currentTarget == modal) {
+      modal.style.display = 'none';
+    }
+  };
+
   controller.getAllProducts = function() {
     ProductFactory.getAllProducts().then(
       function success(success) {
