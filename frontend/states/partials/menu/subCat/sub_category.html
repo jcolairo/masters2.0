@@ -16,19 +16,36 @@
   <div ng-init="product.getProductBySubCategory('product.cat', 'product.sub_category')" class="userDiv">
     <div class="titleDiv productDiv">
       <ul ng-repeat="prod in product.subCat | orderBy: ['price', -'title']" class="productUl">
+        <!-- <li ng-init="check = false">
+          <button ng-mouseover="check = true" ng-mouseleave="check = false" class="optionsI">I</button>
+          <p ng-if="check" ng-repeat="option in prod.options" >{{option}}</p>
+        </li> -->
+
         <li class="productTitle">
-          <a ui-sref="singleProduct({id: prod._id })">{{prod.title}}</a>
+          <p ui-sref="singleProduct({id: prod._id })">{{prod.title}}</p>
         </li>
-        <li ng-repeat="option in prod.options" class="productDesc">
-          {{option}}
+        <li class="modalMain" ng-controller="ProductController as product">
+          <button id="modalBtn" class="buttonModal" ng-mouseover="product.openModal()" ng-mouseleave="product.closeBtn()"><strong>i</strong></button>
+
+          <div id="simpleModal" class="modal" ng-click="product.outsideClick($event)">
+              <div class="modal-content">
+                <p ng-repeat="options in prod.options">{{options}}</p>
+              </div>
+          </div>
         </li>
+        <!-- <div class="productDescDiv">
+          <li ng-repeat="option in prod.options" class="productDesc">
+            {{option}}
+          </li>
+        </div> -->
+
         <li class="productPrice">
           <p>{{prod.price | price}} per person</p>
         </li>
         <form ng-controller="OrderController as order" ng-submit="order.addToOrder(prod._id, order.addToOrder.order.products.qty)">
           <div>
             <input ng-model="order.newOrder" type="submit" value="add to order">
-            <input ng-model="order.addToOrder.order.products.qty" type="number" min="1">
+            <input ng-model="order.addToOrder.order.products.qty" type="number" min="1" class="inputBox">
           </div>
         </form>
       </ul>
