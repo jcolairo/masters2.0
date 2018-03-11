@@ -17,15 +17,16 @@ aside {
   }
 }
 main {
-  border: $border-dev-green;
+  // border: $border-dev-green;
   display: inline-block;
   margin-top: 15px;
   margin-left: 12.5vw;
   width: 75%;
   height: 100vh;
   text-align: center;
-  background-color: $creme;
+  background-color: $yellow;
+  border-radius: 10px;
 }
 body {
-  background-color: $white;
+  background-color: $black;
 }
